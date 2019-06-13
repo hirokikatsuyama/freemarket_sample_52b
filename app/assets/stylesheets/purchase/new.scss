@@ -10,223 +10,94 @@ display: block;
 clear: both;
 }
 
-.item__confirmation {
+body {
   background: rgb(245, 245, 245);
-  &__header {
-    height: 128px;
-    text-align: center;
-    &__inner {
-      display: inline-block;
-      margin-top: 40px;
-      & a {
-        display: inline-block;
-        width: 230px;
-        height: 65px;
-        padding-right: 8px;
-        & img {
-        width: 230px;
-        height: 65px;
-        }
-      }
-    }
-  }
+}
+
+.logout {
+  margin: 40px auto 0;
+  width: 1020px;
+  padding: 0 0 40px;
   &__main {
-    display: block;
-  }
-  &__box {
     width: 700px;
-    margin: 0 auto;
-    background-color: #fff;
-    & h2 {
-      font-size: 22px;
-      padding: 16px;
-      text-align: center;
-      line-height: 1.5;
+    float: right;
+    &__content {
+      background: #fff;
     }
   }
-  &__product {
-    width: 700px;
-    text-align: center;
-    padding: 24px 12.5% 0;;
+  &__form {
+    padding: 64px;
     border-top: 1px solid #f5f5f5;
-    &__content {
-      display: flex;
-      flex-wrap: wrap;
+    &__inner {
       max-width: 320px;
       margin: 0 auto;
-      & h3 {
-        display: inline-block;
-        width: 64px;
-        height: 64px;
-      }
-      & img {
-      width: 64px;
-      height: 64px;
-      }
-      & p {
-      width: calc(100% - 80px);
-      margin-left: 16px;
-      text-align: left;
-      font-size: 16px;
-      line-height: 1.5;
-      font-weight: 600;
-      }
-    }
-    &__form {
-      width: 100%;
-      .buy__price {
-        margin: 8px 0 0;
-        line-height: 1.5;
-        &__left {
-          font-size: 18px;
-          font-weight: 600;
-        }
-        &__right {
-          display: inline-block;
-          margin-left: 8px;
-          font-size: 14px;
-          font-weight: 400;
-        }
-      }
-      .buy__point {
-        margin-top: 16px;
-        background: #ccc;
-        &--not {
-          padding: 16px;
-          border: 1px solid #ccc;
-          height: 48px;
-          font-size: 14px;
-        }
-      }
-      .buy--total {
-        display: table;
-        border-collapse: collapse;
-        width: 100%;
-        font-weight: bold;
-        &__title {
-          display: table-cell;
-          padding: 16px 0;
-          text-align: left;
-        }
-        &__price {
-          line-height: 1.3;
-          display: table-cell;
-          padding: 16px 0;
-          text-align: right;
-          font-size: 24px;
-        }
-      }
-      .buy__alert {
-        width: 100%;
-        margin: 8px 0 0;
-        line-height: 1.5;
-        font-size: 13px;
-        color: #ea352d;
-        text-align: center;
-        font-weight: normal;
-      }
-      .buy__button {
-        margin: 8px 0 0;
-        border: 1px solid #888;
-        background: #888;
+      &__button {
+        background: #ea352d;
+        border: 1px solid #ea352d;
         color: #fff;
-        font-weight: 600;
         display: block;
         width: 100%;
         line-height: 48px;
         font-size: 14px;
+        cursor: pointer;
         text-align: center;
       }
     }
   }
-  &__user {
-    margin: 40px 0 0;
-    padding: 24px 12.5% 0;
-    border-top: 1px solid #f5f5f5;
-    &__info {
-      max-width: 320px;
-      margin: 0 auto;
-      text-align: left;
-      & h3 {
-        font-size: 14px;
-      }
-      & p {
-        margin: 8px 0 0;
-        font-size: 13px;
-        line-height: 1.4;
-      }
-      & a {
-        color: #0099e8;
-        text-decoration: none;
-        display: block;
-        text-align: right;
-        font-size: 14px;
-      }
-      & i {
-        margin-left: 8px;
-      }
-    }
-  }
-  &__credit {
-    padding: 24px 12.5% 40px;
-    border-top: 1px solid #f5f5f5;
-    margin-top: 40px;
-  &__info {
-      max-width: 320px;
-      margin: 0 auto;
-      text-align: left;
-      & h3 {
-        font-size: 14px;
-      }
-      & p {
-        margin: 8px 0 0;
-        font-size: 13px;
-        line-height: 1.4;
-      }
-      & a {
-        color: #0099e8;
-        text-decoration: none;
-        display: block;
-        text-align: right;
-        font-size: 14px;
-      }
-      & i {
-        margin-left: 8px;
-      }
-    }
-  }
-  &__footer {
-    width: 456px;
-    height: 220px;
-    margin: 0 auto;
-    padding: 40px 0;
-    text-align: center;
-    & ul {
-      font-size: 0;
-      & li {
-        display: inline-block;
-        font-size: 12px;
-        & a {
+  .mypage--side {
+    float: left;
+    width: 280px;
+    margin: 0 40px 0 0;
+    &__inner {
+      .side__navi {
+        list-style: none;
+        &--first {
+          border: 0;
+        }
+        &--other {
+          border-top: 1px solid #eee;
+        }
+        &__link {
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
           color: #333;
+          text-decoration: none;
+          &--active {
+            position: relative;
+            display: block;
+            min-height: 48px;
+            padding: 16px;
+            background: #eee;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+          }
+          &__icon {
+            position: absolute;
+            top: 13px;
+            right: 16px;
+            color: #ccc;
+            font-size: 22px;
+            &--active {
+              position: absolute;
+              top: 13px;
+              right: 16px;
+              color: #333;
+              font-weight: 600;
+              font-size: 22px;
+            }
+          }
+        }
+        &__title {
+          margin: 40px 0 8px;
+          font-size: 16px;
         }
       }
-    }
-    &__link {
-      margin-left: 16px;
-    }
-    &__logo {
-      display: block;
-      margin: 40px auto 0;
-      -webkit-filter: grayscale(100%);
-      -moz-filter: grayscale(100%);
-      -ms-filter: grayscale(100%);
-      -o-filter: grayscale(100%);
-      filter: grayscale(100%);
-      opacity:0.3;
-    }
-    &__copyright {
-      margin: 8px 0 0;
-      font-size: 12px;
     }
   }
 }
