@@ -74,7 +74,7 @@ body{
 }
 
 .single-header {
-  height:128px;
+  height:100px;
   width:100%;
   text-align: center;
   margin-top:40px;
@@ -177,7 +177,7 @@ body{
       }
     }
     &__exhibition{
-      height:380px;
+      height:350px;
       padding:40px;
       line-height:25px;
       a {
@@ -232,7 +232,6 @@ body{
   &__section{
     width:456px;
     margin:0 auto;
-  }
   &__img{
     margin-top: 40px;
     margin-bottom: 0;
@@ -241,11 +240,13 @@ body{
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
+    opacity:0.3;
   }
   &__right{
     font-size:13px;
     margin-top:8px;
   }
+}
 }
 single-container nav{
   font-size:13px;
