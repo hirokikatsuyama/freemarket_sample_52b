@@ -1,2 +1,88 @@
-%h1 Items#new
-%p Find me in app/views/items/new.html.erb
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title mercari
+
+    .single-container
+      %header.single-header
+        = image_tag 'mercari_logo_horizontal.png', size: "250x70"
+      %main.single-main
+        %section.single-main__section
+          .single-main__section__title
+            %h2.single-main__section__title__bar
+              商品の情報を入力
+          .single-main__section__picture
+            %label#large-label 出品画像
+            %span.form-require 必須
+            %p 最大10枚までアップロードできます
+            .single-main__section__picture__uploader
+              %p
+                ドラッグアンドドロップ
+                %br>/
+                またはクリックしてファイルをアップロード
+          .single-main__section__item--name
+            .form-group
+              %label.normal-label 商品名
+              %span.form-require 必須
+              %input.form{placeholder: "商品名(必須40文字まで)", value:""}/
+            .form-group
+              %label.normal-label 商品の説明
+              %span.form-require 必須
+              %textarea.form-detail{cols: "50", placeholder:"商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", rows:"10", wrap: "soft"}
+          .single-main__section__item--detail
+            %h3.gray-title.detail-left 商品の詳細
+            .single-main__section__item--detail__pulldown
+              .single-main__section__item--detail__pulldown__one
+                %label.normal-label カテゴリー
+                %span.form-require 必須
+                .single-main__section__item--detail__pulldown__one__tab
+            .single-main__section__item--detail__pulldown__one
+              %label.normal-label 商品の状態
+              %span.form-require 必須
+              .single-main__section__item--detail__pulldown__one__tab
+          .single-main__section__delivery
+            %h3.gray-title 配送について
+            .single-main__section__delivery__pulldown
+              .single-main__section__delivery__pulldown__one
+                %label.normal-label 配送量の負担
+                %span.form-require 必須
+                .single-main__section__delivery__pulldown__one__tab
+            .single-main__section__delivery__pulldown__one
+              %label.normal-label 配送元の地域
+              %span.form-require 必須
+              .single-main__section__delivery__pulldown__one__tab
+            .single-main__section__delivery__pulldown__one
+              %label.normal-label 発送までの日数
+              %span.form-require 必須
+              .single-main__section__delivery__pulldown__one__tab
+          .single-main__section__price
+            %h3.gray-title 販売価格(300〜9,999,999)
+            %ul.single-main__section__price__sell-form
+              %li.single-main__section__price__sell-form__price
+                %label.normal-label 価格
+                %span.form-require 必須
+                .price-right
+                  ¥
+                  %input.form-price{placeholder: "例）300", value: ""}/
+              %li.single-main__section__price__sell-form__margin
+                販売手数料(10%)
+              %li.single-main__section__price__sell-form__profit
+                %label#large-label 販売利益
+          .single-main__section__exhibition
+            %p
+              = link_to "禁止されている出品、行為", "#"
+              を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "偽ブランドの販売", "#"
+              は犯罪であり処罰される可能性があります。また、出品を持ちまして
+              = link_to "加盟店規約", "#"
+              に同意したことになります。
+            .single-main__section__exhibition__button
+              %button.single-main__section__exhibition__button__exhibition 出品する
+              %button.single-main__section__exhibition__button__return もどる
+      %footer.single-footer
+        .single-footer__section
+          %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
+          .single-footer__section__img
+            = image_tag 'mercari_logo_vertical', size: "88x85"
+          %p.single-footer__right @ 2019 Mercari
