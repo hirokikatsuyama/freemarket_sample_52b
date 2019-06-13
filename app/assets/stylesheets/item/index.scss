@@ -1,0 +1,119 @@
+@import "reset";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0099e8;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.top {
+  background-color: #fff;
+  &__slide {
+    height: 390px;
+    background-color: rgba(59, 123, 134, 0.39);
+  }
+  &__pickup {
+    padding: 40px 0;
+    background: #f5f5f5;
+    &__title {
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+  &__item {
+    width: 940px;
+    margin: 0 auto;
+    &__title {
+      font-size: 22px;
+      margin: 26px 11px;
+      text-align: center;
+      font-weight: bold;
+      &__link:hover {
+        border-bottom: 2px solid #83c7e9;
+        color: #83c7e9;
+      }
+    }
+    &__contents {
+      width: auto;
+      margin: 0 auto;
+      &__box {
+        position: relative;
+        float: left;
+        width: 213px;
+        margin-left: 20px;
+        background-color: #fff;
+      }
+    }
+    &__all {
+      width: 99.5%;
+      padding: 20px 0 30px;
+      text-align: right;
+      font-size: 15px;
+    }
+  }
+  &__list {
+    display: block;
+    text-decoration: none;
+    &__photo {
+      position: relative;
+      width: 213px;
+      height: 220px;
+      overflow: hidden;
+      & img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+      }
+    }
+    &__description {
+      padding: 16px;
+      height: 110px;
+      color: #333;
+      & p {
+        font-size: 10px;
+      }
+      &__name {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: normal;
+        line-height: 1.5;
+        height: 3em;
+      }
+      &__other {
+        margin-top: 8px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        &__price {
+          font-weight: 600;
+        }
+        &__like {
+          & i {
+            color: #ccc;
+          }
+          & span {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

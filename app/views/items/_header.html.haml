@@ -1,0 +1,35 @@
+.header
+  .header__inner
+    .header__inner__top
+      %h1
+        = link_to "#", class: "title__logo" do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613125057"
+      %form.keyword__search{:action => "", :method => ""}
+        %input.keyword__search__box{:name => "keyword", :placeholder => "何かお探しですか？", :type => "text"}/
+        .keyword__search__button
+          %i.material-icons.search search
+    .header__inner__bottom
+      %nav.header__inner__bottom-left
+        %ul.header__inner__bottom-left__box
+          %li.header__inner__bottom-left__box__category
+            = link_to "#", class: "category__link" do
+              %i.material-icons.category format_list_bulleted
+              %span カテゴリーから探す
+          %li.header__inner__bottom-left__box__brand
+            = link_to "#", class: "brand__link" do
+              %i.material-icons.brand local_offer
+              %span ブランドから探す
+      .header__inner__bottom-right
+        %ul.header__inner__bottom-right__box
+          %li.header__inner__bottom-right__box__notice
+            = link_to "#", class: "notice__link" do
+              %i.far.fa-bell
+              %span お知らせ
+          %li.header__inner__bottom-right__box__list
+            = link_to "#", class: "list__link" do
+              %i.fas.fa-check
+              %span やることリスト
+          %li.header__inner__bottom-right__box__mypage
+            = link_to "#", class: "mypage__link" do
+              %i.fas.fa-user-circle
+              %span マイページ
