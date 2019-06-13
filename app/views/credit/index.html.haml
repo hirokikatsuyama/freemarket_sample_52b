@@ -3,9 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title mercari
-    = stylesheet_link_tag    '/credit/index.scss', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+
   %body
     .container
       .container__right
@@ -18,4 +16,4 @@
             .container__right-main-button-button
               %button.credit-button クレジットカードを追加する
           .container__right-main-footer
-            %a{:href => ""} 支払い方法について
+            = link_to "支払い方法について", "#"

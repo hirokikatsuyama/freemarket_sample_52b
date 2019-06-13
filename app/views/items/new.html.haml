@@ -3,13 +3,10 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title mercari
-    = stylesheet_link_tag    '/item/new.scss', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-  %body
+
     .single-container
       %header.single-header
-        = image_tag 'mercari_logo_horizontal.png', :size => "250x70"
+        = image_tag 'mercari_logo_horizontal.png', size: "250x70"
       %main.single-main
         %section.single-main__section
           .single-main__section__title
@@ -28,11 +25,11 @@
             .form-group
               %label.normal-label 商品名
               %span.form-require 必須
-              %input.form{:placeholder => "商品名(必須40文字まで)", :value => ""}/
+              %input.form{placeholder: "商品名(必須40文字まで)", value:""}/
             .form-group
               %label.normal-label 商品の説明
               %span.form-require 必須
-              %textarea.form-detail{:cols => "50", :placeholder => "商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", :rows => "10", :wrap => "soft"}
+              %textarea.form-detail{cols: "50", placeholder:"商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", rows:"10", wrap: "soft"}
           .single-main__section__item--detail
             %h3.gray-title.detail-left 商品の詳細
             .single-main__section__item--detail__pulldown
@@ -67,7 +64,7 @@
                 %span.form-require 必須
                 .price-right
                   ¥
-                  %input.form-price{:placeholder => "例）300", :value => ""}/
+                  %input.form-price{placeholder: "例）300", value: ""}/
               %li.single-main__section__price__sell-form__margin
                 販売手数料(10%)
               %li.single-main__section__price__sell-form__profit
@@ -87,5 +84,5 @@
         .single-footer__section
           %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
           .single-footer__section__img
-            = image_tag 'mercari_logo_vertical', :size => "88x85"
+            = image_tag 'mercari_logo_vertical', size: "88x85"
           %p.single-footer__right @ 2019 Mercari
