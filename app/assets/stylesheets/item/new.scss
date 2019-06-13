@@ -1,0 +1,253 @@
+body{
+  margin:0;
+  padding:0;
+  background-color:#f5f5f5;
+  font-size:14px;
+}
+.top-logo{
+  height: 6rem;
+  text-align: center;
+}
+#large-label{
+  font-size:16px;
+  font-weight: bold;
+  margin-bottom:50px;
+}
+.single-container label{
+  font-size:14px;
+  font-weight: bold;
+  margin-bottom:20px;
+}
+
+.gray-title{
+  font-size:14px;
+  font-weight: bold;
+  color:#888;
+}
+.form-require{
+  background:#ea352d;
+  font-size:12px;
+  padding-top:3px;
+  padding-bottom:3px;
+  padding-left:4px;
+  padding-right:4px;
+  margin: 0 0 0 8px;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: 600;
+}
+.single-main h2{
+  font-size:22px;
+  color:#333;
+}
+
+.single-main ul{
+  list-style: none;
+}
+
+.single-main p{
+  margin-top:10px;
+  margin-bottom:20px;
+  line-height:1.5;
+}
+
+.form{
+  height:28px;
+  width:620px;
+  margin: 0.5em 0;
+  background: #FFF;
+  border: solid 1px #ccc;/*線*/
+  border-radius: 4px;/*角の丸み*/
+  color:#ccc;
+  padding:10px;
+  margin-bottom:40px;
+  font-size:16px;
+}
+.form-detail{
+  height:142px;
+  width:620px;
+  margin: 0.5em 0;
+  background: #FFF;
+  border: solid 1px #ccc;/*線*/
+  padding:10px;
+  font-size:16px;
+}
+
+.single-header {
+  height:128px;
+  width:100%;
+  text-align: center;
+  margin-top:40px;
+}
+
+.single-main{
+  width:100%;
+  &__section{
+    background-color:white;
+    width:700px;
+    margin:0 auto;
+    padding:0 auto;
+    &__title{
+    text-align: center;
+    border-bottom: solid 1px #eee;
+    padding: 32px 16px;
+    font-size: 22px;
+    }
+    &__picture{
+      padding:40px;
+      border-bottom: solid 1px #eee;
+      &__uploader{
+        background-color:#f5f5f5;
+        height:180px;
+        width:620px;
+        margin-top:20px;
+        text-align:center;
+        display: table-cell; /* IE8から使用可能 */
+        vertical-align: middle;
+        border: dotted 2px #ccc;
+      }
+    }
+    &__item--name{
+      padding:40px;
+      border-bottom: solid 1px #eee;
+    }
+    &__item--detail{
+      height:220px;
+      padding:40px;
+      border-bottom: solid 1px #eee;
+      &__pulldown{
+        width:400px;
+        float:right;
+        &__one{
+          float:right;
+          margin:15px 0;
+          &__tab{
+            height:50px;
+            width:400px;
+            border: solid 1px #ccc;/*線*/
+            border-radius: 4px;
+            margin: 0.5em 0;
+          }
+        }
+      }
+    }
+    &__delivery{
+      height:330px;
+      padding:40px;
+      border-bottom: solid 1px #eee;
+      &__pulldown{
+        width:400px;
+        float:right;
+        &__one{
+          float:right;
+          margin:15px 0;
+          &__tab{
+            height:50px;
+            width:400px;
+            border: solid 1px #ccc;/*線*/
+            border-radius: 4px;
+            margin: 0.5em 0;
+          }
+        }
+      }
+    }
+    &__price{
+      height:240px;
+      padding:40px;
+      border-bottom: solid 1px #eee;
+      &__sell-form{
+        height: 218px;
+        width: 400px;
+        float:right;
+        &__price{
+          height:48px;
+          border-bottom: solid 1px #ccc;
+          padding-bottom:28px;
+        }
+        &__margin{
+          height:14px;
+          border-bottom: solid 1px #ccc;
+          padding:24px 0;
+          margin-bottom:28px;
+        }
+        &__profit{
+          height:48px;
+          margin-bottom:28px;
+        }
+      }
+    }
+    &__exhibition{
+      height:300px;
+      padding:40px;
+      line-height:25px;
+      a {
+        text-decoration: none;
+        color:#0099e8;
+      }
+      &__button{
+        text-align: center;
+        outline:0;
+        &__exhibition{
+          background-color:#ea352d;
+          color:white;
+          height:50px;
+          width:600px;
+          margin-top:30px;
+          font-size:14px;
+        }
+        &__return{
+          background-color:#aaa;
+          color:white;
+          height:50px;
+          width:300px;
+          margin:30px auto;
+          font-size:14px;
+        }
+      }
+
+    }
+  }
+}
+.price-right{
+  float:right;
+  text-align: center;
+}
+.form-price{
+  height:25px;
+  width:134px;
+  background: #FFF;
+  border: solid 1px #ccc;/*線*/
+  border-radius: 4px;/*角の丸み*/
+  color:#ccc;
+  padding:10px 16px 8px;
+  font-size:16px;
+  margin-bottom:24px;
+  text-align: right;
+}
+.single-footer{
+  height:220px;
+  width:100%;
+  text-align:center;
+  padding-top:40px;
+  &__section{
+    width:456px;
+    margin:0 auto;
+  }
+  &__img{
+    margin-top: 40px;
+    margin-bottom: 0;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  &__right{
+    font-size:13px;
+    margin-top:8px;
+  }
+}
+single-container nav{
+  font-size:13px;
+}
+

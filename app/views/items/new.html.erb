@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>mercari</title>
+ <%= stylesheet_link_tag    '/item/new.scss', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="single-container">
+  <header class="single-header">
+    <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723" width="193" height="49" class="top-logo">
+  </header>
+  <main class="single-main">
+    <section class="single-main__section">
+      <div class="single-main__section__title">
+        <h2 class="single-main__section__title__bar">
+        商品の情報を入力
+        </h2>
+      </div>
+
+      <div class="single-main__section__picture">
+        <label id="large-label">出品画像</label>
+        <span class="form-require">必須</span>
+        <p>最大10枚までアップロードできます</p>
+        <div class="single-main__section__picture__uploader">
+          <p>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード</p>
+        </div>
+      </div>
+
+      <div class="single-main__section__item--name">
+        <div class="form-group">
+          <label class="normal-label">商品名</label>
+          <span class="form-require">必須</span>
+          <input class="form" value placeholder="商品名(必須40文字まで)">
+        </div>
+      <div class="form-group">
+          <label class="normal-label">商品の説明</label>
+          <span class="form-require">必須</span>
+          <textarea class="form-detail" cols="50" rows="10" wrap="soft" placeholder="商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。">
+          </textarea>
+        </div>
+      </div>
+
+      <div class="single-main__section__item--detail">
+        <h3 class="gray-title detail-left">商品の詳細</h3>
+        <div class="single-main__section__item--detail__pulldown">
+          <div class="single-main__section__item--detail__pulldown__one">
+            <label class="normal-label">カテゴリー</label>
+            <span class="form-require">必須</span>
+            <div class="single-main__section__item--detail__pulldown__one__tab">
+            </div>
+          </div>
+        </div>
+
+        <div class="single-main__section__item--detail__pulldown__one">
+            <label class="normal-label">商品の状態</label>
+            <span class="form-require">必須</span>
+            <div class="single-main__section__item--detail__pulldown__one__tab">
+            </div>
+        </div>
+      </div>
+
+      <div class="single-main__section__delivery">
+        <h3 class="gray-title">配送について</h3>
+          <div class="single-main__section__delivery__pulldown">
+            <div class="single-main__section__delivery__pulldown__one">
+            <label class="normal-label">配送量の負担</label>
+            <span class="form-require">必須</span>
+            <div class="single-main__section__delivery__pulldown__one__tab">
+            </div>
+            </div>
+          </div>
+
+            <div class="single-main__section__delivery__pulldown__one">
+            <label class="normal-label">配送元の地域</label>
+            <span class="form-require">必須</span>
+            <div class="single-main__section__delivery__pulldown__one__tab">
+            </div>
+          </div>
+          <div class="single-main__section__delivery__pulldown__one">
+            <label class="normal-label">発送までの日数</label>
+            <span class="form-require">必須</span>
+            <div class="single-main__section__delivery__pulldown__one__tab">
+            </div>
+          </div>
+      </div>
+
+      <div class="single-main__section__price">
+        <h3 class="gray-title">販売価格(300〜9,999,999)</h3>
+        <ul class="single-main__section__price__sell-form">
+          <li class="single-main__section__price__sell-form__price">
+            <label class="normal-label">価格</label>
+            <span class="form-require">必須</span>
+            <div class="price-right">
+              ¥
+              <input class="form-price" value placeholder="例）300">
+            </div>
+          </li>
+          <li class="single-main__section__price__sell-form__margin">
+          販売手数料(10%)
+          </li>
+          <li class="single-main__section__price__sell-form__profit">
+            <label id="large-label">販売利益</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="single-main__section__exhibition">
+            <p><a href="">禁止されている出品、行為</a>を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。<a href="">偽ブランドの販売</a>は犯罪であり処罰される可能性があります。また、出品を持ちまして<a href="">加盟店規約</a>に同意したことになります。</p>
+        <div class="single-main__section__exhibition__button">
+          <button class="single-main__section__exhibition__button__exhibition">出品する</button>
+          <button class="single-main__section__exhibition__button__return">もどる</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="single-footer">
+    <div class="single-footer__section">
+    <nav>プライバシーポリシー メルカリ利用規約 特定商取引に関する表記</nav>
+    <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?582218381" alt="mercari" width="80" height="65" class="single-footer__img">
+        <p class="single-footer__right">@ 2019 Mercari</p>
+    </div>
+  </footer>
+</body>
+
