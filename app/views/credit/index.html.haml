@@ -1,2 +1,21 @@
-%h1 Credit#index
-%p Find me in app/views/credit/index.html.erb
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title mercari
+    = stylesheet_link_tag    '/credit/index.scss', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      .container__right
+        .container__right-top
+          %h1 支払い方法
+        .container__right-main
+          .container__right-main-button
+            .container__right-main-button-title
+              %p クレジットカード一覧
+            .container__right-main-button-button
+              %button.credit-button クレジットカードを追加する
+          .container__right-main-footer
+            %a{:href => ""} 支払い方法について

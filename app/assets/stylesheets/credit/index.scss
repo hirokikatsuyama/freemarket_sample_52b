@@ -19,19 +19,23 @@
     &-main{
       padding: 44px;
       &-button{
-        padding-bottom:40px;
         text-align: center;
         &-title{
           font-size:16px;
           font-weight: bold;
           width:320px;
-          padding-left:65px;
+          padding-left:130px;
+          padding-top:24px;
+          padding-bottom:20px;
         }
       }
       &-footer{
         padding-top:40px;
         border-top: solid 1px #eee;
         font-size:14px;
+        a{
+          float:right;
+        }
       }
     }
 
@@ -47,6 +51,4 @@
   font-size: 14px;
 
 }
-a{
-  float:right;
-}
+

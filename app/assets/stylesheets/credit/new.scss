@@ -1,14 +1,12 @@
 .credit-info{
   height:487px;
   width:320px;
-  padding-right:64px;
-  padding-left:64px;
   padding-bottom:0px;
   padding-top:14px;
 }
 .form-require__number{
-  height:28px;
-  width:286px;
+  height:50px;
+  width:320px;
   background: #FFF;
   border: solid 1px #ccc;/*線*/
   border-radius: 4px;/*角の丸み*/
@@ -26,6 +24,7 @@
 .credit-info a {
   text-decoration: none;
   color:#0099e8;
+  float:right;
 }
 
 
@@ -45,9 +44,8 @@
   margin-top:40px;
 }
 .credit-button{
-  margin-bottom:100px;
+  margin-bottom:30px;
 }
-
 
 
 .credit-info select::-ms-expand {
@@ -75,4 +73,5 @@
 .container__right-main-space{
   padding-right:126px;
   padding-left:126px;
+  padding-bottom:80px;
 }

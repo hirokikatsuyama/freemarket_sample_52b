@@ -1,2 +1,77 @@
-%h1 Credit#new
-%p Find me in app/views/credit/new.html.erb
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title mercari
+    = stylesheet_link_tag    '/credit/new.scss', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+  %body
+    .container
+      .container__right2
+        .container__right-top
+          %h1 クレジットカード情報入力
+        .container__right-main
+          .container__right-main-space
+            .credit-info
+              %label カード番号
+              %span.form-require 必須
+              %br/
+              %input.form-require__number{:placeholder => "半角数字のみ", :value => ""}/
+              .deadline
+                %ul.signup-card-list
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?4069491723", :width => "49"}/
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?4069491723", :width => "34"}/
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?4069491723", :width => "30"}/
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?4069491723", :width => "32"}/
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?4069491723", :width => "21"}/
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?4069491723", :width => "32"}/
+                  %li
+                    %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?4069491723", :width => "32"}/
+              .title-space
+                %label.title-space 有効期限
+                %span.form-require 必須
+                %br/
+                %select{:name => "select-time", :type => "text"}
+                  %option{:value => "1"} 01
+                  %option{:value => "1"} 02
+                  %option{:value => "1"} 03
+                  %option{:value => "1"} 04
+                  %option{:value => "1"} 05
+                  %option{:value => "1"} 06
+                  %option{:value => "1"} 07
+                  %option{:value => "1"} 08
+                  %option{:value => "1"} 09
+                  %option{:value => "1"} 10
+                  %option{:value => "1"} 11
+                  %option{:value => "1"} 12
+                %span 月
+                %br/
+                %select{:name => "select-time", :type => "text"}
+                  %option{:value => "1"} 19
+                  %option{:value => "1"} 20
+                  %option{:value => "1"} 21
+                  %option{:value => "1"} 22
+                  %option{:value => "1"} 23
+                  %option{:value => "1"} 24
+                  %option{:value => "1"} 25
+                  %option{:value => "1"} 26
+                  %option{:value => "1"} 27
+                  %option{:value => "1"} 28
+                  %option{:value => "1"} 29
+                %span 年
+              %br/
+              %label セキュリティコード
+              %span.form-require 必須
+              %br/
+              %input.form-require__number{:maxlength => "4", :placeholder => "カード背面3~4桁の番号", :value => ""}/
+              %a{:href => ""} カード裏面の番号とは？
+              .credit
+                %button.credit-button 追加する

@@ -52,7 +52,7 @@ body{
 }
 
 .form{
-  height:28px;
+  height:50px;
   width:620px;
   margin: 0.5em 0;
   background: #FFF;
@@ -112,7 +112,7 @@ body{
       border-bottom: solid 1px #eee;
     }
     &__item--detail{
-      height:220px;
+      height:310px;
       padding:40px;
       border-bottom: solid 1px #eee;
       &__pulldown{
@@ -132,7 +132,7 @@ body{
       }
     }
     &__delivery{
-      height:330px;
+      height:430px;
       padding:40px;
       border-bottom: solid 1px #eee;
       &__pulldown{
@@ -152,7 +152,7 @@ body{
       }
     }
     &__price{
-      height:240px;
+      height:320px;
       padding:40px;
       border-bottom: solid 1px #eee;
       &__sell-form{
@@ -160,12 +160,12 @@ body{
         width: 400px;
         float:right;
         &__price{
-          height:48px;
+          height:70px;
           border-bottom: solid 1px #ccc;
           padding-bottom:28px;
         }
         &__margin{
-          height:14px;
+          height:60px;
           border-bottom: solid 1px #ccc;
           padding:24px 0;
           margin-bottom:28px;
@@ -177,7 +177,7 @@ body{
       }
     }
     &__exhibition{
-      height:300px;
+      height:380px;
       padding:40px;
       line-height:25px;
       a {
@@ -213,8 +213,8 @@ body{
   text-align: center;
 }
 .form-price{
-  height:25px;
-  width:134px;
+  height:45px;
+  width:150px;
   background: #FFF;
   border: solid 1px #ccc;/*線*/
   border-radius: 4px;/*角の丸み*/
