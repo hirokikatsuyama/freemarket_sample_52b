@@ -3,11 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Top
-    = stylesheet_link_tag '/new', media: 'all', 'data-turbolinks-track' => true
-    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
   %body
     .item__confirmation
       .item__confirmation__header
@@ -68,7 +64,7 @@
               = link_to "メルカリ利用規約", "#"
             %li.item__confirmation__footer__link
               = link_to "特定商取引に関する表記", "#"
-        %a.item__confirmation__footer__logo{:href => ""}
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4069491723"
+        = link_to "#", class: "item__confirmation__footer__logo" do
+          = image_tag 'mercari_logo_vertical', size: "88x85"
         %p.item__confirmation__footer__copyright
           %span ©︎ 2019 Mercari

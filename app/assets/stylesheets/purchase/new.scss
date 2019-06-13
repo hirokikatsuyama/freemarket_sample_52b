@@ -216,9 +216,13 @@ clear: both;
     }
     &__logo {
       display: block;
-      width: 80px;
-      height: 65px;
       margin: 40px auto 0;
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity:0.3;
     }
     &__copyright {
       margin: 8px 0 0;
