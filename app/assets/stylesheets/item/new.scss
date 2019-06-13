@@ -56,8 +56,8 @@ body{
   width:620px;
   margin: 0.5em 0;
   background: #FFF;
-  border: solid 1px #ccc;/*線*/
-  border-radius: 4px;/*角の丸み*/
+  border: solid 1px #ccc;
+  border-radius: 4px;
   color:#ccc;
   padding:10px;
   margin-bottom:40px;
@@ -68,7 +68,7 @@ body{
   width:620px;
   margin: 0.5em 0;
   background: #FFF;
-  border: solid 1px #ccc;/*線*/
+  border: solid 1px #ccc;
   padding:10px;
   font-size:16px;
 }
@@ -102,7 +102,7 @@ body{
         width:620px;
         margin-top:20px;
         text-align:center;
-        display: table-cell; /* IE8から使用可能 */
+        display: table-cell;
         vertical-align: middle;
         border: dotted 2px #ccc;
       }
@@ -124,7 +124,7 @@ body{
           &__tab{
             height:50px;
             width:400px;
-            border: solid 1px #ccc;/*線*/
+            border: solid 1px #ccc;
             border-radius: 4px;
             margin: 0.5em 0;
           }
@@ -144,7 +144,7 @@ body{
           &__tab{
             height:50px;
             width:400px;
-            border: solid 1px #ccc;/*線*/
+            border: solid 1px #ccc;
             border-radius: 4px;
             margin: 0.5em 0;
           }
@@ -216,8 +216,8 @@ body{
   height:45px;
   width:150px;
   background: #FFF;
-  border: solid 1px #ccc;/*線*/
-  border-radius: 4px;/*角の丸み*/
+  border: solid 1px #ccc;
+  border-radius: 4px;
   color:#ccc;
   padding:10px 16px 8px;
   font-size:16px;
