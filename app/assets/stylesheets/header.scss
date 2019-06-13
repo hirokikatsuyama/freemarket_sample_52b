@@ -5,6 +5,9 @@
 }
 
 .header {
+  position: relative;
+  z-index: 1001;
+  background: #fff;
   height: 100px;
   &__inner {
     width: 1020px;
