@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "items#index"
   get 'credit/new'
   get 'credit/index'
   get 'users/edit'
