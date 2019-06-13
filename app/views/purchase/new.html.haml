@@ -1,2 +1,63 @@
-%h1 Purchase#new
-%p Find me in app/views/purchase/new.html.erb
+.item__confirmation
+  .item__confirmation__header
+    %h1.item__confirmation__header__inner
+      = link_to "#" do
+        = image_tag('mercari_logo_horizontal.png', size: "230x65")
+  .item__confirmation__main
+    .item__confirmation__box
+      %h2 購入内容の確認
+      .item__confirmation__product
+        .item__confirmation__product__content
+          %h3
+            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPF_-Ey6UIAypKKCwOP30iAZqpam7Kslrll21X3hnzhgN9Zv_"
+          %p 商品の名前・商品の名前・商品の名前
+          .item__confirmation__product__form
+            .buy__price
+              %span.buy__price__left ¥123,456
+              %span.buy__price__right 送料込み
+            .buy__point
+              .buy__point--not
+                ポイントはありません
+            .buy--total
+              .buy--total__title
+                支払い金額
+              .buy--total__price
+                ¥ 123,456
+            %p.buy__alert 配送先と支払い方法の入力を完了してください。
+            %button.buy__button{disabled: "disabled", type: "submit"} 購入する
+        .item__confirmation__user
+          .item__confirmation__user__info
+            %h3 配送先
+            %p
+              〒000-0000
+              %br>/
+              東京都〇〇〇〇
+              %br>/
+              苗字名前
+            = link_to "#" do
+              %span 変更する
+              %i.fas.fa-angle-right
+        .item__confirmation__credit
+          .item__confirmation__credit__info
+            %h3 支払い方法
+            %p
+              %br>/
+              \/
+              %br/
+              %br/
+            = link_to "#" do
+              %span 変更する
+              %i.fas.fa-angle-right
+  .item__confirmation__footer
+    %div
+      %ul
+        %li
+          = link_to "プライバシーポリシー", "#" 
+        %li.item__confirmation__footer__link
+          = link_to "メルカリ利用規約", "#"
+        %li.item__confirmation__footer__link
+          = link_to "特定商取引に関する表記", "#"
+    = link_to "#", class: "item__confirmation__footer__logo" do
+      = image_tag 'mercari_logo_vertical', size: "88x85"
+    %p.item__confirmation__footer__copyright
+      %span ©︎ 2019 Mercari
