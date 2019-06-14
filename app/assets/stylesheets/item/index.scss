@@ -1,26 +1,10 @@
-@import "reset";
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #0099e8;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .top {
   background-color: #fff;
   &__slide {
     height: 390px;
-    background-color: rgba(59, 123, 134, 0.39);
+    background-image: url(https://www.mercari.com/jp/assets/img/common/jp/top/banner-6th-thanks.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   &__pickup {
     padding: 40px 0;

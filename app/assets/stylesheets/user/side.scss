@@ -26,12 +26,15 @@
     background: #fff;
     font-size: 14px;
     color: #333;
-    & i {
+    & .next {
       position: absolute;
       top: 12px;
       right: 16px;
       color: #ccc;
       font-size: 24px;
     }
+  }
+  &__list:hover {
+    background-color: #eee;
   }
 }
