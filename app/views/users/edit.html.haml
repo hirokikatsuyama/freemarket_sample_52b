@@ -1,4 +1,5 @@
-= render partial: "items/header"
+= render partial: "layouts/header"
+= render partial: "layouts/button"
 .edit.clearfix
   = render partial: "side"
   .edit__main
@@ -13,5 +14,5 @@
         .edit__textarea
           %textarea.edit__textarea__box{:placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
           %button.edit__textarea__box__button{:type => "submit"} 変更する
-= render partial: "items/banner"
-= render partial: "items/footer"
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"

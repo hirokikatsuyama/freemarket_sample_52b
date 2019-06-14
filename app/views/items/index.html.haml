@@ -1,370 +1,358 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Top
-    = stylesheet_link_tag    '/header', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag    '/footer', media: 'all', 'data-turbolinks-track' => true
-    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-  %body
-    = render partial: "header"
-    = render partial: "button"
-    .top
-      .top__slide
-      .top__pickup
-        %h2.top__pickup__title ピックアップカテゴリー
-        .top__item
-          %h3.top__item__title
-            = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
-          .top__item__contents.clearfix
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-          .top__item__all
-            = link_to "すべての商品を見る", "#"
-        .top__item
-          %h3.top__item__title
-            = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
-          .top__item__contents.clearfix
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-          .top__item__all
-            = link_to "すべての商品を見る", "#"
-        .top__item
-          %h3.top__item__title
-            = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
-          .top__item__contents.clearfix
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-          .top__item__all
-            = link_to "すべての商品を見る", "#"
-      .top__pickup
-        %h2.top__pickup__title ピックアップカテゴリー
-        .top__item
-          %h3.top__item__title
-            = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
-          .top__item__contents.clearfix
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-          .top__item__all
-            = link_to "すべての商品を見る", "#"
-        .top__item
-          %h3.top__item__title
-            = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
-          .top__item__contents.clearfix
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-          .top__item__all
-            = link_to "すべての商品を見る", "#"
-        .top__item
-          %h3.top__item__title
-            = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
-          .top__item__contents.clearfix
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-            .top__item__contents__box
-              = link_to "#", class: "top__list" do
-                .top__list__photo
-                  = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
-                .top__list__description
-                  %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
-                  .top__list__description__other
-                    .top__list__description__other__price
-                      ¥ 3,000
-                    .top__list__description__other__like
-                      %i.far.fa-heart
-                      %span 6
-                  %p (税込)
-          .top__item__all
-            = link_to "すべての商品を見る", "#"
-    = render partial: "banner"
-    = render partial: "footer"
+= render partial: "layouts/header"
+= render partial: "layouts/button"
+.top
+  .top__slide
+  .top__pickup
+    %h2.top__pickup__title ピックアップカテゴリー
+    .top__item
+      %h3.top__item__title
+        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+      .top__item__contents.clearfix
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+      .top__item__all
+        = link_to "すべての商品を見る", "#"
+    .top__item
+      %h3.top__item__title
+        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+      .top__item__contents.clearfix
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+      .top__item__all
+        = link_to "すべての商品を見る", "#"
+    .top__item
+      %h3.top__item__title
+        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+      .top__item__contents.clearfix
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+      .top__item__all
+        = link_to "すべての商品を見る", "#"
+  .top__pickup
+    %h2.top__pickup__title ピックアップブランド
+    .top__item
+      %h3.top__item__title
+        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+      .top__item__contents.clearfix
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+      .top__item__all
+        = link_to "すべての商品を見る", "#"
+    .top__item
+      %h3.top__item__title
+        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+      .top__item__contents.clearfix
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+      .top__item__all
+        = link_to "すべての商品を見る", "#"
+    .top__item
+      %h3.top__item__title
+        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+      .top__item__contents.clearfix
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+        .top__item__contents__box
+          = link_to "#", class: "top__list" do
+            .top__list__photo
+              = image_tag "https://c-doumon.com/wp-content/uploads/2018/10/%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%EF%BC%88%E5%B1%B1%E5%B4%8E%E5%85%88%E7%94%9F%EF%BC%89-1.jpg"
+            .top__list__description
+              %h3.top__list__description__name 洋服AAAAAAAAAAAAAAAAAAAAAAA
+              .top__list__description__other
+                .top__list__description__other__price
+                  ¥ 3,000
+                .top__list__description__other__like
+                  %i.far.fa-heart
+                  %span 6
+              %p (税込)
+      .top__item__all
+        = link_to "すべての商品を見る", "#"
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
