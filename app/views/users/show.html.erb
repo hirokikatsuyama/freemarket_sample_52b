@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>mercari</title>
+ <%= stylesheet_link_tag    '/users/show', media: 'all', 'data-turbolinks-track' => true %>
+ <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div class="wrapper">
+  <%= render partial: "side-bar" %>
+  <%= render partial: "right-mypage" %>
+</div>
+</body>
+</html>
+
