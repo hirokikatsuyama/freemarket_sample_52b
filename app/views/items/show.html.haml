@@ -1,6 +1,8 @@
+= render partial: "layouts/header"
+= render partial: "layouts/button"
 .wrapper
   .itembox__container
-    %h1 AKIRA
+    %h1 シール
     .itembox__container__detail--main.clearfix
       .itembox__container__photobox
         .itembox__container__photobox__img
@@ -230,3 +232,5 @@
               .itembox__user__goodsbox__itembody__num
                 .goodsbox__price ¥ 2,222
                 %p.goodsbox__tax (税込)
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
