@@ -76,13 +76,12 @@ body{
     height:1983px;
     float: left;
     width:700px;
-    margin-top:40px;
     margin-right:204px;
     &__user{
       width:700px;
       height:200px;
       padding:20px;
-      background-color:  #fff;
+      background-image: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?60714622);
       text-align: center;
       padding-top:4px;
       &__li{
@@ -98,6 +97,9 @@ body{
         margin-left:auto;
         margin-right:auto;
         text-align: center;
+        & img {
+          border-radius: 50%;
+        }
         & li{
           margin-top:8px;
         }
@@ -204,7 +206,7 @@ body{
   .mypage__buy{
     margin: 40px 0 0;
     background: #fff;
-    height:380px;
+    height:480px;
     &__head{
       padding: 0 16px;
       background: #fafafa;
@@ -262,7 +264,7 @@ body{
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
-    opacity:0.3;
+    margin:0 auto;
     
     &__list{
       list-style:none;
@@ -271,14 +273,15 @@ body{
       width:700px;
       height:236px;
       .mypage__not__found__now{
+        opacity:0.1;
         list-style:none;
-        width:700px;
+        background: image-url("mercari_icon.png");
         background-repeat: no-repeat;
         background-position: center 40px;
-        background-size: 78px 85px;
+        background-size: 110px 120px;
         text-align: center;
         font-size: 16px;
-        color: #ccc;
+        color: black;
         padding: 160px 0 60px;
 
       }
@@ -289,6 +292,13 @@ body{
 
   }
 
-  
+.render-side-bar{
+  margin-top:100px;
+  margin-left:204px;
+}
+.backicon{
+ margin:0 auto;
+
+}
 
 
