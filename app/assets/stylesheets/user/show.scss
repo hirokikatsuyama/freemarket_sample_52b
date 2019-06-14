@@ -1,10 +1,8 @@
 *{
   box-sizing: border-box;
 }
-
 body{
   background-color: #f5f5f5;
-
 }
 .wrapper{
   .side-bar{
@@ -82,7 +80,6 @@ body{
       text-align: center;
       padding-top:4px;
       &__li{
-      
       }
       &__icon{
         list-style:none;
@@ -100,12 +97,7 @@ body{
         & li{
           margin-top:8px;
         }
-        
-        }
-        
-
-      
-    
+      }
     }
     &__notice{
       &__tab{
@@ -155,7 +147,6 @@ body{
           padding: 16px;
           color: #333;
           background: #fff;
-      
         }
       }
     }
@@ -194,7 +185,6 @@ body{
    .mypage-item__list{
     border-bottom: 1px solid #eee;
    }
-
   &__arrow{
     position: absolute;
     top: 50%;
@@ -222,7 +212,6 @@ body{
       h3{
         color:black;
       }
-      
       &__sell{
         background: #fff;
         width: 50%;
@@ -234,9 +223,6 @@ body{
         font-size: 16px;
         color: #ccc;
         line-height:74px;
-        
-        
-        
       }
       &__past{
         width: 50%;
@@ -280,22 +266,18 @@ body{
         font-size: 16px;
         color: black;
         padding: 160px 0 60px;
-
       }
       &__past{
         list-style:none;
       }
     }
-
   }
-
 .render-side-bar{
   margin-top:100px;
   margin-left:204px;
 }
 .backicon{
  margin:0 auto;
-
 }
 
 
