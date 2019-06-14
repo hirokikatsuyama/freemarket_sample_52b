@@ -8,14 +8,14 @@
   %section.mypage__notice
     %ul.mypage__notice__tab
       %li.mypage__notice__tab__list1
-        %a{:href => ""}
+        = link_to "#" do
           %h3 お知らせ
       %li.mypage__notice__tab__list2
-        %a{:href => ""}
+        = link_to "#" do
           %h3 やることリスト
     %ul.mypage__info
       %li.mypage__info__list
-        %a.mypage__info__list__item{:href => ""}
+        = link_to "#", class: "mypage__info__list__item" do
           .mypage__icon
             %img{:src => "//static.mercdn.net/images/mercari_profile.png"}/
           .mypage__body
@@ -26,9 +26,9 @@
                 %span 3時間前
           %i.mypage__icon__arrow
       %li.mypage__info__list
-        %a.mypage__info__list__item{:href => ""}
+        = link_to "#", class: "mypage__info__list__item" do
           .mypage__icon
-            %img{:src => "//static.mercdn.net/images/mercari_profile.png"}/
+            %img{src: "//static.mercdn.net/images/mercari_profile.png"}/
           .mypage__body
             .mypage__body__text
               3日後、P1,000還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
@@ -38,7 +38,7 @@
       %li.mypage__info__list
         %a.mypage__info__list__item{:href => ""}
           .mypage__icon
-            %img{:src => "//static.mercdn.net/images/mercari_profile.png"}/
+            %img{src:"//static.mercdn.net/images/mercari_profile.png"}/
           .mypage__body
             .mypage__body__text
               事務局から個別メッセージ「《大感謝祭のお得チケットとあわせて使おう》あなただけに特別にP300を進呈しました」
@@ -46,7 +46,8 @@
               %i.far.fa-clock
                 %span 3時間前
       %li.mypage__info__list
-        %a.mypage__info__list__item{:href => ""}
+        %mypage__info__list__item
+        = link_to "#", class: "mypage__info__list__item" do
           .mypage__icon
             %img{:src => "//static.mercdn.net/images/mercari_profile.png"}/
           .mypage__body
@@ -56,7 +57,8 @@
               %i.far.fa-clock
                 %span 3時間前
       %li.mypage__info__list
-        %a.mypage__info__list__item{:href => ""}
+        %mypage__info__list__item
+        = link_to "#", class: "mypage__info__list__item" do
           .mypage__icon
             %img{:src => "//static.mercdn.net/images/mercari_profile.png"}/
           .mypage__body
