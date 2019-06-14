@@ -1,3 +1,4 @@
+= render partial: "items/header"
 %head
   %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %title mercari
@@ -6,7 +7,9 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  .wrapper
+  .wrapper.clearfix
     .render-side-bar
       = render partial: "side"
       = render partial: "right-mypage"
+= render partial: "items/banner"
+= render partial: "items/footer"
