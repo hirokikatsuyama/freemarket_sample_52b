@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  padding-top: 20px;
+  background-color: #ece9e9;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  .itembox__container {
+    width: 700px;
+    padding: 24px 40px 40px 40px;
+    margin: 40px auto 0;
+    background-color:white;
+    & h1 {
+      width: 620px;
+      line-height: 1.4;
+      font-size: 24px;
+      text-align: center;
+    }
+    &__detail--main {
+      width: 620px;
+      height: 420px;
+      margin-top: 16px;
+      background-color: white;
+    }
+    &__photobox {
+      width: 300px;
+      height: 375px;
+      float: left;
+      max-width: 300px;
+      border: 1px solid black;
+      &__img {
+        width: 300px;
+        height: 300px;
+        &__photo {
+          width: 100%;
+        }
+      }
+    }
+    
+
+    &__detail__table {
+      width: 298px;
+      height: 418px;
+      border-style: solid;
+      border-width: 0;
+      float: right;
+      border: 1px solid #f5f5f5;
+      font-size: 14px;
+      margin: 1px;
+      padding: 8px;
+      & tr {
+        width: 299px;
+        height: 46px;
+      }
+      & th,td {
+        width: 39%;
+        padding: 8px;
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #f5f5f5;
+      }
+      & th {
+        background: #fafafa;
+        font-weight: 400;
+      }
+      &__ratings {
+        display: inline-block;
+        margin: 8px 0 0 16px;
+      }
+      &__ratings:nth-child(3n+1) {
+        margin: 8px 0 0 0;
+      }
+      & .fa-smile {
+        color: #ef5185;
+      }
+      & .fa-meh {
+        color: #fba933;
+      }
+      & .fa-sad-tear {
+        color: #6ab5d8;
+      }
+    }
+
+    & .clearfix:after {
+      content: ""; 
+      display: block; 
+      clear: both; 
+      visibility: hidden; 
+    }
+
+    &__pricebox {
+      width: 620px;
+      height: 50px;
+      margin-top: 24px;
+      background-color: white;
+      text-align: center;
+      &__price {
+        font-weight: 600;
+        margin: 0 16px 0 0;
+        font-size: 50px;
+      }
+      &__tax {
+        font-size: 10px;
+        text-align: center;
+      }
+      &__fee {
+        font-size: 16px;
+        display: inline-block;
+      }
+    }
+
+    &__buybtn {
+      width: 620px;
+      height: 60px;
+      margin: 16px 0 24px 0;
+      background: #e62017;
+      line-height: 60px;
+      display: block;
+      background: #ea352d;
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    &__discription {
+      padding-top: 32px;
+      &__exprain {
+        white-space: pre-wrap;
+      }
+    }
+
+    &__btnbox {
+      height: 33px;
+      margin: 16px;
+      font-size: 14px;
+      &__left {
+        float: left;
+        height: 33px;
+        &__likebtn {
+          border: 1px solid #f5f5f5;
+          background: #f5f5f5;
+          padding: 8px 16px;
+          border-radius: 40px;
+        
+          & .fa-heart {
+            display: inline-block;   
+            vertical-align: middle;
+            font-size: 14px;
+            color: #ccc;
+            font-weight: 400px;
+          }
+          &__like {
+            display: inline-block;
+            font-size: 14px;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+          &__likenum {
+            display: inline-block;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+            font-size: 14px;
+          }
+        }
+        &__reportbtn {
+          border: 1px solid #f5f5f5;
+          display: inline-block;
+          margin: 0 0 0 16px;
+          background: #f5f5f5;
+          padding: 8px 16px;
+          border-radius: 40px;
+          font-size: 14px;
+          & .fa-flag {
+            display: inline-block;
+            vertical-align: middle;
+            color: #ccc;
+            font-size: 14px;
+            font-weight: 900;
+          }
+          &__report {
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+        }
+
+        & .icon::before {
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f007";
+          }
+        
+      }
+      &__right {
+        float: right;
+        margin: 8px 0 0;
+        &__policy {
+          font-size: 14px;
+          display: inline-block;
+          margin: 1px 0 0 8px;
+          vertical-align: middle;
+        }
+      }  
+    }
+  }
+
+  .itembox__message {
+    margin: 8px auto;
+    width: 700px;
+    background-color: white;
+    &__content {
+      padding: 24px;
+      background: #fff;
+      &__form {
+        & p {    
+          padding: 8px;
+          font-size: 14px;
+          background: #fff6de;
+        }
+        &__box {
+          margin: 8px 0 0;
+          width: 100%;
+          min-height: 104px;
+          padding: 10px;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        &__submitbtn {
+          width: 100%;
+          height: 48px;
+          margin: 8px 0 0;
+          text-align: center;
+          background: #aaa;
+          border: 1px solid #aaa;
+          &__submit {
+            color: #fff;
+            font-size: 14px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  .itembox__to__nextitembox {
+    margin: 24px auto 0;
+    height: 14px;
+    width: 700px;
+    list-style: none;
+    &__previous {
+      width: 43%;
+      padding-left: 14px;
+      float: left;
+    }
+    &__next {
+      padding-right: 14px;
+      float: right;
+      text-align: right;
+      position: relative;
+    }
+  }
+
+  .itembox__socialmediabox {
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width: 700px;
+    background-color: white;
+    &__sns {
+      margin: 16px 0 0;
+      text-align: center;
+      list-style: none;
+      height: 52px;
+      & li {
+        width: 44px;
+        height: 44px;
+        display: inline-block;
+        margin: 0 8px 8px 0;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: 900;
+      }
+        & i {
+          width: 44px;
+          height: 44px;
+          font-size: 44px;
+        }
+        & .fb {
+          color: #385185;
+        }
+        & .twitter {
+          color: #5d9dc9;
+        }
+        & .line {
+          color: green;
+        }
+        & .pin {
+          color: #aa262a;
+        }
+      
+    }
+  }
+
+  .itembox__user__profile {
+    margin: 0 auto;
+    width: 700px;
+    height: 1524px;
+    &__mainbox {
+      width: 700px;
+      overflow: hidden;
+       & h2 {
+        margin: 24px 0 8px;
+        font-size: 22px;
+        line-height: 1.4;
+       }
+      &__userprofile {
+        color: #0099e8;
+      }
+    }
+    .itembox__user__goodsbox {
+      padding: 0;
+      &__item {
+        margin: 0 0 20px 20px;
+        display: block;
+        width: 220px;
+        height: 330px;
+        float: left;
+      }
+      &__item:nth-child(3n+1) {
+        margin: 0 0 20px;
+      }
+      &__itemimg {
+        width: 220px;
+        height: 220px;
+        position: relative;
+        overflow: hidden;
+        & .goods__img {
+          width: 220px;
+          left: 50%;
+          right: auto;     
+          position: absolute;
+          transform: translate(-50%, 0);
+        }
+      }
+      &__itembody {
+        padding: 16px;
+        height: 110px;
+        background-color: white;
+        display: inline-block;
+        color: #333;
+        position: relative;      
+        &__name {
+          font-weight: 400;
+          height: 3em;
+          line-height: 1.5;
+          word-break: break-word;
+          white-space: normal;
+          font-size: 16px;
+        }
+        &__num {
+          margin: 8px 0 0;
+          display: flex;
+          align-items: center;
+          & .goodsbox__price {
+            font-size: 16px;
+            font-weight: 600;
+          }
+          & .goodsbox__tax {
+            font-size: 10px;
+          }
+        } 
+      }
+    }
+  }    
+}
+  
+  
+

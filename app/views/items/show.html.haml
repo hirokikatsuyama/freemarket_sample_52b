@@ -1,2 +1,232 @@
-%h1 Items#show
-%p Find me in app/views/items/show.html.erb
+.wrapper
+  .itembox__container
+    %h1 AKIRA
+    .itembox__container__detail--main.clearfix
+      .itembox__container__photobox
+        .itembox__container__photobox__img
+          = image_tag("https://static.mercdn.net/item/detail/orig/photos/m30971704799_1.jpg?1560139326", class:"itembox__container__photobox__img__photo")
+        .itembox__small--photobox
+      %table.itembox__container__detail__table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              =link_to "大友克洋", "#"
+              %div
+                .itembox__container__detail__table__ratings
+                  %i.far.fa-smile
+                  %span 223
+                .itembox__container__detail__table__ratings
+                  %i.far.fa-meh
+                  %span 0
+                .itembox__container__detail__table__ratings
+                  %i.far.fa-sad-tear
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              = link_to "#" do
+                %div メンズ
+              = link_to "#" do
+                .itembox__detail--category
+                  %i.icon-arrow-right
+                  小物
+              = link_to "#" do
+                .itembox__detail--category
+                  %i.icon-arrow-right
+                  其の他
+          %tr
+            %th ブランド
+            %td
+              = link_to "#" do
+                %div
+                  ネオトウキョウ
+          %tr
+            %th 商品の状態
+            %td 未使用に近い
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              =link_to "大阪府", "#"
+          %tr
+            %th 発送日の目安
+            %td 1〜2日で発送
+    .itembox__container__pricebox
+      %span.itembox__container__pricebox__price ¥1,500
+      %span.itembox__container__pricebox__tax (税込)
+      %span.itembox__container__pricebox__fee 送料込み
+    = link_to "#" do
+      %button.itembox__container__buybtn 購入画面に進む
+    .itembox__container__discription
+      %p.itembox__container__discription__exprain
+        　
+        
+        　   金田さん
+    .itembox__container__btnbox.clearfix
+      .itembox__container__btnbox__left
+        %button.itembox__container__btnbox__left__likebtn
+          %i.far.fa-heart
+          %span.itembox__container__btnbox__left__likebtn__like いいね!
+          %span.itembox__container__btnbox__left__likebtn__likenum 5
+        = link_to "#" do
+          %button.itembox__container__btnbox__left__reportbtn.clearfix
+            %i.far.fa-flag
+            %span.itembox__container__btnbox__left__reportbtn__report 不適切な商品の警告
+      .itembox__container__btnbox__right
+        = link_to "#" do
+          %i.fas.fa-lock
+          %span.itembox__container__btnbox__right__policy あんしん・あんぜんへの取り組み
+  .itembox__message
+    .itembox__message__content
+      %form.itembox__message__content__form
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.itembox__message__content__form__box{name: "body", type: "text", value: ""}
+        %button.itembox__message__content__form__submitbtn{type: "submit"}
+          %span.itembox__message__content__form__submitbtn__submit コメントする
+  %div
+    %ul.itembox__to__nextitembox.clearfix
+      %li.itembox__to__nextitembox__previous
+        = link_to "#" do
+          %i.icon-arrow-left
+          王の手バッジ
+      %li.itembox__to__nextitembox__next
+        = link_to "#" do
+          %i.icon-arrow-right
+          インフィニティストーン
+  .itembox__socialmediabox
+    %ul.itembox__socialmediabox__sns
+      %li
+        = link_to "#" do
+          %i.fab.fa-facebook-square.fb
+      %li
+        = link_to "#" do
+          %i.fab.fa-twitter-square.twitter
+      %li
+        = link_to "#" do
+          %i.fab.fa-line.line
+      %li
+        = link_to "#" do
+          %i.fab.fa-pinterest-square.pin
+  .itembox__user__profile
+    .itembox__user__profile__mainbox
+      %h2
+        =link_to "大友克洋さんのその他の出品", "#"
+      .itembox__user__goodsbox.clearfix
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+    .itembox__user__profile__mainbox
+      %h2
+        =link_to "趣味/スポーツ/実用 （本・音楽・ゲーム） その他の商品", "#"
+      .itembox__user--profile--goodsbox.clearfix
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
+        .itembox__user__goodsbox__item
+          = link_to "#" do
+            %figure.itembox__user__goodsbox__itemimg
+              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+            .itembox__user__goodsbox__itembody
+              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              .itembox__user__goodsbox__itembody__num
+                .goodsbox__price ¥ 2,222
+                %p.goodsbox__tax (税込)
