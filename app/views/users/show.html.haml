@@ -1,15 +1,7 @@
-= render partial: "items/header"
-%head
-  %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-  %title mercari
-  = stylesheet_link_tag    '/users/show', media: 'all', 'data-turbolinks-track' => true
-  %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags
-%body
-  .wrapper.clearfix
-    .render-side-bar
-      = render partial: "side"
-      = render partial: "right-mypage"
-= render partial: "items/banner"
-= render partial: "items/footer"
+= render partial: "layouts/header"
+.mypage__wrapper.clearfix
+  .render-side-bar
+    = render partial: "side"
+    = render partial: "right-mypage"
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
