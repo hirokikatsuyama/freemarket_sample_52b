@@ -52,6 +52,21 @@
           height: 48px;
           border: 1px solid #ccc;
         }
+        &--prefecture {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          font-size: 93%;
+          line-height: 1.1em;
+          border-radius: 5px;
+          height:48px;
+          width:320px;
+          border: solid 1px #ccc;
+          border-radius: 4px;
+          padding:10px 16px 8px 16px;
+          margin-top:8px;
+          background-color: white;
+        }
       }
       .next-button {
         margin: 20px 190px 50px;

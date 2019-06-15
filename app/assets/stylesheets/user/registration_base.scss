@@ -1,7 +1,7 @@
 .base-info {
   width: 100%;
   height: 100%;
-  padding: 128px 0 220px;
+  padding: 40px 0 220px;
   background-color:rgb(245, 245, 245);
   &__content {
     width: 700px;
@@ -33,6 +33,7 @@
       }
       .input-caution {
         padding: 20px 190px;
+        clear: both;
         &__word {
           font-size: 14px;
           line-height: 20px;
@@ -68,12 +69,27 @@
       }
       .birthday-select-wrap {
         .birthday-select {
+          float: left;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin-bottom: 20px;
+          padding: 7px 30px 7px 10px;
+          font-size: 93%;
+          line-height: 1.1em;
+          border-radius: 5px;
+          height:48px;
+          width:76px;
+          border: solid 1px #ccc;
+          border-radius: 4px;
+          padding:10px 16px 8px 16px;
+          margin-top:8px;
+          background-color: white;
         }
-        .select-down {
+        .birth-info {
+          float: left;
+          margin: 25px 5px 0 5px;
         }
-      }
-      .birth-info {
-
       }
       .service-terms {
         padding: 20px 190px;
