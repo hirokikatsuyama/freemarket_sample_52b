@@ -1,2 +1,7 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.erb
+= render partial: "layouts/header"
+.mypage__wrapper.clearfix
+  .render-side-bar
+    = render partial: "side"
+    = render partial: "right-mypage"
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"

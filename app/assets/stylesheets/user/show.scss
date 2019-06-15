@@ -1,0 +1,222 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #f5f5f5;
+}
+.mypage__wrapper{
+  width: 1020px;
+  margin: 40px auto 0;
+  padding-bottom: 40px; 
+}
+ .mypage{
+    background: #f5f5f5;
+    float: right;
+    width:700px;
+    &__user{
+      width:700px;
+      height:200px;
+      padding:20px;
+      background-image: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?60714622);
+      text-align: center;
+      padding-top:4px;
+      &__li{
+      }
+      &__icon{
+        list-style:none;
+        width:660px;
+        height:160px;
+        padding:20px;
+        display: block;
+        color: #333;
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        & img {
+          border-radius: 50%;
+        }
+        & li{
+          margin-top:8px;
+        }
+      }
+    }
+    &__notice{
+      &__tab{
+        background: #eee;
+        font-size: 0;
+        list-style: none;
+        &__list1 {
+          background: #fff;
+          width: 50%;
+          display: inline-block;
+          text-align: center;
+          vertical-align: top;
+          font-size: 22px;
+          border-top: solid 1px red;
+          & a {
+            position: relative;
+            display: block;
+            color: #333;
+            font-size: 16px;
+            line-height: 72px;
+          }
+        }
+        &__list2 {
+          background: #eee;
+          width: 50%;
+          display: inline-block;
+          text-align: center;
+          vertical-align: top;
+          font-size: 22px;
+          & a {
+            position: relative;
+            display: block;
+            color: #333;
+            font-size: 16px;
+            line-height: 72px;
+          }
+        }
+      }
+    }
+    &__info {
+      &__list {
+        border-bottom: 1px solid #eee;
+        list-style: none;
+        &__item{
+          display: block;
+          height: 90px;
+          padding: 16px;
+          color: #333;
+          background: #fff;
+        }
+      }
+    }
+    &__icon{
+      position: relative;
+      overflow: hidden;
+      float: left;
+      width: 48px;
+      height: 48px;
+      & img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+      }
+    }
+    &__body{
+      margin: 0 40px 0 68px;
+      &__text{
+        overflow: hidden;
+        display: block;
+        display: -webkit-box;
+        max-height: 4.4em;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        line-height: 1.5;
+      }
+      &__time{
+        margin: 0 8px 0 0;
+      }
+    }
+   .mypage-item__list{
+    border-bottom: 1px solid #eee;
+   }
+  &__arrow{
+    position: absolute;
+    top: 50%;
+    right: 16px;
+  }
+  .mypage__buy{
+    margin: 40px 0 0;
+    background: #fff;
+    height:480px;
+    &__head{
+      padding: 0 16px;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+    }
+    .mypage__item{
+      list-style: none;
+      width:700px;
+      height:74px;
+      border: 0;
+      background: #eee;
+      font-size: 0;
+      border-style: solid;
+      border-width: 0;
+      h3{
+        color:black;
+      }
+      &__sell{
+        background: #fff;
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        font-size: 22px;
+        height:74px;
+        font-size: 16px;
+        color: #ccc;
+        line-height:74px;
+      }
+      &__past{
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height:74px;
+        font-size: 16px;
+        color: #ccc;
+        line-height:74px;
+      }
+    }
+    }
+  }
+  .tab__contents{
+    list-style:none;
+    width:700px;
+    border-style: solid;
+    background: #fff;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    margin:0 auto;
+    
+    &__list{
+      list-style:none;
+      display: block;
+      list-style: none;
+      width:700px;
+      height:236px;
+      .mypage__not__found__now{
+        opacity:0.1;
+        list-style:none;
+        background: image-url("mercari_icon.png");
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 110px 120px;
+        text-align: center;
+        font-size: 16px;
+        color: black;
+        padding: 160px 0 60px;
+      }
+      &__past{
+        list-style:none;
+      }
+    }
+  }
+
+  
+.backicon{
+ margin:0 auto;
+}
+
+

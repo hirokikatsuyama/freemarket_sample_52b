@@ -1,0 +1,32 @@
+.mypage
+  %section.mypage__user
+    %ul.mypage__user__icon
+      = image_tag '//static.mercdn.net/images/member_photo_noimage_thumb.png', size: "60x60"
+      %li かっちゃん
+      %li.mypage__user__number
+        評価 5  評価5
+  %section.mypage__notice
+  %ul.mypage__notice__tab
+    %li.mypage__notice__tab__list1
+      = link_to "#" do
+        %h3 お知らせ
+    %li.mypage__notice__tab__list2
+      = link_to "#" do
+        %h3 やることリスト
+  %ul.mypage__info
+    = render partial: "info"
+  %section.mypage__buy
+    %h2.mypage__buy__head
+      購入した商品
+    %ul.mypage__item
+      %li.mypage__item__sell
+        %h3 取引中
+      %li.mypage__item__past
+        %h3
+          過去の取引
+          %h3
+    .tab__contents
+      %ul.tab__contents__list
+        %li.mypage__not__found__now 取引中の商品がありません
+      %ul.tab__contents__list__past
+        %li
