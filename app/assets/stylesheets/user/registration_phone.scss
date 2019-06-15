@@ -1,0 +1,87 @@
+.phone {
+  width: 100%;
+  height: 100%;
+  padding: 128px 0 220px;
+  background-color:rgb(245, 245, 245);
+  &__content {
+    width: 710px;
+    margin: 0 auto;
+    background-color: white;
+    &__header {
+      border: solid 1px #f5f5f5;
+      height: 50px;
+      &--title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+      }
+    }
+    &__form {
+      height: 440px;
+      padding: 60px 190px;
+      &--label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      &--input {
+        padding-left: 15px;
+        border-radius: 4px;
+        margin-top: 5px;
+        width: 320px;
+        font-size: 14px;
+        height: 48px;
+        border: 1px solid #ccc;
+      }
+      &--explanation {
+        font-size: 14px;
+        margin-top: 8px;
+        line-height: 20px;
+      }
+      &--sms {
+        margin-top: 40px;
+        width: 320px;
+        height: 50px;
+        color: white;
+        background-color: #ea352d;
+        font-size: 14px;
+        height: 48px;
+        border: none;
+      }
+      &--reason {
+        display: block;
+        font-size: 14px;
+        margin: 50px 0 0 130px;
+      }
+    }
+  }
+}
+
+
+
+
+
+// <div class="phone">
+//   <div class="phone__content">
+//     <div class="phone__content__header">
+//       <p class="phone__content__header--title">
+//         電話番号の確認
+//       </p>
+//     </div>
+//     <form class="phone__content__form">
+//       <label class="phone__content__form--label">携帯電話の番号</label>
+//       <input class="phone__content__form--input" type="text" name="phone" placeholder="携帯電話の番号を入力">
+//       <p class="phone__content__form--explanation">
+//         本人確認のため、携帯電話のSMS（ショートメッセ<br />
+//         ージサービス）を利用して認証を行います。
+//       </p>
+//       <button class="phone__content__form--sms" type="submit">SMSを送信する</button>
+//       <p class="phone__content__form--explanation">
+//         ※電話番号は本人確認や不正利用防止のために利用<br />
+//         します。他のユーザーに公開されることはありま<br />
+//         せん。
+//       </p>
+//       <%=link_to "電話番号の確認が必要な理由>", "#", class: "phone__content__form--reason" %>
+//     </form>
+//   </div>
+// </div>

@@ -1,0 +1,24 @@
+<div class="phone">
+  <div class="phone__content">
+    <div class="phone__content__header">
+      <p class="phone__content__header--title">
+        電話番号の確認
+      </p>
+    </div>
+    <form class="phone__content__form">
+      <label class="phone__content__form--label">携帯電話の番号</label>
+      <input class="phone__content__form--input" type="text" name="phone" placeholder="携帯電話の番号を入力">
+      <p class="phone__content__form--explanation">
+        本人確認のため、携帯電話のSMS（ショートメッセ<br />
+        ージサービス）を利用して認証を行います。
+      </p>
+      <button class="phone__content__form--sms" type="submit">SMSを送信する</button>
+      <p class="phone__content__form--explanation">
+        ※電話番号は本人確認や不正利用防止のために利用<br />
+        します。他のユーザーに公開されることはありま<br />
+        せん。
+      </p>
+      <%=link_to "電話番号の確認が必要な理由>", "#", class: "phone__content__form--reason" %>
+    </form>
+  </div>
+</div>
