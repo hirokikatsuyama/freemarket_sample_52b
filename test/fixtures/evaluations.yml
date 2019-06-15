@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evaluation: MyString
+  date: 1
+  user_id: one
+  transaction_id: one
+
+two:
+  evaluation: MyString
+  date: 1
+  user_id: two
+  transaction_id: two
