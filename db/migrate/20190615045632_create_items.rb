@@ -14,9 +14,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :profit
       t.integer :status
       t.references :user_id, foreign_key:true
-      t.references :brand_id
+      t.references :brand_id, foreign_key:true
       t.references :small_category_id, foreign_key:true
-      t.references :size_id
+      t.references :size_id, foreign_key:true
 
       t.timestamps
     end
