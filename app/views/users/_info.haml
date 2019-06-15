@@ -9,7 +9,8 @@
         %i.far.fa-clock
           %span 3時間前
 %li.mypage__info__list
-  %a.mypage__info__list__item{:href => ""}
+  %mypage__info__list__item
+  = link_to "#", class: "mypage__info__list__item" do
     .mypage__icon
       = image_tag "//static.mercdn.net/images/mercari_profile.png"
     .mypage__body
