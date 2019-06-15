@@ -1,19 +1,19 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title mercari
+= render partial: "layouts/header"
+= render partial: "layouts/button"
+.container.clearfix
+  .left-side
+    = render partial: "users/side"
+  .container__right
+    .container__right-top
+      %h1 支払い方法
+    .container__right-main
+      .container__right-main-button
+        .container__right-main-button-title
+          %p クレジットカード一覧
+        .container__right-main-button-button
+          %button.credit-button クレジットカードを追加する
+      .container__right-main-footer
+        = link_to "支払い方法について", "#"
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
 
-  %body
-    .container
-      .container__right
-        .container__right-top
-          %h1 支払い方法
-        .container__right-main
-          .container__right-main-button
-            .container__right-main-button-title
-              %p クレジットカード一覧
-            .container__right-main-button-button
-              %button.credit-button クレジットカードを追加する
-          .container__right-main-footer
-            = link_to "支払い方法について", "#"
