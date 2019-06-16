@@ -1,5 +1,5 @@
 .base-info
-  = render partial: "header"
+  = render partial: "registration_header"
   .base-info__content
     .base-info__content__header
       %p 会員情報入力
@@ -238,3 +238,5 @@
           に同意したものとみなします
       %button.next-button{:type => "submit"} 次へ進む
       = link_to "本人情報の登録について>", "#", class: "user-registration-explanation"
+  = render partial: "registration_footer"
+

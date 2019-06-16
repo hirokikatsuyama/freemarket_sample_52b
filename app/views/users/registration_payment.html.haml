@@ -2,8 +2,8 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title mercari
     .payment
+      = render partial: "registration_header"
       .payment__content
         .payment__content--header
           %p 支払い方法
@@ -70,3 +70,4 @@
               = link_to "カード裏面の番号とは？", "#"
               .credit
                 %button.credit-button 次へ進む
+      = render partial: "registration_footer"

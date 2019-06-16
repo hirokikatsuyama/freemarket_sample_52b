@@ -1,4 +1,5 @@
 .phone
+  = render partial: "registration_header"
   .phone__content
     .phone__content__header
       %p.phone__content__header--title
@@ -18,3 +19,5 @@
         %br/
         せん。
       = link_to "電話番号の確認が必要な理由>", "#", class: "phone__content__form--reason"
+  = render partial: "registration_footer"
+
