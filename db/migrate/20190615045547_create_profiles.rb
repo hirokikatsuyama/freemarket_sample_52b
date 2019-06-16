@@ -9,7 +9,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.integer :birthday_year
       t.integer :birthday_month
       t.integer :bithday_day
-      t.references :user, foreign_key:true
+      # t.references :user, foreign_key:true
 
       t.timestamps
     end
