@@ -27,10 +27,8 @@ ActiveRecord::Schema.define(version: 2019_06_15_050618) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "brands_group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brands_group_id"], name: "index_brands_on_brands_group_id"
   end
 
   create_table "brands_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,12 +39,8 @@ ActiveRecord::Schema.define(version: 2019_06_15_050618) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
-    t.bigint "user_id"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_comments_on_item_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,29 +48,21 @@ ActiveRecord::Schema.define(version: 2019_06_15_050618) do
     t.string "expiration_date_month"
     t.string "expiration_date_year"
     t.string "security_code"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_credits_on_user_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "evaluation"
     t.integer "date"
-    t.bigint "user_id"
-    t.bigint "transaction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["transaction_id"], name: "index_evaluations_on_transaction_id"
-    t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,25 +78,13 @@ ActiveRecord::Schema.define(version: 2019_06_15_050618) do
     t.integer "tax"
     t.integer "profit"
     t.integer "status"
-    t.bigint "user_id"
-    t.bigint "brand_id"
-    t.bigint "small_category_id"
-    t.bigint "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id"
-    t.index ["size_id"], name: "index_items_on_size_id"
-    t.index ["small_category_id"], name: "index_items_on_small_category_id"
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_likes_on_item_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -135,19 +109,15 @@ ActiveRecord::Schema.define(version: 2019_06_15_050618) do
   end
 
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
-    t.bigint "buyer_id"
-    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
-    t.index ["item_id"], name: "index_transactions_on_item_id"
-    t.index ["seller_id"], name: "index_transactions_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "nickname"
+    t.text "avater_image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -169,4 +139,6 @@ ActiveRecord::Schema.define(version: 2019_06_15_050618) do
     t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "profiles", "users"
 end
