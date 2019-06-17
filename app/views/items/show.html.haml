@@ -2,7 +2,7 @@
 = render partial: "layouts/button"
 .wrapper
   .itembox__container
-    %h1 シール
+    %h1= @item.name
     .itembox__container__detail--main.clearfix
       .itembox__container__photobox
         .itembox__container__photobox__img
@@ -13,7 +13,7 @@
           %tr
             %th 出品者
             %td
-              =link_to "大友克洋", "#"
+              =link_to "山本", "#"
               %div
                 .itembox__container__detail__table__ratings
                   %i.far.fa-smile
@@ -45,24 +45,24 @@
                   ネオトウキョウ
           %tr
             %th 商品の状態
-            %td 未使用に近い
+            %td= "#{@item.condition}"
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td= "#{@item.shipping_cost}"
           %tr
             %th 配送の方法
-            %td らくらくメルカリ便
+            %td= "#{@item.shipping_method}"
           %tr
             %th 配送元地域
             %td
-              =link_to "大阪府", "#"
+              =link_to "#{@item.shipping_source}", "#"
           %tr
             %th 発送日の目安
-            %td 1〜2日で発送
+            %td= "#{@item.delivery_date}"
     .itembox__container__pricebox
-      %span.itembox__container__pricebox__price ¥1,500
-      %span.itembox__container__pricebox__tax (税込)
-      %span.itembox__container__pricebox__fee 送料込み
+      %span.itembox__container__pricebox__price= "#{@item.price}"
+      %span.itembox__container__pricebox__tax= "(税抜)"
+      %span.itembox__container__pricebox__fee= "(送料込)"
     = link_to "#" do
       %button.itembox__container__buybtn 購入画面に進む
     .itembox__container__discription
