@@ -23,4 +23,10 @@ class UsersController < ApplicationController
   def registration_completion
   end
 
+  def sign_in
+  end
+
+  def sign_up
+  end
+
 end
