@@ -1,0 +1,10 @@
+.sign-up
+  = render partial: "layouts/sign_header"
+  .sign-up__content
+    .sign-up__content__header
+      %p 新規会員登録
+    .sign-up__content__link
+      %button.button-mail{:href => "#", :type => "button"} メールアドレスで登録
+      %button.button-facebook{:href => "#", :type => "button"} Facebookで登録
+      %button.button-google{:href => "#", :type => "button"} Googleで登録
+  = render partial: "/./users/registration_footer"
