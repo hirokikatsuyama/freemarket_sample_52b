@@ -1,6 +1,5 @@
-= stylesheet_link_tag '/devise/sessions/new', media: 'all', 'data-turbolinks-track' => true
 .sign-in
-  = render partial: "devise/shared/sign_header"
+  = render partial: "layouts/sign_header"
   .sign-in__content
     .sign-in__content__header
       %p アカウントをお持ちでない方はこちら
@@ -17,4 +16,3 @@
           %button.button-log-in{:href => "#", :type => "button"} ログイン
           = link_to "パスワードをお忘れの方", "#", class: "link-forget-password"
   = render partial: "/./users/registration_footer"
-
