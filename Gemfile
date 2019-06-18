@@ -85,3 +85,6 @@ gem 'paperclip'
 gem 'rspec-rails'
 gem 'kaminari'
 gem "jquery-rails"
+
+gem 'ancestry'
+gem 'ransack'

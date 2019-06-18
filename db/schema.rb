@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_105054) do
+ActiveRecord::Schema.define(version: 2019_06_18_012345) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal"
@@ -19,17 +19,17 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
     t.string "address"
     t.string "building"
     t.integer "phone"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "brands_group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brands_group_id"
     t.index ["brands_group_id"], name: "index_brands_on_brands_group_id"
   end
 
@@ -39,12 +39,20 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text"
-    t.bigint "user_id"
-    t.bigint "item_id"
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "item_id"
     t.index ["item_id"], name: "index_comments_on_item_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -54,28 +62,28 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
     t.string "expiration_date_month"
     t.string "expiration_date_year"
     t.string "security_code"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_credits_on_user_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "evaluation"
     t.integer "date"
-    t.bigint "user_id"
-    t.bigint "transaction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "transaction_id"
     t.index ["transaction_id"], name: "index_evaluations_on_transaction_id"
     t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "item_id"
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
@@ -92,23 +100,23 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
     t.integer "tax"
     t.integer "profit"
     t.integer "status"
-    t.bigint "user_id"
-    t.bigint "brand_id"
-    t.bigint "small_category_id"
-    t.bigint "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.bigint "user_id"
+    t.bigint "brand_id"
+    t.bigint "size_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["size_id"], name: "index_items_on_size_id"
-    t.index ["small_category_id"], name: "index_items_on_small_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "item_id"
     t.index ["item_id"], name: "index_likes_on_item_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -122,9 +130,9 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
     t.integer "birthday_year"
     t.integer "birthday_month"
     t.integer "bithday_day"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -135,11 +143,11 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
   end
 
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
-    t.bigint "buyer_id"
-    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "buyer_id"
+    t.bigint "seller_id"
+    t.bigint "item_id"
     t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
     t.index ["item_id"], name: "index_transactions_on_item_id"
     t.index ["seller_id"], name: "index_transactions_on_seller_id"
@@ -148,6 +156,8 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "nickname"
+    t.text "avater_image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -169,4 +179,22 @@ ActiveRecord::Schema.define(version: 2019_06_17_105054) do
     t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "brands", "brands_groups"
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
+  add_foreign_key "credits", "users"
+  add_foreign_key "evaluations", "transactions"
+  add_foreign_key "evaluations", "users"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
+  add_foreign_key "items", "users"
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "transactions", "items"
+  add_foreign_key "transactions", "users", column: "buyer_id"
+  add_foreign_key "transactions", "users", column: "seller_id"
 end
