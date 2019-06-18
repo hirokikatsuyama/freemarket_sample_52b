@@ -1,0 +1,84 @@
+.registration-header {
+  margin: 0 auto;
+  width: 750px;
+  height:  100px;
+  &__logo {
+    margin: 0 70px 0 0;
+    line-height: 100px;
+    float: left;
+    height: 49px;
+    width: 185px;
+  }
+}
+.progress-meter {
+  width: 850px;
+}
+ol.progress-meter li {
+  display: inline-block;
+  text-align: left;
+  text-indent: -19px;
+  height: 36px;
+  width: 110px;
+  font-size: 12px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+ol.progress-meter li:before {
+  position: relative;
+  float: left;
+  text-indent: 0;
+}
+
+ol.progress-meter li.now {
+  padding-right: 50px;
+}
+ol.progress-meter li.now:before {
+  content: "\2000";
+  height: 13px;
+  width: 13px;
+  line-height: 21.85px;
+  bottom: -28.175px;
+  border: none;
+  border-radius: 19px;
+}
+ol.progress-meter li.now {
+  border-bottom-color: silver;
+}
+ol.progress-meter li.now:before {
+  background-color: #ea352d;
+}
+ol.progress-meter li.now p {
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #ea352d;
+}
+
+ol.progress-meter li.todo:before {
+  content: "\2B24";
+  font-size: 13px;
+  bottom: -24.95px;
+  line-height: 18.05px;
+  color: #cccccc;
+}
+ol.progress-meter li.todo {
+  border-bottom-color: #cccccc;
+}
+ol.progress-meter li.todo p {
+  display: inline-block;
+  font-size: 12px;
+  color: #cccccc;
+}
+
+ol.progress-meter li.hidden:before {
+  content: "\2B24";
+  font-size: 13px;
+  bottom: -24.95px;
+  line-height: 18.05px;
+}
+ol.progress-meter li.hidden {
+  border-bottom-color: transparent;
+  color: #cccccc;
+}
+
+

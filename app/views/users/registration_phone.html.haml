@@ -1,0 +1,23 @@
+.phone
+  = render partial: "registration_header"
+  .phone__content
+    .phone__content__header
+      %p.phone__content__header--title
+        電話番号の確認
+    %form.phone__content__form
+      %label.phone__content__form--label 携帯電話の番号
+      %input.phone__content__form--input{:name => "phone", :placeholder => "携帯電話の番号を入力", :type => "text"}/
+      %p.phone__content__form--explanation
+        本人確認のため、携帯電話のSMS（ショートメッセ
+        %br/
+        ージサービス）を利用して認証を行います。
+      %button.phone__content__form--sms{:type => "submit"} SMSを送信する
+      %p.phone__content__form--explanation
+        ※電話番号は本人確認や不正利用防止のために利用
+        %br/
+        します。他のユーザーに公開されることはありま
+        %br/
+        せん。
+      = link_to "電話番号の確認が必要な理由>", "#", class: "phone__content__form--reason"
+  = render partial: "registration_footer"
+

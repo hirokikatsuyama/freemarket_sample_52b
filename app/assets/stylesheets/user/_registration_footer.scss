@@ -1,0 +1,22 @@
+.registration-footer {
+  margin: 40px auto 0;
+  width: 400px;
+  &__nav {
+    &--each {
+      font-size: 12px;
+      touch-action: manipulation;
+      padding-right: 10px;
+      color: #333333;
+    }
+  }
+  &__logo {
+    margin: 40px 160px 10px 160px;
+    width: 80px;
+    height: 65;
+  }
+  &__copyright {
+    margin: 0 150px;
+    font-size: 13px;
+    width: 100px;
+  }
+}

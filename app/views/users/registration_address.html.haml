@@ -1,0 +1,43 @@
+.address
+  = render partial: "registration_header"
+  .address__content
+    .address__content__header
+      %p 発送元・お届け先住所入力
+    %form.address__content__form
+      .address__content__form__each
+        %label.adress__content__form__each--label お名前
+        %span.address__content__form__each--span 必須
+        %input.address__content__form__each--input{:name => "", :placeholder => "例）山田", :type => "text"}/
+        %input.address__content__form__each--input{:name => "", :placeholder => "例）彩", :type => "text"}/
+      .address__content__form__each
+        %label.address__content__form__each--label お名前カナ
+        %span.address__content__form__each--span 必須
+        %input.address__content__form__each--input{:name => "email", :placeholder => "例）ヤマダ", :type => "email"}/
+        %input.address__content__form__each--input{:name => "email", :placeholder => "例）アヤ", :type => "email"}/
+      .address__content__form__each
+        %label.address__content__form__each--label 郵便番号
+        %span.address__content__form__each--span 必須
+        %input.address__content__form__each--input{:name => "password", :placeholder => "例）123-4567", :type => "password"}/
+      .address__content__form__each
+        %label.address__content__form__each--label 都道府県
+        %span.address__content__form__each--span 必須
+        = select_tag "prefecture", options_for_select([['北海道', '北海道'],['青森県', '青森県'],['岩手県', '岩手県'],['宮城県', '宮城県'],['秋田県', '秋田県'],['山形県', '山形県'],['福島県', '福島県'],['茨城県', '茨城県'],['栃木県', '栃木県'],['群馬県', '群馬県'],['埼玉県', '埼玉県'],['千葉県', '千葉県'],['東京都', '東京都'],['神奈川県', '神奈川県'],['新潟県', '新潟県'],['富山県', '富山県'],['石川県', '石川県'],['福井県', '福井県'],['山梨県', '山梨県'],['長野県', '長野県'],['岐阜県', '岐阜県'],['静岡県', '静岡県'],['愛知県', '愛知県'],['三重県', '三重県'],['滋賀県', '滋賀県'],['京都府', '京都府'],['大阪府', '大阪府'],['兵庫県', '兵庫県'],['奈良県', '奈良県'],['和歌山県', '和歌山県'],['鳥取県', '鳥取県'],['島根県', '島根県'],['岡山県', '岡山県'],['広島県', '広島県'],['山口県', '山口県'],['徳島県', '徳島県'],['香川県', '香川県'],['愛媛県', '愛媛県'],['高知県', '高知県'],['福岡県', '福岡県'],['佐賀県', '佐賀県'],['長崎県', '長崎県'],['熊本県', '熊本県'],['大分県', '大分県'],['宮崎県', '宮崎県'],['鹿児島県', '鹿児島県'],['沖縄県',  '沖縄県']])
+      .address__content__form__each
+        %label.address__content__form__each--label 市区町村
+        %span.address__content__form__each--span 必須
+        %input.address__content__form__each--input{:name => "family_name", :placeholder => "例）横浜市緑区", :type => "text"}/
+      .address__content__form__each
+        %label.address__content__form__each--label 番地
+        %span.address__content__form__each--span 必須
+        %input.address__content__form__each--input{:name => "family_name", :placeholder => "例）青山1-1-1", :type => "text"}/
+      .address__content__form__each
+        %label.address__content__form__each--label 建物名
+        %span.address__content__form__each--span-option 任意
+        %input.address__content__form__each--input{:name => "family_name", :placeholder => "例）柳ビル103", :type => "text"}/
+      .address__content__form__each
+        %label.address__content__form__each--label 電話
+        %span.address__content__form__each--span-option 任意
+        %input.address__content__form__each--input{:name => "family_name", :placeholder => "例）09012345678", :type => "text"}/
+      %button.next-button{:type => "submit"} 次へ進む
+  = render partial: "registration_footer"
+
