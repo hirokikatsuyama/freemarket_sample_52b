@@ -81,6 +81,8 @@
       }
       & .icon-arrow-right {
         font-family: 'icon-font';
+        font-size: .9em;
+        content: '\e005';
       }
     }
 
@@ -261,6 +263,9 @@
       text-align: right;
       position: relative;
     }
+    & .pre {
+      font-style: normal;
+    }
   }
 
   .itembox__socialmediabox {
@@ -348,7 +353,6 @@
         padding: 16px;
         height: 110px;
         background-color: white;
-        display: inline-block;
         color: #333;
         position: relative;      
         &__name {

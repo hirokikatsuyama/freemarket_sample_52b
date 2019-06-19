@@ -13,36 +13,34 @@
           %tr
             %th 出品者
             %td
-              =link_to "山本", "#"
+              = link_to "#{@user.nickname}" #"/user/#{current_user.id}"
               %div
                 .itembox__container__detail__table__ratings
                   %i.far.fa-smile
-                  %span 223
+                  %span #{@good.count}
                 .itembox__container__detail__table__ratings
                   %i.far.fa-meh
-                  %span 0
+                  %span #{@normal.count}
                 .itembox__container__detail__table__ratings
                   %i.far.fa-sad-tear
-                  %span 0
+                  %span #{@bad.count}
           %tr
             %th カテゴリー
             %td
               = link_to "#" do
-                %div メンズ
+                %div= @category.parent.parent.name
               = link_to "#" do
                 .itembox__detail--category
-                  %i.icon-arrow-right
-                  小物
+                  %i.fas.fa-chevron-right
+                  = @category.parent.name
               = link_to "#" do
                 .itembox__detail--category
-                  %i.icon-arrow-right
-                  其の他
+                  %i.fas.fa-chevron-right
+                    = @category.name
           %tr
             %th ブランド
-            %td
-              = link_to "#" do
-                %div
-                  ネオトウキョウ
+            %td 
+              = link_to "#{@brand.name}", "#"
           %tr
             %th 商品の状態
             %td= "#{@item.condition}"
@@ -60,16 +58,14 @@
             %th 発送日の目安
             %td= "#{@item.delivery_date}"
     .itembox__container__pricebox
-      %span.itembox__container__pricebox__price= "#{@item.price}"
+      %span.itembox__container__pricebox__price
+        = converting(@item.price)
       %span.itembox__container__pricebox__tax= "(税抜)"
       %span.itembox__container__pricebox__fee= "(送料込)"
     = link_to "#" do
       %button.itembox__container__buybtn 購入画面に進む
     .itembox__container__discription
-      %p.itembox__container__discription__exprain
-        　
-        
-        　   金田さん
+      %p.itembox__container__discription__exprain= "#{@item.detail}"
     .itembox__container__btnbox.clearfix
       .itembox__container__btnbox__left
         %button.itembox__container__btnbox__left__likebtn
@@ -83,6 +79,7 @@
       .itembox__container__btnbox__right
         = link_to "#" do
           %i.fas.fa-lock
+        = link_to "https://www.mercari.com/jp/safe/description/" do
           %span.itembox__container__btnbox__right__policy あんしん・あんぜんへの取り組み
   .itembox__message
     .itembox__message__content
@@ -94,143 +91,52 @@
   %div
     %ul.itembox__to__nextitembox.clearfix
       %li.itembox__to__nextitembox__previous
-        = link_to "#" do
-          %i.icon-arrow-left
-          王の手バッジ
+        - if @item.previous.present?
+          = link_to "@item.previous" do
+            %i.fas.fa-chevron-left
+              = "#{@item.previous.name}"
       %li.itembox__to__nextitembox__next
-        = link_to "#" do
-          %i.icon-arrow-right
-          インフィニティストーン
+        - if @item.next.present?
+          = link_to "@item.next" do
+            = "#{@item.next.name}"
+            %i.fas.fa-chevron-right
   .itembox__socialmediabox
     %ul.itembox__socialmediabox__sns
       %li
-        = link_to "#" do
+        = link_to "http://www.facebook.com/share.php?u=httpsitem.mercari.com" do
           %i.fab.fa-facebook-square.fb
       %li
-        = link_to "#" do
+        = link_to "http://twitter.com/share?count=horizontal&original_referer=httpsitem.mercari.comtext=item.mercari.commercari_jp" do
           %i.fab.fa-twitter-square.twitter
       %li
-        = link_to "#" do
+        = link_to "https://social-plugins.line.me/lineit/share?url=" do
           %i.fab.fa-line.line
       %li
-        = link_to "#" do
+        = link_to "https://www.pinterest.jp/pin/create/button/?static.mercdn.netdescription=" do
           %i.fab.fa-pinterest-square.pin
   .itembox__user__profile
     .itembox__user__profile__mainbox
-      %h2
-        =link_to "大友克洋さんのその他の出品", "#"
+      %h2=link_to "#{@user.nickname}さんのその他の出品", "#"
       .itembox__user__goodsbox.clearfix
-        .itembox__user__goodsbox__item
-          = link_to "#" do
+        - @user.items.limit(6).each do |item|
+          .itembox__user__goodsbox__item
             %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+              = image_tag(item.images.first.image, class:"goods__img")
             .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              %h3.itembox__user__goodsbox__itembody__name= "#{item.name}"
               .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
+                .goodsbox__price= converting(item.price)
                 %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-    .itembox__user__profile__mainbox
-      %h2
-        =link_to "趣味/スポーツ/実用 （本・音楽・ゲーム） その他の商品", "#"
+      %h2=link_to "#{@category.name}", "#"
       .itembox__user--profile--goodsbox.clearfix
-        .itembox__user__goodsbox__item
-          = link_to "#" do
+        - @category.items.limit(6).each do |item|
+          .itembox__user__goodsbox__item
             %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
+              =image_tag(item.images.first.image, class:"goods__img")
             .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
+              %h3.itembox__user__goodsbox__itembody__name= "#{item.name}"
               .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
-                %p.goodsbox__tax (税込)
-        .itembox__user__goodsbox__item
-          = link_to "#" do
-            %figure.itembox__user__goodsbox__itemimg
-              =image_tag("https://static.mercdn.net/thumb/photos/m20130201592_1.jpg?1560310391", class:"goods__img")
-            .itembox__user__goodsbox__itembody
-              %h3.itembox__user__goodsbox__itembody__name SUPREME 10f/w 缶 バッジ 黒
-              .itembox__user__goodsbox__itembody__num
-                .goodsbox__price ¥ 2,222
+                .goodsbox__price= converting(item.price)
                 %p.goodsbox__tax (税込)
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
