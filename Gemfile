@@ -44,6 +44,11 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -73,7 +78,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'dropzonejs-rails'
 gem 'active_hash'
-gem 'factory_bot'
 gem 'ransack'
 gem 'payjp'
 gem 'fontawesome-rails'
@@ -81,7 +85,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'paperclip'
-gem 'rspec-rails'
 gem 'kaminari'
 gem "jquery-rails"
 
