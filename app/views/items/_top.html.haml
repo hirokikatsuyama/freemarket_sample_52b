@@ -1,0 +1,10 @@
+.top__item__contents__box
+  = link_to items_show_path(top), class: "top__list" do
+    .top__list__photo
+      = image_tag (top.images.first.image)
+    .top__list__description
+      %h3.top__list__description__name=top.name
+      .top__list__description__other
+        .top__list__description__other__price
+          = converting(top.price)
+      %p (税込)
