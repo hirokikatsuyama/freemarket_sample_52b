@@ -11,8 +11,37 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @parents = Category.find(1).siblings
+    # @children = Category.find(1).children
+    # @grandchild = Category.find(1).indirects
+    # @price = Price.new
+    # @tax = @price * 0.1
+    # @profit = @price * 0.9
   end
 
+  def create
+    Item.create!(item_params)
+    redirect_to controller: :items, action: :index
+  end
+
+
+
+
+
   def show
+  end
+
+
+  def search
+    respond_to do |format|
+      format.json {@children = Category.find(params[:parent_id]).children}
+       #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義。search.json.jbuilderへ。
+    end
+  end
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :price)
   end
 end

@@ -1,171 +1,147 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-    %title mercari
-
-    .single-container
-      %header.single-header
-        = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
-      %main.single-main
-        %section.single-main__section
-          .single-main__section__title
-            %h2.single-main__section__title__bar
-              商品の情報を入力
-          .single-main__section__picture
-            %label#large-label 出品画像
-            %span.form-require 必須
-            %p 最大10枚までアップロードできます
-            .single-main__section__picture__uploader
+.single-container
+  %header.single-header
+    -# = image_tag 'mercari_logo_horizontal.png', size: "250x70"
+  %main.single-main
+    = form_for(@item) do |f|
+      %section.single-main__section
+        .single-main__section__title
+          %h2.single-main__section__title__bar 商品の情報を入力
+        .single-main__section__picture
+          %label#large-label 出品画像
+          %span.form-require 必須
+          %p 最大10枚までアップロードできます
+          .single-main__section__picture__uploader
+            =label :images, "", for: "item_images" do
+              =f.file_field :images, class: "single", style: "display: none;"
               %p
                 ドラッグアンドドロップ
                 %br>/
                 またはクリックしてファイルをアップロード
-          .single-main__section__item--name
-            .form-group
-              %label.normal-label 商品名
-              %span.form-require 必須
-              %input.form{placeholder: "商品名(必須40文字まで)", value:""}/
-            .form-group
-              %label.normal-label 商品の説明
-              %span.form-require 必須
-              %textarea.form-detail{cols: "50", placeholder:"商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", rows:"10", wrap: "soft"}
-          .single-main__section__item--detail
-            %h3.gray-title.detail-left 商品の詳細
-            .single-main__section__item--detail__pulldown
-              .single-main__section__item--detail__pulldown__one
-                %label.normal-label カテゴリー
-                %span.form-require 必須
-                .single-main__section__item--detail__pulldown__one__tab
-                  %select{name:"categoly",type: "text"}
-                    %option{value:"--"} --
-                    %option{value:"レディース"} レディース
-                    %option{value:"メンズ"} メンズ
-                    %option{value:"ベビー・キッズ"} ベビー・キッズ
-                    %option{value:"インテリア・住まい・小物"} インテリア・住まい・小物
-                    %option{value:"本・音楽・ゲーム"} 本・音楽・ゲーム
-                    %option{value:"おもちゃ・ホビー・グッズ"} おもちゃ・ホビー・グッズ
-                    %option{value:"コスメ・香水・美容"} コスメ・香水・美容
-                    %option{value:"家電・スマホ・カメラ"} 家電・スマホ・カメラ
-                    %option{value:"スポーツ・レジャー"} スポーツ・レジャー
-                    %option{value:"ハンドメイド"} ハンドメイド
-                    %option{value:"チケット"} チケット
-                    %option{value:"自動車・オートバイ"} 自動車・オートバイ
-                    %option{value:"その他"} その他
-                    %i.far.fa-angle-down
+        .single-main__section__item--name
+          .form-group
+            %label.normal-label 商品名
+            %span.form-require 必須
+            =f.label :name do
+              =f.text_field :name, class: "form", placeholder: "商品名（必須 40文字まで)"
+          .form-group
+            %label.normal-label 商品の説明
+            %span.form-require 必須
+            =f.label :detail do
+              =f.text_area :detail, class: "form-detail", cols: "50", rows:"10", wrap: "soft", placeholder: "商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", value: ""
+        .single-main__section__item--detail
+          %h3.gray-title.detail-left 商品の詳細
+          .single-main__section__item--detail__pulldown
             .single-main__section__item--detail__pulldown__one
-              %label.normal-label 商品の状態
+              %label.normal-label カテゴリー
               %span.form-require 必須
               .single-main__section__item--detail__pulldown__one__tab
-                %select{name:"condeition",type: "text"}
-                  %option{value:"--"} --
-                  %option{value:"新品、未使用"} 新品、未使用
-                  %option{value:"未使用に近い"} 未使用に近い
-                  %option{value:"目立った傷や汚れなし"} 目立った傷や汚れなし
-                  %option{value:"やや傷や汚れあり"} やや傷や汚れあり
-                  %option{value:"傷や汚れあり"} 傷や汚れあり
-                  %option{value:"全体的に状態が悪い"} 全体的に状態が悪い
-          .single-main__section__delivery
-            %h3.gray-title 配送について
-            .single-main__section__delivery__pulldown
-              .single-main__section__delivery__pulldown__one
-                %label.normal-label 配送量の負担
-                %span.form-require 必須
-                .single-main__section__delivery__pulldown__one__tab
-                  %select{name:"send-fee",type: "text"}
-                    %option{value:"--"} --
-                    %option{value:"送料込み(出品者負担)"} 送料込み(出品者負担)
-                    %option{value:"着払い(購入者負担)"} 着払い(購入者負担)
+                = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+              .select-wrap
+          .single-main__section__item--detail__pulldown__one
+            %label.normal-label 商品の状態
+            %span.form-require 必須
+            .single-main__section__item--detail__pulldown__one__tab
+              =f.label :condition do
+                =f.select :condition, [["--", ""], ["新品、未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"], ["全体的に状態が悪い", "6"]], {class: 'select--booox'}
+        .single-main__section__delivery
+          %h3.gray-title 配送について
+          .single-main__section__delivery__pulldown
             .single-main__section__delivery__pulldown__one
-              %label.normal-label 配送元の地域
+              %label.normal-label 配送料の負担
               %span.form-require 必須
               .single-main__section__delivery__pulldown__one__tab
-                %select{name:"place",type: "text"}
-                  %option{value:"--"} --
-                  %option{value:"1"} 北海道
-                  %option{value:"2"} 青森県
-                  %option{value:"3"} 岩手県
-                  %option{value:"4"} 宮城県
-                  %option{value:"5"} 秋田県
-                  %option{value:"6"} 山形県
-                  %option{value:"7"} 福島県
-                  %option{value:"8"} 茨城県
-                  %option{value:"9"} 栃木県
-                  %option{value:"10"} 群馬県
-                  %option{value:"11"} 埼玉県
-                  %option{value:"12"} 千葉県
-                  %option{value:"13"} 東京都
-                  %option{value:"14"} 神奈川県
-                  %option{value:"15"} 新潟県
-                  %option{value:"16"} 富山県
-                  %option{value:"17"} 石川県
-                  %option{value:"18"} 福井県
-                  %option{value:"19"} 山梨県
-                  %option{value:"20"} 長野県
-                  %option{value:"21"} 岐阜県
-                  %option{value:"22"} 静岡県
-                  %option{value:"23"} 愛知県
-                  %option{value:"24"} 三重県
-                  %option{value:"25"} 滋賀県
-                  %option{value:"26"} 京都府
-                  %option{value:"27"} 大阪府
-                  %option{value:"28"} 兵庫県
-                  %option{value:"29"} 奈良県
-                  %option{value:"30"} 和歌山県
-                  %option{value:"31"} 鳥取県
-                  %option{value:"32"} 島根県
-                  %option{value:"33"} 岡山県
-                  %option{value:"34"} 広島県
-                  %option{value:"35"} 山口県
-                  %option{value:"36"} 徳島県
-                  %option{value:"37"} 香川県
-                  %option{value:"38"} 愛媛県
-                  %option{value:"39"} 高知県
-                  %option{value:"40"} 福岡県
-                  %option{value:"41"} 佐賀県
-                  %option{value:"42"} 長崎県
-                  %option{value:"43"} 熊本県
-                  %option{value:"44"} 大分県
-                  %option{value:"45"} 宮崎県
-                  %option{value:"46"} 鹿児島県
-                  %option{value:"47"} 沖縄県
-            .single-main__section__delivery__pulldown__one
-              %label.normal-label 発送までの日数
+                =f.label :shipping_cost do
+                  =f.select :shipping_cost, [["--", ""], ["送料込み(出品者負担)", "1"], ["着払い(購入者負担)", "2"]], {class: 'select--booox'}
+          .single-main__section__delivery__pulldown__one
+            %label.normal-label 配送元の地域
+            %span.form-require 必須
+            .single-main__section__delivery__pulldown__one__tab
+              %select{name:"place",type: "text"}
+                %option{value:""} --
+                %option{value:"1"} 北海道
+                %option{value:"2"} 青森県
+                %option{value:"3"} 岩手県
+                %option{value:"4"} 宮城県
+                %option{value:"5"} 秋田県
+                %option{value:"6"} 山形県
+                %option{value:"7"} 福島県
+                %option{value:"8"} 茨城県
+                %option{value:"9"} 栃木県
+                %option{value:"10"} 群馬県
+                %option{value:"11"} 埼玉県
+                %option{value:"12"} 千葉県
+                %option{value:"13"} 東京都
+                %option{value:"14"} 神奈川県
+                %option{value:"15"} 新潟県
+                %option{value:"16"} 富山県
+                %option{value:"17"} 石川県
+                %option{value:"18"} 福井県
+                %option{value:"19"} 山梨県
+                %option{value:"20"} 長野県
+                %option{value:"21"} 岐阜県
+                %option{value:"22"} 静岡県
+                %option{value:"23"} 愛知県
+                %option{value:"24"} 三重県
+                %option{value:"25"} 滋賀県
+                %option{value:"26"} 京都府
+                %option{value:"27"} 大阪府
+                %option{value:"28"} 兵庫県
+                %option{value:"29"} 奈良県
+                %option{value:"30"} 和歌山県
+                %option{value:"31"} 鳥取県
+                %option{value:"32"} 島根県
+                %option{value:"33"} 岡山県
+                %option{value:"34"} 広島県
+                %option{value:"35"} 山口県
+                %option{value:"36"} 徳島県
+                %option{value:"37"} 香川県
+                %option{value:"38"} 愛媛県
+                %option{value:"39"} 高知県
+                %option{value:"40"} 福岡県
+                %option{value:"41"} 佐賀県
+                %option{value:"42"} 長崎県
+                %option{value:"43"} 熊本県
+                %option{value:"44"} 大分県
+                %option{value:"45"} 宮崎県
+                %option{value:"46"} 鹿児島県
+                %option{value:"47"} 沖縄県
+          .single-main__section__delivery__pulldown__one
+            %label.normal-label 発送までの日数
+            %span.form-require 必須
+            .single-main__section__delivery__pulldown__one__tab
+              =f.label :delivery_date do
+                =f.select :delivery_date, [["--", ""], ["1~2日で発送", "1"], ["2~3日で発送", "2"], ["4~7日で発送", "3"]], {class: 'select--booox'}
+        .single-main__section__price
+          %h3.gray-title 販売価格(300〜9,999,999)
+          %ul.single-main__section__price__sell-form
+            %li.single-main__section__price__sell-form__price
+              %label.normal-label 価格
               %span.form-require 必須
-              .single-main__section__delivery__pulldown__one__tab
-                %select{name:"send-time",type: "text"}
-                  %option{value:"--"} --
-                  %option{value:"1~2日で発送"} 1~2日で発送
-                  %option{value:"2~3日で発送"} 2~3日で発送
-                  %option{value:"4~7日で発送"} 4~7日で発送
-          .single-main__section__price
-            %h3.gray-title 販売価格(300〜9,999,999)
-            %ul.single-main__section__price__sell-form
-              %li.single-main__section__price__sell-form__price
-                %label.normal-label 価格
-                %span.form-require 必須
-                .price-right
-                  ¥
-                  %input.form-price{placeholder: "例）300", value: ""}/
-              %li.single-main__section__price__sell-form__margin
-                販売手数料(10%)
-              %li.single-main__section__price__sell-form__profit
-                %label#large-label 販売利益
-          .single-main__section__exhibition
-            %p
-              = link_to "禁止されている出品、行為", "#"
-              を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
-              = link_to "偽ブランドの販売", "#"
-              は犯罪であり処罰される可能性があります。また、出品を持ちまして
-              = link_to "加盟店規約", "#"
-              に同意したことになります。
-            .single-main__section__exhibition__button
-              %button.single-main__section__exhibition__button__exhibition 出品する
-              %button.single-main__section__exhibition__button__return もどる
-      %footer.single-footer
-        .single-footer__section
-          %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
-          .single-footer__section__img
-            = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
-          %p.single-footer__right @ 2019 Mercari
+              .price-right
+                ¥
+                =f.label :price do
+                  =f.text_field :price, class: "form-price", placeholder: "例）300", value: ""
+            %li.single-main__section__price__sell-form__margin
+              販売手数料(10%)
+            %li.single-main__section__price__sell-form__profit
+              %label#large-label 販売利益
+        .single-main__section__exhibition
+          %p
+            = link_to "禁止されている出品、行為", "#"
+            を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", "#"
+            は犯罪であり処罰される可能性があります。また、出品を持ちまして
+            = link_to "加盟店規約", "#"
+            に同意したことになります。
+          .single-main__section__exhibition__button
+            = f.submit "出品する" , class: "single-main__section__exhibition__button__exhibition"
+            %button.single-main__section__exhibition__button__return もどる
+
+    %footer.single-footer
+      .single-footer__section
+        %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
+        .single-footer__section__img
+          -# = image_tag 'mercari_logo_vertical', size: "88x85"
+        %p.single-footer__right @ 2019 Mercari
+
+
