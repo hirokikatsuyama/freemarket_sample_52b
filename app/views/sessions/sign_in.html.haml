@@ -1,0 +1,19 @@
+.sign-in
+  = render partial: "layouts/sign_header"
+  .sign-in__content
+    .sign-in__content__header
+      %p アカウントをお持ちでない方はこちら
+      %button.button-registration{:href => "#", :type => "button"} 新規会員登録
+    .sign-in__content__main
+      = form_for(:session, url: sessions_create_path) do |f|
+        .sign-in__content__main__button
+          %button.button-facebook{:href => "#", :type => "button"} Facebookでログイン
+          %button.button-google{:href => "#", :type => "button"} Googleでログイン
+        .sign-in__content__main__input
+          = f.email_field :email, class: 'sign-in__content__main__mail', placeholder: 'メールアドレス'
+          = f.password_field :password, class: 'sign-in__content__main__password', placeholder: 'パスワード'
+          %div
+            .robot
+            = f.submit "ログイン", class: "button-log-in"
+            = link_to "パスワードをお忘れの方", "#", class: "link-forget-password"
+  = render partial: "/./users/registration_footer"
