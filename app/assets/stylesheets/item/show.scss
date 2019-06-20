@@ -27,24 +27,29 @@
       height: 375px;
       float: left;
       max-width: 300px;
-      
       &__img {
         width: 300px;
         height: 300px;
+        list-style: none;
         &__photo {
           width: 100%;
         }
       }
-
-    #itembox__container__small__photobox {
+      #itembox__container__small__photobox {
       height: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      }
+      .itembox__container__small__photobox__img__photo {
+        width: 60px;
+        height: 60px;
+        max-height: none;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+      }
     }
-
-
-
-    }
-    
-
     &__detail__table {
       width: 298px;
       height: 418px;

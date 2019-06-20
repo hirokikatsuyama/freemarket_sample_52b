@@ -5,14 +5,14 @@
     %h1= @item.name
     .itembox__container__detail--main.clearfix
       .itembox__container__photobox#wrap
-      
         %ul#slider
-          %li.itembox__container__photobox__img
-            = image_tag(@item.images.first.image, class:"itembox__container__photobox__img__photo")
-        
+          - @item.images.each do |image|
+            %li.itembox__container__photobox__img
+              = image_tag(image.image, class:"itembox__container__photobox__img__photo")
         %ul#itembox__container__small__photobox
-          %li.itembox__container__small__photobox__img
-            %image_tag.itembox__container__small__photobox__img__photo() 
+          - @item.images.each do |image|
+            %li.itembox__container__small__photobox__img
+              = image_tag(image.image, class: "itembox__container__small__photobox__img__photo") 
       %table.itembox__container__detail__table
         %tbody
           %tr
