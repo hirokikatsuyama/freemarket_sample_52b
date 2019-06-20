@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'purchase/new'
   get 'items/index' => 'items#index'
   get 'items/new' => 'items#new'
-  get 'items/new' => 'items#search'
+  get 'items/search', to: 'items#search'
   post 'items' => 'items#create'
   get 'items/show'
 

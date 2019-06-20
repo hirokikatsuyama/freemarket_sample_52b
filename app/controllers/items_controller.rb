@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @parents = Category.find(1).siblings
+    @parents = Category.all.order("id ASC").limit(13)
     # @children = Category.find(1).children
     # @grandchild = Category.find(1).indirects
     # @price = Price.new
@@ -34,8 +34,11 @@ class ItemsController < ApplicationController
 
 
   def search
+    @children = Category.find(params[:parent_id]).children
+    # binding.pry
     respond_to do |format|
-      format.json {@children = Category.find(params[:parent_id]).children}
+      format.html
+      format.json
        #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義。search.json.jbuilderへ。
     end
   end
