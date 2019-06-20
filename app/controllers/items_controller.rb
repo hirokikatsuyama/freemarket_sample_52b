@@ -14,12 +14,5 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(1)
-    @user = @item.user
-    # @category = @item.category
-    @brand = @item.brand
-    @good = Evaluation.where(evaluation: 1, user_id: @user.id)
-    @normal = Evaluation.where(evaluation: 2, user_id: @user.id)
-    @bad = Evaluation.where(evaluation: 3, user_id: @user.id)
   end
 end
