@@ -3,75 +3,68 @@
   .base-info__content
     .base-info__content__header
       %p 会員情報入力
-    %form.base-info__content__form
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label ニックネーム
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "text"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label メールアドレス
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label パスワード
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "password", :placeholder => "6文字以上", :type => "password"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label パスワード（確認）
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "password", :placeholder => "6文字以上", :type => "password"}/
-      .current-user-explanation
-        %h3 本人確認
-        %p
-          安心・安全にご利用いただくために、お客さまの
-          %br/
-          本人情報の登録にご協力ください。他のお客さま
-          %br/
-          に公開されることはありません。
-
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label 姓 （全角）
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "family_name", :placeholder => "例）山田", :type => "text"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label 名 （全角）
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "first_name", :placeholder => "例）彩", :type => "text"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label 姓カナ （全角）
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "family_name_kana", :placeholder => "例）ヤマダ", :type => "text"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label 名カナ （全角）
-        %span.base-info__content__form__each--span 必須
-        %input.base-info__content__form__each--input{:name => "first_name_kana", :placeholder => "例）アヤ", :type => "text"}/
-      .base-info__content__form__each
-        %label.base-info__content__form__each--label 生年月日
-        %span.base-info__content__form__each--span 必須
-        .birthday-select-wrap
-          = select_tag('birthday-year',options_for_select((1960..2010), selected: '1960'))
-          %span.birth-info 年
-        .birthday-select-wrap
-          = select_tag('birthday-month',options_for_select((1..12), selected: '1'))
-          %span.birth-info 月
-        .birthday-select-wrap
-          = select_tag('birthday-day',options_for_select((1..31),selected: '1'))
-          %span.birth-info 日
-      .input-caution
-        %p.input-caution__word
-          ※ 本人情報は正しく入力してください。会員登録
-          %br/
-          後、修正するにはお時間を頂く場合があります。
-      .robot
-      .service-terms
-        %p.service-terms__word
-          「次へ進む」のボタンを押すことにより、
-          %a{:href => "#"}>
-            利用規
+    .base-info__content__form
+      = form_for @user, url: users_registration_base_path do |f|
+        .base-info__content__form__each
+          = f.label :nickname, 'ニックネーム', class: 'base-info__content__form__each--label'
+          %span.base-info__content__form__each--span 必須
+          = f.text_field :nickname, class: 'base-info__content__form__each--input', placeholder: '例）メルカリ太郎'
+        .base-info__content__form__each
+          = f.label :email, 'メールアドレス', class: 'base-info__content__form__each--label'
+          %span.base-info__content__form__each--span 必須
+          = f.email_field :email, class: 'base-info__content__form__each--input', placeholder: 'PC・携帯どちらでも可'
+        .base-info__content__form__each
+          = f.label :password, 'パスワード', class: 'base-info__content__form__each--label'
+          %span.base-info__content__form__each--span 必須
+          = f.password_field :password, class: 'base-info__content__form__each--input', placeholder: '6文字以上'
+        .base-info__content__form__each
+          = f.label :password_confirmation, 'パスワード（確認）', class: 'base-info__content__form__each--label'
+          %span.base-info__content__form__each--span 必須
+          = f.password_field :password_confirmation, class: 'base-info__content__form__each--input', placeholder: '6文字以上'
+        .current-user-explanation
+          %h3 本人確認
+          %p
+            安心・安全にご利用いただくために、お客さまの
             %br/
-            約
-          に同意したものとみなします
-      %button.next-button{:type => "submit"} 次へ進む
+            本人情報の登録にご協力ください。他のお客さま
+            %br/
+            に公開されることはありません。
+        = f.fields_for :profile do |i|
+          .base-info__content__form__each
+            = i.label :family_name, '姓（全角）', class: 'base-info__content__form__each--label'
+            %span.base-info__content__form__each--span 必須
+            = i.text_field :family_name, class: 'base-info__content__form__each--input', placeholder: '例）山田'
+          .base-info__content__form__each
+            = i.label :first_name, '名（全角）', class: 'base-info__content__form__each--label'
+            %span.base-info__content__form__each--span 必須
+            = i.text_field :first_name, class: 'base-info__content__form__each--input', placeholder: '例）彩'
+          .base-info__content__form__each
+            = i.label :family_name_kana, '姓カナ（全角）', class: 'base-info__content__form__each--label'
+            %span.base-info__content__form__each--span 必須
+            = i.text_field :family_name_kana, class: 'base-info__content__form__each--input', placeholder: '例）ヤマダ'
+          .base-info__content__form__each
+            = i.label :first_name_kana, '名カナ （全角）', class: 'base-info__content__form__each--label'
+            %span.base-info__content__form__each--span 必須
+            = i.text_field :first_name_kana, class: 'base-info__content__form__each--input', placeholder: '例）アヤ'
+          .base-info__content__form__each
+            = i.label :birthday_year, '生年月日', class: 'base-info__content__form__each--label'
+            %span.base-info__content__form__each--span 必須
+            .birthday-select-wrap
+              = i.date_select :birthday_year, {:order => [:year, :month, :day]}, {:class => "birthday-select"}
+        .input-caution
+          %p.input-caution__word
+            ※ 本人情報は正しく入力してください。会員登録
+            %br/
+            後、修正するにはお時間を頂く場合があります。
+        .robot
+        .service-terms
+          %p.service-terms__word
+            「次へ進む」のボタンを押すことにより、
+            %a{:href => "#"}>
+              利用規
+              %br/
+              約に同意したものとみなします
+        = f.submit '次へ進む', class: 'next-button'
       = link_to "本人情報の登録について>", "#", class: "user-registration-explanation"
   = render partial: "registration_footer"
 
