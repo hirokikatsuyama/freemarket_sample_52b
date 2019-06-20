@@ -27,7 +27,7 @@
       height: 375px;
       float: left;
       max-width: 300px;
-      border: 1px solid black;
+      
       &__img {
         width: 300px;
         height: 300px;
@@ -35,6 +35,13 @@
           width: 100%;
         }
       }
+
+    #itembox__container__small__photobox {
+      height: 60px;
+    }
+
+
+
     }
     
 
