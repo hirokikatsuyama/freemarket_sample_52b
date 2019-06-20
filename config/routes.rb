@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: "items#index"
   get 'users/sign_up' => 'users#sign_up'
-  get 'users/sign_in' => 'users#sign_in'
   get 'users/registration_base' => 'users#registration_base'
   get 'users/registration_phone' => 'users#registration_phone'
   get 'users/registration_address' => 'users#registration_address'
@@ -9,9 +8,14 @@ Rails.application.routes.draw do
   get 'users/registration_completion' => 'users#registration_completion'
   get 'users/confirmation' => 'users#confirmation'
 
+  post 'users/registration_base' => 'users#create'
+  get 'sessions/sign_in' => 'sessions#sign_in'
+  post 'sessions/create' =>'sessions#create'
+  delete 'sessions/destroy' => 'sessions#destroy'
   get 'users/edit'
   get 'users/show'
   get 'users/logout'
+
   get 'credit/new'
   get 'credit/index'
   get 'purchase/new'
