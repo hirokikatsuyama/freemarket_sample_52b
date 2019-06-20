@@ -1,10 +1,17 @@
-Brand.create(name: "シャネル")
-Brand.create(name: "ナイキ")
-Brand.create(name: "ルイ ヴィトン")
-Brand.create(name: "シュプリーム")
-Brand.create(name: "アディダス")
-
 lady = Category.create(name: "レディース")
+man = Category.create(name: "メンズ")
+kids = Category.create(name: "ベビー・キッズ")
+interior = Category.create(name: "インテリア・住まい・小物")
+book = Category.create(name: "本・音楽・ゲーム")
+hobby = Category.create(name: "おもちゃ・ホビー・グッズ")
+beauty = Category.create(name: "コスメ・香水・美容")
+appliance = Category.create(name: "家電・スマホ・カメラ")
+sports = Category.create(name: "スポーツ・レジャー")
+handmade = Category.create(name: "ハンドメイド")
+ticket = Category.create(name: "チケット")
+car = Category.create(name: "自転車・オートバイ")
+other = Category.create(name: "その他")
+
 
 lady_tops = lady.children.create(name: "トップス")
 lady_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},{name: "Tシャツ/カットソー(七分/長袖)"},{name: "シャツ/ブラウス(半袖/袖なし)"},{name: "シャツ/ブラウス(七分/長袖)"},{name: "ポロシャツ"},{name: "キャミソール"},{name: "タンクトップ"},{name: "ホルターネック"},{name: "ニット/セーター"},{name: "チュニック"},{name: "カーディガン/ボレロ"},{name: "アンサンブル"},{name: "ベスト/ジレ"},{name: "パーカー"},{name: "トレーナー/スウェット"},{name: "ベアトップ/チューブトップ"},{name: "ジャージ"},{name: "その他"}])
@@ -64,8 +71,6 @@ lady_other = lady.children.create(name: "その他")
 lady_other.children.create([{name: "コスプレ"},{name: "下着"},{name: "その他"}])
 
 
-man = Category.create(name: "メンズ")
-
 man_tops = man.children.create(name: "トップス")
 man_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},{name: "Tシャツ/カットソー(七分/長袖)"},{name: "シャツ"},{name: "ポロシャツ"},{name: "タンクトップ"},{name: "ニット/セーター"},{name: "パーカー"},{name: "カーディガン"},{name: "スウェット"},{name: "ジャージ"},{name: "ベスト"},{name: "その他"}])
 
@@ -107,8 +112,6 @@ man_under.children.create([{name: "トランクス"},{name: "ボクサーパン�
 
 man_other = man.children.create(name: "その他")
 
-
-kids = Category.create(name: "ベビー・キッズ")
 
 kids_baby_girl = kids.children.create(name: "ベビー服(女の子用)~95cm")
 kids_baby_girl.children.create([{name: "トップス"},{name: "アウター"},{name: "パンツ"},{name: "スカート"},{name: "ワンピース"},{name: "ベビードレス"},{name: "おくるみ"},{name: "下着/肌着"},{name: "パジャマ"},{name: "ロンパース"},{name: "その他"}])
@@ -156,8 +159,6 @@ kids_other = kids.children.create(name: "その他")
 kids_other.children.create([{name: "母子手帳用品"},{name: "その他"}])
 
 
-interior = Category.create(name: "インテリア・住まい・小物")
-
 interior_kitchen = interior.children.create(name: "キッチン/食器")
 interior_kitchen.children.create([{name: "食器"},{name: "調理器具"},{name: "収納/キッチン雑貨"},{name: "弁当用品"},{name: "カラトリー(スプーン等)"},{name: "テーブル用品"},{name: "容器"},{name: "エプロン"},{name: "アルコールグッズ"},{name: "浄水機"},{name: "その他"}])
 
@@ -196,8 +197,6 @@ interior_event.children.create([{name: "正月"},{name: "成人式"},{name: "バ
 
 interior_other = interior.children.create(name: "その他")
 
-book = Category.create(name: "本・音楽・ゲーム")
-
 book_book = book.children.create(name: "本")
 book_book.children.create([{name: "文学/小説"},{name: "人文/社会"},{name: "ノンフィクション/教養"},{name: "地図/旅行ガイド"},{name: "ビジネス/経済"},{name: "健康/医学"},{name: "コンピュータ/IT"},{name: "趣味/スポーツ/実用"},{name: "住まい/暮らし/子育て"},{name: "アート/エンタメ"},{name: "洋書"},{name: "絵本"},{name: "参考書"},{name: "その他"}])
 
@@ -219,8 +218,6 @@ book_record.children.create([{name: "邦楽"},{name: "洋楽"},{name: "その他
 book_game = book.children.create(name: "テレビゲーム")
 book_game.children.create([{name: "家庭用ゲーム本体"},{name: "家庭用ゲームソフト"},{name: "携帯用ゲーム本体"},{name: "携帯用ゲームソフト"},{name: "PCゲーム"},{name: "その他"}])
 
-
-hobby = Category.create(name: "おもちゃ・ホビー・グッズ")
 
 hobby_toy = hobby.children.create(name: "おもちゃ")
 hobby_toy.children.create([{name: "キャラクターグッズ"},{name: "ぬいぐるみ"},{name: "小物/アクセサリー"},{name: "模型/プラモデル"},{name: "ミニカー"},{name: "トイラジコン"},{name: "プラモデル"},{name: "ホビーラジコン"},{name: "鉄道模型"},{name: "その他"}])
@@ -256,8 +253,6 @@ hobby_other = hobby.children.create(name: "その他")
 hobby_other.children.create([{name: "トランプ/UNO"},{name: "カルタ/百人一首"},{name: "ダーツ"},{name: "ビリヤード"},{name: "麻雀"},{name: "パズル/ジグソーパズル"},{name: "囲碁/将棋"},{name: "オセロ/チェス"},{name: "人生ニュース"},{name: "野球/サッカーゲーム"},{name: "スポーツ"},{name: "三輪車/乗り物"},{name: "ヨーヨー"},{name: "摸型製作用品"},{name: "鉄道"},{name: "航空機"},{name: "アマチュア無線"},{name: "パチンコ/パチスロ"},{name: "その他"}])
 
 
-beauty = Category.create(name: "コスメ・香水・美容")
-
 beauty_base = beauty.children.create(name: "ベースメイク")
 beauty_base.children.create([{name: "ファンデーション"},{name: "化粧下地"},{name: "コントロールカラー"},{name: "BBクリーム"},{name: "CCクリーム"},{name: "コンシーラー"},{name: "フェイスパウダー"},{name: "トライアルセット/サンプル"},{name: "その他"}])
 
@@ -292,8 +287,6 @@ beauty_other = beauty.children.create(name: "その他")
 beauty_other.children.create([{name: "健康用品"},{name: "看護/介護用品"},{name: "救急/衛生用品"},{name: "その他"}])
 
 
-appliance = Category.create(name: "家電・スマホ・カメラ")
-
 appliance_phone = appliance.children.create(name: "スマートフォン/携帯電話")
 appliance_phone.children.create([{name: "スマートフォン本体"},{name: "バッテリー/充電器"},{name: "携帯電話本体"},{name: "PHS本体"},{name: "その他"}])
 
@@ -324,8 +317,6 @@ appliance_life.children.create([{name: "冷蔵庫"},{name: "洗濯機"},{name: "
 appliance_other = appliance.children.create(name: "その他")
 appliance_other.children.create([{name: "その他"}])
 
-
-sports = Category.create(name: "スポーツ・レジャー")
 
 sports_golf = sports.children.create(name: "ゴルフ")
 sports_golf.children.create([{name: "クラブ"},{name: "ウェア(男性用)"},{name: "ウェア(女性用)"},{name: "バッグ"},{name: "シューズ(男性用)"},{name: "シューズ(女性用)"},{name: "アクセサリー"},{name: "その他"}])
@@ -364,8 +355,6 @@ sports_other = sports.children.create(name: "その他")
 sports_other.children.create([{name: "旅行用品"},{name: "その他"}])
 
 
-handmade = Category.create(name: "ハンドメイド")
-
 handmade_accessories = handmade.children.create(name: "アクセサリー(女性用)")
 handmade_accessories.children.create([{name: "ピアス"},{name: "イヤリング"},{name: "ネックレス"},{name: "ブレスレット"},{name: "リング"},{name: "チャーム"},{name: "ヘアゴム"},{name: "アンクレット"},{name: "その他"}])
 
@@ -393,8 +382,6 @@ handmade_creation.children.create([{name: "Ingress"},{name: "クリエイター�
 handmade_other = handmade.children.create(name: "その他")
 
 
-ticket = Category.create(name: "チケット")
-
 ticket_music = ticket.children.create(name: "音楽")
 ticket_music.children.create([{name: "男性アイドル"},{name: "女性アイドル"},{name: "韓流"},{name: "国内アーティスト"},{name: "海外アーティスト"},{name: "音楽フェス"},{name: "声優/アニメ"},{name: "その他"}])
 
@@ -419,8 +406,6 @@ ticket_special.children.create([{name: "ショッピング"},{name: "レスト�
 ticket_other = ticket.children.create(name: "その他")
 
 
-car = Category.create(name: "自転車・オートバイ")
-
 car_body = car.children.create(name: "自動車本体")
 car_body.children.create([{name: "国内自動車本体"},{name: "外国自動車本体"}])
 
@@ -441,8 +426,6 @@ car_motorcycle_parts.children.create([{name: "タイヤ"},{name: "マフラー"}
 car_motorcycle_accessories = car.children.create(name: "オートバイアクセサリー")
 car_motorcycle_accessories.children.create([{name: "ヘルメット/シールド"},{name: "バイクウエア/装備"},{name: "アクセサリー"},{name: "メンテナンス"},{name: "カタログ/マニュアル"},{name: "その他"}])
 
-
-other = Category.create(name: "その他")
 
 other_together = other.children.create(name: "まとめ売り")
 
@@ -468,3 +451,43 @@ other_office = other.children.create(name: "事務/店舗用品")
 other_office.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 
 other_other = other.children.create(name: "その他")
+
+Brand.create(name: "シャネル", brands_group_id: "")
+Brand.create(name: "ルイ ヴィトン", brands_group_id: "")
+Brand.create(name: "シュプリーム", brands_group_id: "")
+Brand.create(name: "ナイキ", brands_group_id: "")
+
+
+
+Item.create(name: "レディース", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 1000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "レディース", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 2000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "レディース", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 30000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "レディース", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 700, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "メンズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 5000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "メンズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 10000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "メンズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 500, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "メンズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 1000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "キッズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 7000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "キッズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 3000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "キッズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 1000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "キッズ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 6000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "コスメ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 10000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "コスメ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 1200, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "コスメ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 4000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "コスメ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 1000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シャネル", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 20000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シャネル", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 100000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シャネル", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 7000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シャネル", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 9000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ヴィトン", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 20000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ヴィトン", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 60000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ヴィトン", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 8000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ヴィトン", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 2000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シュプリーム", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 7000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シュプリーム", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 9000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シュプリーム", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 5000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "シュプリーム", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 1000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ナイキ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 300, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ナイキ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 8000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ナイキ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 5000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
+Item.create(name: "ナイキ", detail: "詳細１", condition: "良い", shipping_cost: "着払い", shipping_method: "ゆうパック", shipping_source: "東京都", delivery_date: "１日〜２日", shopping_status: "出品中", price: 3000, tax: 100, profit: 1, status: 1, category_id: 20, user_id: 1, brand_id: 1, size_id: 1)
