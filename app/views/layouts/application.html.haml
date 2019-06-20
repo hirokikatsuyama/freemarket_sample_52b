@@ -5,6 +5,10 @@
     %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
     %title FreemarketSample52b
+    %script{:src => "https://js.pay.jp/", :type => "text/javascript"}
+      :javascript
+        Payjp.setPublicKey('pk_test_a8d83b01f25e72078fc1e347');
+
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'

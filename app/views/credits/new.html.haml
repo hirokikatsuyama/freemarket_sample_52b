@@ -1,72 +1,104 @@
 = render partial: "layouts/header"
 = render partial: "layouts/button"
-.container.clearfix
-  = render partial: "users/side"
-  .container__right2
-    .container__right-top
-      %h1 クレジットカード情報入力
-    .container__right-main
-      .container__right-main-space
-        .credit-info
-          %label カード番号
-          %span.form-require 必須
-          %br/
-          %input.form-require__number{placeholder: "半角数字のみ", value:  ""}/
-          .deadline
-            %ul.signup-card-list
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?4069491723", height: "20",width:"40"
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?4069491723", height: "20",width:"40"
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?4069491723", height: "20",width:"40"
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?4069491723", height: "20",width:"40"
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?4069491723", height: "20",width:"40"
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?4069491723", height: "20",width:"40"
-              %li
-                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?4069491723", height: "20",width:"40"
-          .title-space
-            %label.title-space 有効期限
-            %span.form-require 必須
-            %br/
-            %select{name:"select-time",type: "text"}
-              %option{value:"1"} 01
-              %option{value:"1"} 02
-              %option{value:"1"} 03
-              %option{value:"1"} 04
-              %option{value:"1"} 05
-              %option{value:"1"} 06
-              %option{value:"1"} 07
-              %option{value:"1"} 08
-              %option{value:"1"} 09
-              %option{value:"1"} 10
-              %option{value:"1"} 11
-              %option{value:"1"} 12
-            %span 月
-            %br/
-            %select{name: "select-time",type: "text"}
-              %option{value:"1"} 19
-              %option{value:"1"} 20
-              %option{value:"1"} 21
-              %option{value:"1"} 22
-              %option{value:"1"} 23
-              %option{value:"1"} 24
-              %option{value:"1"} 25
-              %option{value:"1"} 26
-              %option{value:"1"} 27
-              %option{value:"1"} 28
-              %option{value:"1"} 29
-            %span 年
-          %br/
-          %label セキュリティコード
-          %span.form-require 必須
-          %br/
-          %input.form-require__number{maxlength: "4",placeholder: "カード背面3~4桁の番号",value: ""}/
-          = link_to "カード裏面の番号とは？", "#"
-          .credit
-            %button.credit-button 追加する
-= render partial: "layouts/banner"
-= render partial: "layouts/footer"
+%form#charge-form{:action => "/credit/pay", :method => "POST"}
+  %span.charge-errors
+  %h4 支払い
+  %label カード番号
+  %input.number{:maxlength => "16", :name => "number", :placeholder => "カード番号", :type => "text"}/
+  %label CVC
+  %input.cvc{:maxlength => "3", :name => "cvc", :placeholder => "CVC", :type => "text"}/
+  %label 有効期限
+  %input.exp_month{:maxlength => "2", :name => "exp_month", :placeholder => "月", :type => "text"}/
+  %input.exp_year{:maxlength => "4", :name => "exp_year", :placeholder => "年", :type => "text"}/
+  %button{:type => "submit"} 送信
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# = render partial: "layouts/header"
+-# = render partial: "layouts/button"
+-# .container.clearfix
+-#   = render partial: "users/side"
+-#   .container__right2
+-#     .container__right-top
+-#       %h1 クレジットカード情報入力
+-#     .container__right-main
+-#       .container__right-main-space
+-#         .credit-info
+-#           %label カード番号
+-#           %span.form-require 必須
+-#           %br/
+-#           %input.form-require__number#card_number{maxlenght: "16", placeholder: "半角数字のみ", value:  ""}/
+-#           .deadline
+-#             %ul.signup-card-list
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?4069491723", height: "20",width:"40"
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?4069491723", height: "20",width:"40"
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?4069491723", height: "20",width:"40"
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?4069491723", height: "20",width:"40"
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?4069491723", height: "20",width:"40"
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?4069491723", height: "20",width:"40"
+-#               %li
+-#                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?4069491723", height: "20",width:"40"
+-#           .title-space
+-#             %label.title-space 有効期限
+-#             %span.form-require 必須
+-#             %br/
+-#             %select.exp_month#expiration_date_month{maxlength: "2",type: "text"}
+-#               %option{value:"1"} 01
+-#               %option{value:"1"} 02
+-#               %option{value:"1"} 03
+-#               %option{value:"1"} 04
+-#               %option{value:"1"} 05
+-#               %option{value:"1"} 06
+-#               %option{value:"1"} 07
+-#               %option{value:"1"} 08
+-#               %option{value:"1"} 09
+-#               %option{value:"1"} 10
+-#               %option{value:"1"} 11
+-#               %option{value:"1"} 12
+-#             %span 月
+-#             %br/
+-#             %select.exp_year#expiration_date_year{maxlenght: "4", type: "text"}
+-#               %option{value:"1"} 19
+-#               %option{value:"1"} 20
+-#               %option{value:"1"} 21
+-#               %option{value:"1"} 22
+-#               %option{value:"1"} 23
+-#               %option{value:"1"} 24
+-#               %option{value:"1"} 25
+-#               %option{value:"1"} 26
+-#               %option{value:"1"} 27
+-#               %option{value:"1"} 28
+-#               %option{value:"1"} 29
+-#             %span 年
+-#           %br/
+-#           %label セキュリティコード
+-#           %span.form-require 必須
+-#           %br/
+-#           %input.form-require__number#security_code{maxlength: "4", placeholder: "カード背面3~4桁の番号",name: "cvc"}/
+-#           = link_to "カード裏面の番号とは？", "#"
+-#           .credit
+-#             %button.credit-button#charge-form{type: "submit"} 追加する
+-# = render partial: "layouts/banner"
+-# = render partial: "layouts/footer"
+
+
+
