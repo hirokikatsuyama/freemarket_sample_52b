@@ -26,7 +26,7 @@
       position: relative;
       float: left;
       background-color: #fff;
-      & a {
+      a {
         display: block;
         color: #333;
       }
@@ -41,7 +41,7 @@
     overflow: hidden;
     position: relative;
     padding: 0 0 100%;
-    & img {
+    img {
       position: absolute;
       top: 0;
       right: 0;
@@ -74,7 +74,7 @@
         font-weight: 600;
       }
     }
-    & p {
+    p {
       font-size: 10px;
     }
   }
@@ -132,7 +132,7 @@
   &__title {
     text-align: center;
     background-color: #ea352d;
-    & h3 {
+    h3 {
       padding: 16px 8px;
       color: #fff;
       font-size: 22px;
@@ -141,7 +141,7 @@
   &__text {
     padding: 30px;
     background-color: #fff;
-    & p {
+    p {
       line-height: 1.6em;
       font-size: 13px;
     }
