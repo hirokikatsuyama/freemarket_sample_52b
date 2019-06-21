@@ -84,7 +84,7 @@ gem 'payjp'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
-gem 'paperclip'
+# gem 'paperclip'
 gem 'kaminari'
 gem "jquery-rails"
 
