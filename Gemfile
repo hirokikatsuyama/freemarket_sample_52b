@@ -61,7 +61,7 @@ group :development do
 end
 
 group :production do
-  gem 'unicorn', '5.4.1'
+  gem 'unicorn'
 end
 
 group :test do
@@ -80,11 +80,11 @@ gem 'dropzonejs-rails'
 gem 'active_hash'
 gem 'ransack'
 gem 'payjp'
-gem 'fontawesome-rails'
+# gem 'fontawesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
-gem 'paperclip'
+# gem 'paperclip'
 gem 'kaminari'
 gem "jquery-rails"
 
