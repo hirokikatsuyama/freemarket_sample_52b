@@ -19,7 +19,6 @@ $(function(){
       var html = '<select><option value>--</option><option value="1">クロネコヤマト</option><option value="2">ゆうパック</option><option value="3">ゆうメール</option></select>'
       return html;}
 
-
   // #parent-formのid = 大カテゴリプルダウンが選択されたら発火
   $('#parent-form').on("change",function(){
 
@@ -29,7 +28,6 @@ $(function(){
   $('#grand_child').remove();
    // parentValueに、大カテゴリのhtmlの値を代入。
     var parentValue = document.getElementById("parent-form").value;
-
 
   $.ajax({
     //itemsファイルの中のsearch.json.jbuilderを読み込む
@@ -53,11 +51,8 @@ $(function(){
       $('#child').append(option);
     })
 
-
   $("#child").on("change", function(){
-
     var parentValue = document.getElementById("child").value;
-
   $.ajax({
     //itemsファイルの中のsearch.json.jbuilderを読み込む
     url:  '/items/search',
@@ -78,17 +73,9 @@ $(function(){
     //selectタブの中に、optionタブを表示。
       $('#grand_child').append(option);
     })
-
     })
-
   })
   })
   })
-
-
-
-
-
-
 });
 
