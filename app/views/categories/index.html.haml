@@ -1,0 +1,33 @@
+= render partial: "layouts/header"
+= render partial: "layouts/button"
+.categories
+  .categries__inner
+    .categories__inner__head
+      %h2.categories__inner__head__text
+        カテゴリー一覧
+    .categories__inner__menu.clearfix
+      - @parents.each do |parent|
+        = link_to "#parent#{parent.id}", class: "categories__parents", id: "parent" do
+          =parent.name
+    .categories__box
+      - @parents.each do |parent|
+        .categories__box__inner.clearfix
+          .categories__box__inner__head{id: "parent#{parent.id}"}
+            %h3=parent.name
+          .categories__box__inner__list
+            %p
+              =link_to "すべて", "categories/#{parent.id}", class: "categories__link"
+            - parent.children.each do |child|
+              .categories__list.clearfix
+                .categories__list__middle
+                  %h4=child.name
+                .categories__list__small.crearfix
+                  .categories__list__small__name
+                    %p
+                      =link_to "すべて", "categories/#{child.id}", class: "categories__link"
+                  - child.children.each do |grandchild|
+                    .categories__list__small__name
+                      %p
+                        =link_to "#{grandchild.name}", "categories/#{grandchild.id}", class: "categories__link"
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
