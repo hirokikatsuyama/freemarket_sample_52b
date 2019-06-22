@@ -1,0 +1,54 @@
+= render partial: "layouts/header"
+= render partial: "layouts/button"
+.confirmation.clearfix
+  = render partial: "side"
+  .confirmation__main
+    .confirmation__main__inner
+      %h2
+        本人情報の登録
+      %form
+        .confirmation__main__inner__description
+          %p
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.confirmation__main__inner__description__link
+            =link_to "本人確認書類のアップロードについて", "#"
+            %i.fas.fa-angle-right.confirmation__icon
+        .confirmation__form
+          %label お名前
+          %p 名字名前
+        .confirmation__form
+          %label お名前カナ
+          %p ユーザーネーム
+        .confirmation__form
+          %label 生年月日
+          %p 1995/09/26
+        .confirmation__form
+          %label 郵便番号
+          %span.confirmation__form__tips 任意
+          %input.confirmation__form__input{name: "postal", placeholder: "例）1234567", type: "text"}
+        .confirmation__form__prefecture
+          %label 都道府県
+          %span.confirmation__form__tips 任意
+          = select_tag "prefecture", options_for_select([['北海道', '北海道'],['青森県', '青森県'],['岩手県', '岩手県'],['宮城県', '宮城県'],['秋田県', '秋田県'],['山形県', '山形県'],['福島県', '福島県'],['茨城県', '茨城県'],['栃木県', '栃木県'],['群馬県', '群馬県'],['埼玉県', '埼玉県'],['千葉県', '千葉県'],['東京都', '東京都'],['神奈川県', '神奈川県'],['新潟県', '新潟県'],['富山県', '富山県'],['石川県', '石川県'],['福井県', '福井県'],['山梨県', '山梨県'],['長野県', '長野県'],['岐阜県', '岐阜県'],['静岡県', '静岡県'],['愛知県', '愛知県'],['三重県', '三重県'],['滋賀県', '滋賀県'],['京都府', '京都府'],['大阪府', '大阪府'],['兵庫県', '兵庫県'],['奈良県', '奈良県'],['和歌山県', '和歌山県'],['鳥取県', '鳥取県'],['島根県', '島根県'],['岡山県', '岡山県'],['広島県', '広島県'],['山口県', '山口県'],['徳島県', '徳島県'],['香川県', '香川県'],['愛媛県', '愛媛県'],['高知県', '高知県'],['福岡県', '福岡県'],['佐賀県', '佐賀県'],['長崎県', '長崎県'],['熊本県', '熊本県'],['大分県', '大分県'],['宮崎県', '宮崎県'],['鹿児島県', '鹿児島県'],['沖縄県',  '沖縄県']]), {class: "confirmation__form__input", include_blank: true}
+          %i.fas.fa-angle-down.confirmation__form__prefecture__icon
+        .confirmation__form
+          %label 市区町村
+          %span.confirmation__form__tips 任意
+          %input.confirmation__form__input{name: "postal", placeholder: "例) 横浜市緑区", type: "text"}
+        .confirmation__form
+          %label 番地
+          %span.confirmation__form__tips 任意
+          %input.confirmation__form__input{name: "postal", placeholder: "例) 青山1−1−1", type: "text"}
+        .confirmation__form
+          %label 建物名
+          %span.confirmation__form__tips 任意
+          %input.confirmation__form__input{name: "postal", placeholder: "例) 柳ビル103", type: "text"}
+        %button.confirmation__form__button{type: "submit"} 登録する
+        .confirmation__form__about
+          %p.confirmation__main__inner__description__link
+            =link_to "本人情報の登録について", "#"
+            %i.fas.fa-angle-right.confirmation__icon
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
