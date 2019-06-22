@@ -1,0 +1,10 @@
+.itembox__user__goodsbox.clearfix
+  - @user.items.limit(6).each do |item|
+    .itembox__user__goodsbox__item
+      %figure.itembox__user__goodsbox__itemimg
+        -# =image_tag(item.images.first.image, class:"goods__img")
+      .itembox__user__goodsbox__itembody
+        %h3.itembox__user__goodsbox__itembody__name= "#{item.name}"
+        .itembox__user__goodsbox__itembody__num
+          .goodsbox__price= converting(item.price)
+          %p.goodsbox__tax (税込)
