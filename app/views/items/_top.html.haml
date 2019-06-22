@@ -1,5 +1,5 @@
 .top__item__contents__box
-  = link_to items_show_path(top), class: "top__list" do
+  = link_to item_path(top), class: "top__list" do
     .top__list__photo
       = image_tag (top.images.first.image)
     .top__list__description

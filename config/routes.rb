@@ -15,9 +15,7 @@ Rails.application.routes.draw do
   get 'credit/new'
   get 'credit/index'
   get 'purchase/new'
-  get 'items/index'
-  get 'items/new'
-  get 'items/show'
+
 
   resources :items, only: [:index, :new, :create, :show] do
     collection do
