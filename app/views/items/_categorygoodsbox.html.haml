@@ -1,0 +1,9 @@
+.itembox__user__goodsbox.clearfix
+  .itembox__user__goodsbox__item
+    %figure.itembox__user__goodsbox__itemimg
+      -# =image_tag(@items.images.first.image, class:"goods__img")
+    .itembox__user__goodsbox__itembody
+      -# %h3.itembox__user__goodsbox__itembody__name= "#{@items.name}"
+      .itembox__user__goodsbox__itembody__num
+        -# .goodsbox__price= converting(@items.price)
+        %p.goodsbox__tax (税込)

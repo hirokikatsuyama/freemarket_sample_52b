@@ -93,6 +93,8 @@
       }
       & .icon-arrow-right {
         font-family: 'icon-font';
+        font-size: .9em;
+        content: '\e005';
       }
     }
 
@@ -273,6 +275,9 @@
       text-align: right;
       position: relative;
     }
+    & .pre {
+      font-style: normal;
+    }
   }
 
   .itembox__socialmediabox {
@@ -319,29 +324,30 @@
     margin: 0 auto;
     width: 700px;
     height: 1524px;
+    display: flex;
+    flex-wrap: wrap;
     &__mainbox {
       width: 700px;
       overflow: hidden;
-       & h2 {
+      & h2 {
         margin: 24px 0 8px;
         font-size: 22px;
         line-height: 1.4;
-       }
+      }
       &__userprofile {
         color: #0099e8;
       }
     }
     .itembox__user__goodsbox {
       padding: 0;
+      display: inline-block;
       &__item {
-        margin: 0 0 20px 20px;
-        display: block;
+        margin: 0 0 20px 0;
         width: 220px;
         height: 330px;
-        float: left;
       }
       &__item:nth-child(3n+1) {
-        margin: 0 0 20px;
+        margin: 0 0 20px 10px;
       }
       &__itemimg {
         width: 220px;
@@ -360,7 +366,6 @@
         padding: 16px;
         height: 110px;
         background-color: white;
-        display: inline-block;
         color: #333;
         position: relative;      
         &__name {
