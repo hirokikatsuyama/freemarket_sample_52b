@@ -15,9 +15,20 @@ Rails.application.routes.draw do
   get 'credit/new'
   get 'credit/index'
   get 'purchase/new'
-  get 'items/index'
-  get 'items/new'
-  get 'items/show'
+
+  resources :items, only: [:index, :new, :create, :show] do
+    collection do
+      get 'search'
+    end
+  end
+
+  # get 'items/index' => 'items#index'
+  # get 'items/new' => 'items#new'
+
+  # get 'items/search', to: 'items#search'
+  # post 'items' => 'items#create'
+
+  # get 'items/show'
 
   resources :categories, only: [:index, :show]
 

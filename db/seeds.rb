@@ -89,7 +89,7 @@ man_bag.children.create([{name: "ショルダーバッグ"},{name: "トートバ
 man_suit = man.children.create(name: "スーツ")
 man_suit.children.create([{name: "スーツジャケット"},{name: "スーツベスト"},{name: "スラックス"},{name: "セットアップ"},{name: "その他"}])
 
-man_hat = man.children.create(name: "帽子") 
+man_hat = man.children.create(name: "帽子")
 man_hat.children.create([{name: "キャップ"},{name: "ハット"},{name: "ニットキャップ/ビーニー"},{name: "ハンチング/ベレー帽"},{name: "キャスケット"},{name: "サンバイザー"},{name: "その他"}])
 
 man_accessories = man.children.create(name: "アクセサリー")

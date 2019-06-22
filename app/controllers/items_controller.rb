@@ -11,8 +11,29 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @parents = Category.order("id ASC").limit(13)
+    @address = Address.new
+  end
+
+  def create
+    Item.create!(item_params)
+    redirect_to controller: :items, action: :index
   end
 
   def show
+  end
+
+  def search
+    @children = Category.find(params[:parent_id]).children
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :price)
   end
 end
