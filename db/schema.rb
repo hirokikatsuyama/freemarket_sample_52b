@@ -159,7 +159,8 @@ ActiveRecord::Schema.define(version: 2019_06_18_112553) do
     t.string "nickname"
     t.text "avater_image"
     t.string "email"
-    t.string "password_digest"
+    t.string "password"
+    t.string "password_confirmation"
   end
 
   add_foreign_key "addresses", "users"

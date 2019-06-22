@@ -13,17 +13,17 @@
           %tr
             %th 出品者
             %td
-              = link_to "#{@user.nickname}" #"/user/#{current_user.id}"
+              = link_to "#{@user.nickname}" #"users_show_path#{current_user.id}"
               %div
                 .itembox__container__detail__table__ratings
                   %i.far.fa-smile
-                  %span #{@good.count}
+                  %span #{@good.length}
                 .itembox__container__detail__table__ratings
                   %i.far.fa-meh
-                  %span #{@normal.count}
+                  %span #{@normal.length}
                 .itembox__container__detail__table__ratings
                   %i.far.fa-sad-tear
-                  %span #{@bad.count}
+                  %span #{@bad.length}
           %tr
             %th カテゴリー
             %td
@@ -121,7 +121,7 @@
         - @user.items.limit(6).each do |item|
           .itembox__user__goodsbox__item
             %figure.itembox__user__goodsbox__itemimg
-              = image_tag(item.images.first.image, class:"goods__img")
+              -# =image_tag(item.images.first.image, class:"goods__img")
             .itembox__user__goodsbox__itembody
               %h3.itembox__user__goodsbox__itembody__name= "#{item.name}"
               .itembox__user__goodsbox__itembody__num

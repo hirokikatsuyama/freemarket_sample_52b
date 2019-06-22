@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "items#index"
+  root to: "items#show"
   get 'users/sign_up' => 'users#sign_up'
   get 'users/sign_in' => 'users#sign_in'
   get 'users/registration_base' => 'users#registration_base'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'items/index'
   get 'items/new'
   get 'items/show'
+  resources :evaluations, only: :show
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
