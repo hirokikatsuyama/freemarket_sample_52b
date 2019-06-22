@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.order("id ASC").limit(13)
     @address = Address.new
   end
 
@@ -21,13 +21,8 @@ class ItemsController < ApplicationController
     redirect_to controller: :items, action: :index
   end
 
-
-
-
-
   def show
   end
-
 
   def search
     @children = Category.find(params[:parent_id]).children
@@ -36,7 +31,6 @@ class ItemsController < ApplicationController
       format.json
     end
   end
-
 
   private
   def item_params
