@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "items#show"
+  root to: "items#index"
   get 'users/sign_up' => 'users#sign_up'
   get 'users/sign_in' => 'users#sign_in'
   get 'users/registration_base' => 'users#registration_base'
