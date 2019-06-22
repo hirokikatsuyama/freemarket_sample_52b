@@ -19,15 +19,15 @@ $(function(){
       var html = '<select><option value>--</option><option value="1">クロネコヤマト</option><option value="2">ゆうパック</option><option value="3">ゆうメール</option></select>'
       return html;}
 
-    // #parent-formのid = 大カテゴリプルダウンが選択されたら発火
+    //#parent-formのid = 大カテゴリプルダウンが選択されたら発火
     $('#parent-form').on("change",function(){
 
         //中カテゴリが1度選択されたらリセット
         $('#child').remove();
         //小カテゴリが1度選択されたらリセット
         $('#grand_child').remove();
-        // parentValueに、大カテゴリのhtmlの値を代入。
-          var parentValue = document.getElementById("parent-form").value;
+        //parentValueに、大カテゴリのhtmlの値を代入。
+        var parentValue = document.getElementById("parent-form").value;
 
         $.ajax({
           //itemsファイルの中のsearch.json.jbuilderを読み込む
@@ -37,7 +37,8 @@ $(function(){
           data: {parent_id: parentValue },
           dataType: 'json'
         })
-              //発火されたら、「中カテゴリのoptionタブhtml」を引数として受け取る
+
+        //発火されたら、「中カテゴリのoptionタブhtml」を引数として受け取る
         .done(function(cateChild) {
           //htmlは(中カテゴリのselectタブ。)
           var html = buildChild();
@@ -46,11 +47,12 @@ $(function(){
           //optionタブにそれぞれ、中カテゴリの値を入れる。
           cateChild.forEach(function(cateChild){
           //option = (中カテゴリの値)
-            var option = buildOption(cateChild);
+          var option = buildOption(cateChild);
           //selectタブの中に、optionタブを表示。
-            $('#child').append(option);
+          $('#child').append(option);
           })
 
+            //#childのid = 中カテゴリプルダウンが選択されたら発火
             $("#child").on("change", function(){
               var parentValue = document.getElementById("child").value;
                 $.ajax({
@@ -69,9 +71,9 @@ $(function(){
                   //optionタブにそれぞれ、中カテゴリの値を入れる。
                   cateChild.forEach(function(cateChild){
                   //option = (中カテゴリの値)
-                    var option = buildOption(cateChild);
+                  var option = buildOption(cateChild);
                   //selectタブの中に、optionタブを表示。
-                    $('#grand_child').append(option);
+                  $('#grand_child').append(option);
                   })
                 })
             })

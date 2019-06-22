@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
+    Item.create!(item_params)
     redirect_to controller: :items, action: :index
   end
 

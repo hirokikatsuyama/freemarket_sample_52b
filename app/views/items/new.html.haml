@@ -1,6 +1,6 @@
 .single-container
   %header.single-header
-    -# = image_tag 'mercari_logo_horizontal.png', size: "250x70"
+    = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
   %main.single-main
     = form_for(@item) do |f|
       %section.single-main__section
@@ -95,7 +95,7 @@
       .single-footer__section
         %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
         .single-footer__section__img
-          -# = image_tag 'mercari_logo_vertical', size: "88x85"
+          = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
 
 
