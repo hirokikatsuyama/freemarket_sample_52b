@@ -1,4 +1,9 @@
 = render partial: "layouts/header"
+.link__list
+  %ul
+    %li
+      - breadcrumb :category, @category
+      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
 = render partial: "layouts/button"
 .categories__show.clearfix
   .categories__show__inner  
