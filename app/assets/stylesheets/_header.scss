@@ -316,3 +316,36 @@
     }
   }
 }
+
+.link__list {
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul {
+    width: 1020px;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    font-size: 0;
+    li {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      a {
+        color: #333;
+      }
+      span:last-child {
+        font-weight: 600;
+      }
+    }
+  }
+}
+.gretel__icon {
+  margin: 0 8px;
+  font-size: 14px;
+  color: #888;
+}

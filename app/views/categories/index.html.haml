@@ -1,4 +1,9 @@
 = render partial: "layouts/header"
+.link__list
+  %ul
+    %li
+      - breadcrumb :category_index
+      = breadcrumbs separator: " &rsaquo; "
 = render partial: "layouts/button"
 .categories
   .categries__inner
