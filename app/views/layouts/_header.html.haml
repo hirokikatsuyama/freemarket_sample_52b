@@ -2,7 +2,7 @@
   .header__inner
     .header__inner__top
       %h1
-        = link_to "#", class: "title__logo" do
+        = link_to "/", class: "title__logo" do
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613125057"
       %form.keyword__search{:action => "", :method => ""}
         %input.keyword__search__box{:name => "keyword", :placeholder => "何かお探しですか？", :type => "text"}/
@@ -12,9 +12,21 @@
       %nav.header__inner__bottom-left
         %ul.header__inner__bottom-left__box
           %li.header__inner__bottom-left__box__category
-            = link_to "#", class: "category__link" do
+            = link_to "/categories", class: "category__link" do
               %i.material-icons.category format_list_bulleted
               %span カテゴリーから探す
+            %ul
+              -@category_list.each do |parent|
+                %li
+                  =link_to "#{parent.name}", "/categories/#{parent.id}"
+                  %ul
+                    -parent.children.first(14).each do |child|
+                      %li
+                        =link_to "#{child.name}", "/categories/#{child.id}"
+                        %ul
+                          -child.children.first(14).each do |grandchild|
+                            %li
+                              =link_to "#{grandchild.name}", "/categories/#{grandchild.id}"
           %li.header__inner__bottom-left__box__brand
             = link_to "#", class: "brand__link" do
               %i.material-icons.brand local_offer

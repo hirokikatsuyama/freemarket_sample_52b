@@ -29,4 +29,7 @@ class UsersController < ApplicationController
   def sign_up
   end
 
+  def confirmation
+  end
+
 end

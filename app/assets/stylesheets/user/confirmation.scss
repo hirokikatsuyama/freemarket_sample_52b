@@ -1,0 +1,102 @@
+.confirmation {
+  margin: 40px auto 0;
+  width: 1020px;
+  padding-bottom: 40px;
+  &__main {
+    width: 700px;
+    float: right;
+    &__inner {
+      background: #fff;
+      h2 {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+        line-height: 1.4;
+      }
+      form {
+        padding: 64px;
+        border-top: 1px solid #f5f5f5;
+      }
+      &__description {
+        p {
+          margin: 8px 0 0;
+          line-height: 1.5;
+          font-size: 14px;
+        }
+        &__link {
+          text-align: right;
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  &__icon {
+    color: #0099e8;
+  }
+  &__form {
+    margin: 40px 0 0;
+    label {
+      font-weight: 600;
+      display: inline-block;
+      font-size: 14px;
+    }
+    p {
+      margin: 8px 0 0;
+      line-height: 1.5;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    &__tips {
+      background-color: #ccc;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+    }
+    &__input {
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      width: 100%;
+      margin: 8px 0 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    &__button {
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      margin-top: 40px;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+    }
+    &__about {
+      margin: 40px 0 0;
+      text-align: right;
+    }
+    &__prefecture {
+      margin: 40px 0 0;
+      position: relative;
+      &__icon {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 30px;
+        color: #ccc;
+      }
+    }
+  }
+}

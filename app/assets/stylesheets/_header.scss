@@ -66,6 +66,7 @@
         &__box {
           list-style: none;
           height: 44px;
+          position: relative;
           &__category {
             display: inline-block;
             vertical-align: top;
@@ -81,7 +82,6 @@
               text-decoration: none;
               width: 150px;
               height: 44px;
-              position: relative;
               line-height: 32px;
               .material-icons.category {
                 display: inline-block;
@@ -99,6 +99,83 @@
                 left: 21px;
                 font-size: 13px;
                 color: #000;
+              }
+            }
+            ul {
+              display: none;
+              margin: 0px;
+              padding: 0px; 
+              position: absolute;
+              top: 44px;
+              z-index: 1000;
+              background: #fff;
+              box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+             li {
+                width: 224px;
+                font-weight: 400;
+                font-size: 14px;
+               a {
+                  padding: 0 16px;
+                  line-height: 44px;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  display: block;
+                  color: #333;
+                }
+                ul {
+                  display: none;
+                  margin: 0px;
+                  padding: 0px; 
+                  position: absolute;
+                  top: 0;
+                  left: 224px;
+                  bottom: 0;
+                  background: #fff;
+                  box-shadow: 1px 0 0 0 #eee inset;
+                  li {
+                    width: 224px;
+                    a {
+                      padding: 8px 16px;
+                      line-height: 20px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                      font-size: 14px;
+                      display: block;
+                    }
+                    a:hover {
+                      color: #333;
+                    }
+                    ul {
+                      display: none;
+                      margin: 0px;
+                      padding: 0px; 
+                      position: absolute;
+                      top: 0;
+                      left: 224px;
+                      bottom: 0;
+                      background: #fff;
+                      box-shadow: 1px 0 0 0 #eee inset;
+                      li {
+                        width: 320px;
+                        a {
+                          padding: 8px 16px;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          white-space: nowrap;
+                          font-size: 14px;
+                          display: block;
+                        }
+                      }
+                    }
+                  }
+                  li:hover {
+                    background-color: #eee;
+                  }
+                }
+              }
+              li:hover {
+                background-color: #ea352d;
               }
             }
           }
@@ -119,7 +196,7 @@
               height: 44px;
               position: relative;
               line-height: 32px;
-              & i {
+              i {
                 display: inline-block;
                 position: absolute;
                 top: 10px;
@@ -161,7 +238,7 @@
               height: 44px;
               line-height: 32px;
               font-size: 0;
-              & i {
+              i {
                 font-size: 17px;
                 color: rgb(179, 174, 174);
                 vertical-align: middle;
@@ -190,7 +267,7 @@
               height: 44px;
               position: relative;
               line-height: 32px;
-              & i {
+              i {
                 font-size: 16px;
                 color: rgb(179, 174, 174);
                 vertical-align: middle;
@@ -219,7 +296,7 @@
               height: 44px;
               position: relative;
               line-height: 32px;
-              & i {
+              i {
                 display: inline-block;
                 vertical-align: top;
                 color: rgb(179, 174, 174);
@@ -238,4 +315,37 @@
       }
     }
   }
+}
+
+.link__list {
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul {
+    width: 1020px;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    font-size: 0;
+    li {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      a {
+        color: #333;
+      }
+      span:last-child {
+        font-weight: 600;
+      }
+    }
+  }
+}
+.gretel__icon {
+  margin: 0 8px;
+  font-size: 14px;
+  color: #888;
 }
