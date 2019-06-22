@@ -124,6 +124,8 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     haml (5.1.1)
       temple (>= 0.8.0)
       tilt
@@ -362,6 +364,7 @@ DEPENDENCIES
   dropzonejs-rails
   factory_bot_rails
   faker
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -383,7 +386,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
-  unicorn (= 5.4.1)
+  unicorn
   web-console (>= 3.3.0)
 
 RUBY VERSION
