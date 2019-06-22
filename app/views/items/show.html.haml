@@ -117,8 +117,8 @@
   .itembox__user__profile
     .itembox__user__profile__mainbox
       %h2=link_to "#{@user.nickname}さんのその他の出品", "#"
-      = render partial: "items/usergoodsbox"
+      = render partial: "items/usergoodsbox", collection:@user.items
       %h2=link_to "#{@category.name}", "#"
-      = render partial: "items/categorygoodsbox"
+      = render partial: "items/categorygoodsbox", collection:@category.items
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
