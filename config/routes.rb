@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'users/registration_address' => 'users#registration_address'
   get 'users/registration_payment' => 'users#registration_payment'
   get 'users/registration_completion' => 'users#registration_completion'
+  get 'users/confirmation' => 'users#confirmation'
 
   get 'users/edit'
   get 'users/show'
