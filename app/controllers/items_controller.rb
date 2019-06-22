@@ -13,9 +13,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @parents = Category.all.order("id ASC").limit(13)
-    # @price = Price.new
-    # @tax = @price * 0.1
-    # @profit = @price * 0.9
+    @address = Address.new
   end
 
   def create
