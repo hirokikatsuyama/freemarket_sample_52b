@@ -21,7 +21,7 @@
             %h3=parent.name
           .categories__box__inner__list
             %p
-              =link_to "すべて", "categories/#{parent.id}", class: "categories__link"
+              =link_to "すべて", "#{parent.id}", class: "categories__link"
             - parent.children.each do |child|
               .categories__list.clearfix
                 .categories__list__middle
@@ -29,10 +29,10 @@
                 .categories__list__small.crearfix
                   .categories__list__small__name
                     %p
-                      =link_to "すべて", "categories/#{child.id}", class: "categories__link"
+                      =link_to "すべて", "#{child.id}", class: "categories__link"
                   - child.children.each do |grandchild|
                     .categories__list__small__name
                       %p
-                        =link_to "#{grandchild.name}", "categories/#{grandchild.id}", class: "categories__link"
+                        =link_to "#{grandchild.name}", "#{grandchild.id}", class: "categories__link"
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
