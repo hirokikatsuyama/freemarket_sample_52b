@@ -92,3 +92,5 @@ gem 'ancestry'
 gem 'ransack'
 
 gem 'gretel'
+gem 'bcrypt'
+
