@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @parents = Category.order("id ASC").limit(13)
-    @address = Address.new
   end
 
   def create
@@ -40,7 +39,7 @@ class ItemsController < ApplicationController
   end
 
   private
-  def item_params
-    params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :price)
+    def item_params
+      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []})
+    end
   end
-end
