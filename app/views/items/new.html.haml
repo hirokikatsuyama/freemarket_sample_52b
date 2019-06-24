@@ -39,6 +39,12 @@
               .select-wrap
               .select-wrap2
           .single-main__section__item--detail__pulldown__one
+            %label.normal-label ブランド
+            %span.form-any 任意
+            .single-main__section__item--detail__pulldown__one__tab
+              =f.label :brand_id do
+                =f.text_field :brand_id, class: "form__brand", placeholder: "例）シャネル"
+          .single-main__section__item--detail__pulldown__one
             %label.normal-label 商品の状態
             %span.form-require 必須
             .single-main__section__item--detail__pulldown__one__tab
