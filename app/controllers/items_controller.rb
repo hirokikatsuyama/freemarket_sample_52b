@@ -29,6 +29,13 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(1)
+    @user = @item.user
+    @category = @item.category
+    @brand = @item.brand
+    @good = Evaluation.evaluation(1, @user)
+    @normal = Evaluation.evaluation(2, @user)
+    @bad = Evaluation.evaluation(3, @user)
   end
 
   def search
