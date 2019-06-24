@@ -7,7 +7,7 @@ class Prefecture < ActiveHash::Base
       {name: '東京都'}, {name: '神奈川県'}, {name: '新潟県'},
       {name: '富山県'}, {name: '石川県'}, {name: '福井県'},
       {name: '山梨県'}, {name: '長野県'}, {name: '岐阜県'},
-      {name: '静岡県'}, {iname: '愛知県'}, {name: '三重県'},
+      {name: '静岡県'}, {name: '愛知県'}, {name: '三重県'},
       {name: '滋賀県'}, {name: '京都府'}, {name: '大阪府'},
       {name: '兵庫県'}, {name: '奈良県'}, {name: '和歌山県'},
       {name: '鳥取県'}, {name: '島根県'}, {name: '岡山県'},
