@@ -471,3 +471,4 @@ Size.create(name: "XL(LL)")
 Size.create(name: "2XL(3L)")
 Size.create(name: "3XL(4L)")
 Size.create(name: "4XL(5L)以上")
+

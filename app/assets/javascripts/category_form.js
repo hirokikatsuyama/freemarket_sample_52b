@@ -76,7 +76,6 @@ $(function(){
                   $('#grand_child').append(option);
                   })
                 })
-                $('.hide__form').show();
             })
         })
     })

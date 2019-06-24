@@ -11,8 +11,8 @@
           %span.form-require 必須
           %p 最大10枚までアップロードできます
           .single-main__section__picture__uploader
-            =label :images, "", for: "item_images" do
-              =f.file_field :images, class: "single", style: "display: none;"
+            =f.label :images do
+              =f.file_field :images, multiple: true, class: "single", style: "display: none;"
               %p
                 ドラッグアンドドロップ
                 %br>/
@@ -38,6 +38,7 @@
                 = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
               .select-wrap
               .select-wrap2
+          .single-main__section__item--detail__pulldown__one
           .single-main__section__item--detail__pulldown__one.hide__form
             %label.normal-label サイズ
             %span.form-require 必須
@@ -54,7 +55,7 @@
             %span.form-require 必須
             .single-main__section__item--detail__pulldown__one__tab
               =f.label :condition do
-                =f.select :condition, [["--", ""], ["新品、未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし", "3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"], ["全体的に状態が悪い", "6"]], {class: 'select--booox'}
+                =f.select :condition, [["--"], ["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {class: 'select--booox'}
         .single-main__section__delivery
           %h3.gray-title 配送について
           .single-main__section__delivery__pulldown
@@ -63,7 +64,7 @@
               %span.form-require 必須
               .single-main__section__delivery__pulldown__one__tab
                 =f.label :shipping_cost do
-                  =f.select :shipping_cost, [["--", ""], ["送料込み(出品者負担)", "1"], ["着払い(購入者負担)", "2"]], id: "pulu"
+                  =f.select :shipping_cost, [["--"], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]], id: "pulu"
                   .pulu2
           .single-main__section__delivery__pulldown__one
             %label.normal-label 配送元の地域
@@ -75,7 +76,7 @@
             %span.form-require 必須
             .single-main__section__delivery__pulldown__one__tab
               =f.label :delivery_date do
-                =f.select :delivery_date, [["--", ""], ["1~2日で発送", "1"], ["2~3日で発送", "2"], ["4~7日で発送", "3"]], {class: 'select--booox'}
+                =f.select :delivery_date, [["--"], ["1~2日で発送"], ["2~3日で発送"], ["4~7日で発送"]], {class: 'select--booox'}
         .single-main__section__price
           %h3.gray-title 販売価格(300〜9,999,999)
           %ul.single-main__section__price__sell-form
@@ -101,7 +102,6 @@
           .single-main__section__exhibition__button
             = f.submit "出品する" , class: "single-main__section__exhibition__button__exhibition"
             %button.single-main__section__exhibition__button__return もどる
-
     %footer.single-footer
       .single-footer__section
         %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記

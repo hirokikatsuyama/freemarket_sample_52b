@@ -13,8 +13,8 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @parents = Category.order("id ASC").limit(13)
-    @address = Address.new
     @sizes = Size.all
+
   end
 
   def create
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     else
       params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
     end
-    
+
     Item.create!(item_params)
     redirect_to controller: :items, action: :index
   end
@@ -48,7 +48,12 @@ class ItemsController < ApplicationController
   end
 
   private
-  def item_params
-    params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :price, :brand_id, :size_id)
+
+    def item_params
+      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id)
+    end
   end
-end
+  end
+
+
+
