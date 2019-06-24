@@ -39,6 +39,12 @@
               .select-wrap
               .select-wrap2
           .single-main__section__item--detail__pulldown__one
+          .single-main__section__item--detail__pulldown__one.hide__form
+            %label.normal-label サイズ
+            %span.form-require 必須
+            .single-main__section__item--detail__pulldown__one__tab
+              =f.collection_select :size_id, @sizes, :id, :name,{prompt: "---"},{class: 'select--booox', required:"required"}
+          .single-main__section__item--detail__pulldown__one.hide__form
             %label.normal-label ブランド
             %span.form-any 任意
             .single-main__section__item--detail__pulldown__one__tab
@@ -96,7 +102,6 @@
           .single-main__section__exhibition__button
             = f.submit "出品する" , class: "single-main__section__exhibition__button__exhibition"
             %button.single-main__section__exhibition__button__return もどる
-
     %footer.single-footer
       .single-footer__section
         %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
