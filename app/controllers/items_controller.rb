@@ -13,6 +13,8 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @parents = Category.order("id ASC").limit(13)
+    @sizes = Size.all
+
   end
 
   def create
@@ -46,9 +48,9 @@ class ItemsController < ApplicationController
   end
 
   private
-
     def item_params
       params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id)
     end
   end
+
 
