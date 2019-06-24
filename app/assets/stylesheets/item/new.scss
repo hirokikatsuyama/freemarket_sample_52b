@@ -248,10 +248,17 @@ body{
           border-bottom: solid 1px #ccc;
           padding:24px 0;
           margin-bottom:28px;
+          &__feebox{
+            float: right;
+          }
         }
         &__profit{
           height:48px;
           margin-bottom:28px;
+          &__pricebox {
+            float: right;
+            font-size: 34px;
+          }
         }
       }
     }
