@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'users/registration_payment' => 'users#registration_payment'
   get 'users/registration_completion' => 'users#registration_completion'
   get 'users/confirmation' => 'users#confirmation'
-
   post 'users/registration_base' => 'users#create'
   get 'sessions/sign_in' => 'sessions#sign_in'
   post 'sessions/create' =>'sessions#create'
@@ -15,26 +14,15 @@ Rails.application.routes.draw do
   get 'users/edit'
   get 'users/show'
   get 'users/logout'
-
-  get 'credit/new'
-  get 'credit/index'
-  get 'purchase/new'
-
-
+  # resources :users, only: [:sign_up, :registration_base, :registration_phone, :registration_address, :registration_payment, :registration_completion, :confirmation, :registration_base, :edit, :show, :logout]
+  # resources :sessions, only: [:sign_in, :create, :destroy]
+  resources :credits, only: [:index, :new]
+  resources :purchase, only: [:new]
   resources :items, only: [:index, :new, :create, :show] do
     collection do
       get 'search'
     end
   end
-
-  # get 'items/index' => 'items#index'
-  # get 'items/new' => 'items#new'
-
-  # get 'items/search', to: 'items#search'
-  # post 'items' => 'items#create'
-
-  # get 'items/show'
-
   resources :categories, only: [:index, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

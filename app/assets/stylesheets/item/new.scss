@@ -36,6 +36,18 @@ body{
   color: #fff;
   font-weight: 600;
 }
+.form-any {
+  background:#ccc;
+  font-size:12px;
+  padding-top:3px;
+  padding-bottom:3px;
+  padding-left:4px;
+  padding-right:4px;
+  margin: 0 0 0 8px;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: 600;
+}
 .single-main h2{
   font-size:22px;
   color:#333;
@@ -62,6 +74,18 @@ body{
   padding:10px;
   margin-bottom:40px;
   font-size:16px;
+  &__brand {
+    height:50px;
+    width:400px;
+    margin: 0.5em 0;
+    background: #FFF;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    color:#ccc;
+    padding:10px;
+    margin-bottom:40px;
+    font-size:16px;
+  }
 }
 .form-detail{
   height:142px;
