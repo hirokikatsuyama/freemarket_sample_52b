@@ -186,9 +186,6 @@ ActiveRecord::Schema.define(version: 2019_06_24_060946) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  end
-
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "brands_groups"
   add_foreign_key "comments", "items"
