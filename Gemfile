@@ -93,4 +93,5 @@ gem 'ransack'
 
 gem 'gretel'
 gem 'bcrypt'
+gem 'carrierwave'
 
