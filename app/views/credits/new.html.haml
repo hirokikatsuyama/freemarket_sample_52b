@@ -1,16 +1,16 @@
 = render partial: "layouts/header"
 = render partial: "layouts/button"
-%form#charge-form{:action => "/credit/pay", :method => "POST"}
+%form#charge-form{:controller => :credit, :action => :pay, :method => "POST"}
   %span.charge-errors
   %h4 支払い
   %label カード番号
-  %input.number{:maxlength => "16", :name => "number", :placeholder => "カード番号", :type => "text"}/
+  %input#card_number{:maxlength => "16", :name => "card_number", :placeholder => "カード番号", :type => "text"}/
   %label CVC
-  %input.cvc{:maxlength => "3", :name => "cvc", :placeholder => "CVC", :type => "text"}/
+  %input#cvc{:maxlength => "3", :name => "cvc", :placeholder => "CVC", :type => "text"}/
   %label 有効期限
-  %input.exp_month{:maxlength => "2", :name => "exp_month", :placeholder => "月", :type => "text"}/
-  %input.exp_year{:maxlength => "4", :name => "exp_year", :placeholder => "年", :type => "text"}/
-  %button{:type => "submit"} 送信
+  %input#exp_month{:maxlength => "2", :name => "exp_month", :placeholder => "月", :type => "text"}/
+  %input#exp_year{:maxlength => "4", :name => "exp_year", :placeholder => "年", :type => "text"}/
+  %button#charge-form-button{:type => "submit" } 送信
 
 
 
@@ -102,3 +102,4 @@
 
 
 
+    -# %form#charge-form{:action => "/credit/pay", :method => "POST"}
