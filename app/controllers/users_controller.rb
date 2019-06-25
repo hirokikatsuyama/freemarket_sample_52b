@@ -1,12 +1,26 @@
 class UsersController < ApplicationController
   before_action :move_to_log_in, only: [:show]
 
-  def create
+  def sign_in
+  end
+
+  def create_sign_up
     @user = User.new(user_params)
     if @user.save
       redirect_to root_path
     else
       render action: "registration_base"
+    end
+  end
+
+  def create_sign_in
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      redirect_to root_path
+    else
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'sign_in'
     end
   end
 

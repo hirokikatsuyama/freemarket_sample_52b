@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   root to: "items#index"
-  post 'users/registration_base' => 'users#create'
-  get 'sessions/sign_in' => 'sessions#sign_in'
-  post 'sessions/create' =>'sessions#create'
+  post 'users/registration_base' => 'users#create_sign_up'
+  post 'users/create' =>'users#create_sign_in'
   delete 'sessions/destroy' => 'sessions#destroy'
-  # resources :users, only: [:sign_up, :registration_base, :registration_phone, :registration_address, :registration_payment, :registration_completion, :confirmation, :registration_base, :edit, :show, :logout]
-  # resources :sessions, only: [:sign_in, :create, :destroy]
+
   resources :credits, only: [:index, :new]
   resources :purchase, only: [:new]
 
@@ -20,6 +18,7 @@ Rails.application.routes.draw do
       get 'registration_payment'
       get 'registration_completion'
       get 'confirmation'
+      get 'sign_in'
     end
   end
 
