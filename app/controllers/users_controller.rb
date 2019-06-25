@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create_sign_up
     @user = User.new(user_params)
     if @user.save
+      log_in(@user)
       redirect_to root_path
     else
       render action: "registration_base"
