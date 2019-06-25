@@ -1,11 +1,43 @@
 class UsersController < ApplicationController
+  before_action :move_to_log_in, only: [:show]
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to root_path
+    else
+      render action: "registration_base"
+    end
+  end
+
   def edit
   end
 
   def show
   end
 
-  def logout
+  def sign_up
+  end
+
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
+  def logged_in?
+    !current_user.nil?
+  end
+
+  def log_out_page
+  end
+
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
+    redirect_to root_path
   end
 
   def registration_base
@@ -25,16 +57,7 @@ class UsersController < ApplicationController
   def registration_completion
   end
 
-  def sign_up
-  end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path
-    else
-      render action: "registration_base"
-    end
+  def confirmation
   end
 
   private
@@ -43,7 +66,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :email, :password, :password_confirmation, profile_attributes:[:id, :first_name, :family_name, :first_name_kana, :family_name_kana])
   end
 
-  def confirmation
+  def move_to_log_in
+    redirect_to controller: "sessions", action: "sign_in" unless logged_in?
   end
-
 end

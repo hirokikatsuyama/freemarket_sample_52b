@@ -31,6 +31,7 @@
             = link_to "#", class: "brand__link" do
               %i.material-icons.brand local_offer
               %span ブランドから探す
+    - if logged_in?
       .header__inner__bottom-right
         %ul.header__inner__bottom-right__box
           %li.header__inner__bottom-right__box__notice
@@ -42,6 +43,16 @@
               %i.fas.fa-check
               %span やることリスト
           %li.header__inner__bottom-right__box__mypage
-            = link_to "#", class: "mypage__link" do
+            = link_to "/users/#{current_user.id}", class: "mypage__link" do
               %i.fas.fa-user-circle
               %span マイページ
+    - else
+      .header__inner__bottom-right
+        %ul.header__inner__bottom-right__box
+          %li.header__inner__bottom-right__box__sign-up
+            = link_to "/users/sign_up", class: "sign-up__link" do
+              %span 新規会員登録
+          %li.header__inner__bottom-right__box__log-in
+            = link_to "/sessions/sign_in", class: "log-in__link" do
+              %span ログイン
+

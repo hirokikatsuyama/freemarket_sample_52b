@@ -57,15 +57,15 @@
       }
     }
     &__bottom {
-      height: 44px;
-      margin-top: 8px;
+      height: 5px;
+      margin-top: 7px;
       list-style: none;
       &-left {
         float: left;
         height: 44px;
         &__box {
           list-style: none;
-          height: 44px;
+          height: 5px;
           position: relative;
           &__category {
             display: inline-block;
@@ -308,6 +308,63 @@
                 margin-left: 10px;
                 font-size: 14px;
                 color: #000;
+              }
+            }
+          }
+          &__sign-up {
+            display: inline-block;
+            vertical-align: top;
+            width: 126px;
+            height: 44px;
+            padding-left: 50px;
+            cursor: pointer;
+            .sign-up__link {
+              position: relative;
+              display: block;
+              font-size:0;
+              text-decoration: none;
+              width: 106px;
+              height: 32px;
+              position: relative;
+              line-height: 32px;
+              background-color: #ea352d;
+              border: 1px solid #ea352d;
+              border-radius: 6px;
+              span {
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 10px;
+                font-size: 14px;
+                color: #fff;
+
+              }
+            }
+          }
+          &__log-in {
+            display: inline-block;
+            vertical-align: top;
+            width: 126px;
+            height: 44px;
+            padding-left: 48px;
+            cursor: pointer;
+            .log-in__link {
+              position: relative;
+              display: block;
+              font-size:0;
+              text-decoration: none;
+              width: 78px;
+              height: 32px;
+              position: relative;
+              line-height: 32px;
+              border: 1px solid #0099e8;
+              border-radius: 6px;
+              background-color: #fff;
+              span {
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 10px;
+                font-size: 14px;
+                color: #0099e8;
               }
             }
           }
