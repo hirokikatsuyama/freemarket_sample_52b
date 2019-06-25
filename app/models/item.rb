@@ -21,4 +21,4 @@ class Item < ApplicationRecord
   #carria wave
   mount_uploaders :images, ImageUploader
 
-
+end

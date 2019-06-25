@@ -14,17 +14,14 @@ class ItemsController < ApplicationController
     @item = Item.new
     @parents = Category.order("id ASC").limit(13)
     @sizes = Size.all
-
   end
 
   def create
-
     if brand = Brand.find_by(name: params[:item][:brand_id])
       params[:item][:brand_id] = brand.id
     else
       params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
     end
-
     Item.create!(item_params)
     redirect_to controller: :items, action: :index
   end
@@ -48,11 +45,9 @@ class ItemsController < ApplicationController
   end
 
   private
-
     def item_params
       params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id)
     end
-  end
   end
 
 
