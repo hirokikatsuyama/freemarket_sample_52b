@@ -27,8 +27,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(1)
+    @item = Item.find(39)
     @user = @item.user
+    @image = @item.images
     @category = @item.category
     @brand = @item.brand
     @good = Evaluation.evaluation(1, @user)
