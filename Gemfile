@@ -94,4 +94,6 @@ gem 'ransack'
 gem 'gretel'
 gem 'bcrypt'
 gem 'carrierwave'
+gem 'fog-aws'
+
 
