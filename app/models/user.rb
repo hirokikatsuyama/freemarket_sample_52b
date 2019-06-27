@@ -27,20 +27,5 @@ class User < ApplicationRecord
   has_one :credit
   has_many :sns_credentials, dependent: :destroy
   accepts_nested_attributes_for :sns_credentials
-
-  def self.from_omniauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
-
-    unless user
-      user = User.create(
-        uid:      auth.uid,
-        provider: auth.provider,
-        name:     auth.info.name,
-        email:    auth.info.email,
-        password: Devise.friendly_token[0, 20]
-      )
-    end
-
-    return user
-  end
+  
 end

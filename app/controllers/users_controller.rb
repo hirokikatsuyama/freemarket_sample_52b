@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to root_path
     else
-      render action: "registration_base"
+      render action: "registration_sns"
     end
   end
 
