@@ -26,6 +26,20 @@ class ItemsController < ApplicationController
     redirect_to controller: :items, action: :index
   end
 
+  def edit
+    @parents = Category.order("id ASC").limit(13)
+    @sizes = Size.all
+  end
+
+  def update
+    if @item.user_id == current_user.id
+       @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def show
     @item = Item.find(39)
     @user = @item.user
@@ -49,7 +63,10 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id, :size_id)
     end
-  end
 
+    def set_item
+      @item = Item.find(params[:id])
+    end
+  end
 
 
