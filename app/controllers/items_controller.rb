@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:show, :destroy]
+
   def index
     @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).order(created_at: "DESC").limit(4)
     @man_items = Item.includes(:images).where(category_id: Category.find(2).subtree_ids).order(created_at: "DESC").limit(4)
@@ -30,7 +33,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(1)
     @user = @item.user
     @category = @item.category
     @brand = @item.brand
@@ -48,13 +50,19 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy if current_user == user_id
-    redirect_to root_path
+    if @item.destroy == current_user == user_id
+      redirect_to root_path
+    else
+      redirect_to root_path alert: "エラーが発生しました。"
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :price, :brand_id, :size_id)
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+  
 end
