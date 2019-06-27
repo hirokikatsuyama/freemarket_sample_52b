@@ -24,33 +24,67 @@
       margin: 10px auto;
       padding-top: 64px;
       .button-mail {
-        margin-bottom: 15px;
         width: 100%;
         font-size: 14px;
-        background-color: #eee;
+        background-color: #ea352d;
         height: 48px;
         border: 1px solid transparent;
         text-align: center;
+        color: #fff;
+        border-radius: 4px;
       }
       .button-facebook {
-        margin-bottom: 15px;
+        display: block;
+        text-align: center;
+        margin-top: 16px;
         width: 100%;
         color: white;
         font-size: 14px;
         background-color: #385185;
         height: 48px;
-        text-align: center;
-        border: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        &__icon {
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 16px;
+        }
       }
       .button-google {
-        margin-bottom: 15px;
+        display: block;
+        line-height: 48px;
+        text-align: center;
+        margin-top: 16px;
         width: 100%;
         font-size: 14px;
         height: 48px;
-        border: 1px solid transparent;
-        text-align: center;
         border: #979797 solid 1px;
+        cursor: pointer;
+        border-radius: 4px;
       }
+      // .button-facebook {
+      //   margin-bottom: 15px;
+      //   width: 100%;
+      //   color: white;
+      //   font-size: 14px;
+      //   background-color: #385185;
+      //   height: 48px;
+      //   text-align: center;
+      //   border: none;
+      // }
+      // .button-google {
+      //   display: block;
+      //   margin-bottom: 15px;
+      //   width: 100%;
+      //   font-size: 14px;
+      //   height: 48px;
+      //   border: 1px solid transparent;
+      //   text-align: center;
+      //   border: #979797 solid 1px;
+      // }
     }
   }
 }

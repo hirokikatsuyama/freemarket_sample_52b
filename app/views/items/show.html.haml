@@ -6,13 +6,20 @@
     .itembox__container__detail--main.clearfix
       .itembox__container__photobox#wrap
         %ul#slider
-          - @item.images.each do |image|
+          - @image.each do |image|
             %li.itembox__container__photobox__img
-              -# = image_tag(image.image, class:"itembox__container__photobox__img__photo")
+
+             
+              = image_tag(image.url, class:"itembox__container__photobox__img__photo")
+
         %ul#itembox__container__small__photobox
-          - @item.images.each do |image|
+          - @image.each do |image|
             %li.itembox__container__small__photobox__img
-              -# = image_tag(image.image, class: "itembox__container__small__photobox__img__photo") 
+
+              
+
+              = image_tag(image.url, class: "itembox__container__small__photobox__img__photo") 
+
       %table.itembox__container__detail__table
         %tbody
           %tr
@@ -122,7 +129,7 @@
   .itembox__user__profile
     .itembox__user__profile__mainbox
       %h2=link_to "#{@user.nickname}さんのその他の出品", "#"
-      = render partial: "items/usergoodsbox", collection:@user.items.limit(6)
+      = render partial: "items/usergoodsbox", collection:@user.items.limit(6), :as => "items"
       %h2=link_to "#{@category.name}", "#"
       = render partial: "items/categorygoodsbox", collection:@category.items.limit(6)
 = render partial: "layouts/banner"

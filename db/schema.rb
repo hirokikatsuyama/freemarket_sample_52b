@@ -163,6 +163,15 @@ ActiveRecord::Schema.define(version: 2019_06_25_064520) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "uid"
+    t.string "provider"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -199,6 +208,7 @@ ActiveRecord::Schema.define(version: 2019_06_25_064520) do
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "transactions", "items"
   add_foreign_key "transactions", "users", column: "buyer_id"
   add_foreign_key "transactions", "users", column: "seller_id"

@@ -16,9 +16,6 @@ class Item < ApplicationRecord
     user.items.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
   end
 
-  #active_starage
-  # has_many_attached :images
-  #carria wave
   mount_uploaders :images, ImageUploader
 
 end
