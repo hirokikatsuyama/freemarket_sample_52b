@@ -1,3 +1,4 @@
+%script{src: "dropzone.js"}
 .single-container
   %header.single-header
     = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
@@ -10,13 +11,16 @@
           %label#large-label 出品画像
           %span.form-require 必須
           %p 最大10枚までアップロードできます
-          .single-main__section__picture__uploader
-            =f.label :images do
-              =f.file_field :images, multiple: true, class: "single", style: "display: none;"
-              %p
-                ドラッグアンドドロップ
-                %br>/
-                またはクリックしてファイルをアップロード
+          .all-gazo
+            .uploader-5#preview
+            .single-main__section__picture__uploader
+              =f.label :images , id: "files" do
+                =f.file_field :images, multiple: true, class: "single1", style: "display: none;", onchange: "previewFile()"
+                .single-main__section__picture__uploader__font
+                  %p
+                  ドラッグアンドドロップまたは
+                  %br
+                  クリックしてファイルをアップロード
         .single-main__section__item--name
           .form-group
             %label.normal-label 商品名
@@ -108,5 +112,4 @@
         .single-footer__section__img
           = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
-
 
