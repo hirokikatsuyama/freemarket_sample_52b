@@ -7,8 +7,8 @@
     .sign-in__content__main
       = form_for(:session, url: users_create_path) do |f|
         .sign-in__content__main__button
-          %button.button-facebook{href: "#", type: "button"} Facebookでログイン
-          %button.button-google{href: "#", type: "button"} Googleでログイン
+          %button.button-facebook{onclick: "location.href='/auth/facebook'", type: "button"} Facebookでログイン
+          %button.button-google{onclick: "location.href='/auth/google_oauth2'", type: "button"} Googleでログイン
         .sign-in__content__main__input
           = f.email_field :email, class: 'sign-in__content__main__mail', placeholder: 'メールアドレス'
           = f.password_field :password, class: 'sign-in__content__main__password', placeholder: 'パスワード'

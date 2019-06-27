@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "items#index"
   post 'users/registration_base' => 'users#create_sign_up'
+  post 'users/registration_sns' => 'users#create_sns'
   post 'users/create' =>'users#create_sign_in'
   delete 'sessions/destroy' => 'sessions#destroy'
 
@@ -19,8 +20,12 @@ Rails.application.routes.draw do
       get 'registration_completion'
       get 'confirmation'
       get 'sign_in'
+      get 'registration_sns'
     end
   end
+ 
+  get 'auth/:provider/callback', to: 'users#registration_sns'
+  get 'auth/failure', to: 'users#sign_in'
 
   resources :items, only: [:index, :new, :create, :show] do
     collection do

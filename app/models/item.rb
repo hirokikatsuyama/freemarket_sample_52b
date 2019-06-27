@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   has_many :likes
   has_many :comments
+  has_many :images
   
   has_many :transactions
 

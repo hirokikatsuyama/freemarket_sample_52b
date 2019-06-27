@@ -34,5 +34,11 @@ describe User do
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
+
+    it "is invalid if password is less than 6 charscters" do
+      user = build(:user, password: nil)
+      user.valid?
+      expect(user.errors[:password]).to include("can't be blank")
+    end
   end
 end
