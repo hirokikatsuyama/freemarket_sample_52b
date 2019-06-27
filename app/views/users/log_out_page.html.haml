@@ -6,6 +6,8 @@
     .logout__right__box
       %form.logout__form
         .logout__form__box
-          %button.logout__form__box__button{type: "submit"} ログアウト
+          = link_to "ログアウト", log_out_users_path, method: :delete, class: "logout__form__box__button"
+
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
+

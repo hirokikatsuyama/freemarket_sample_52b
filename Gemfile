@@ -49,6 +49,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -81,7 +83,6 @@ gem 'active_hash'
 gem 'ransack'
 gem 'payjp'
 # gem 'fontawesome-rails'
-gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 # gem 'paperclip'
@@ -93,4 +94,11 @@ gem 'ransack'
 
 gem 'gretel'
 gem 'bcrypt'
+gem 'carrierwave'
+gem 'fog-aws'
 
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dropzonejs-rails'
