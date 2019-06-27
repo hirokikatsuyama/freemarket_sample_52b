@@ -19,6 +19,7 @@
             %th 出品者
             %td
               = link_to "#{@user.nickname}" #"users_show_path#{current_user.id}"
+              //他人のitem/showページにのみ表示  
               %div
                 .itembox__container__detail__table__ratings
                   %i.far.fa-smile
@@ -29,6 +30,7 @@
                 .itembox__container__detail__table__ratings
                   %i.far.fa-sad-tear
                   %span #{@bad.length}
+              ////
           %tr
             %th カテゴリー
             %td
@@ -71,6 +73,8 @@
       %button.itembox__container__buybtn 購入画面に進む
     .itembox__container__discription
       %p.itembox__container__discription__exprain= "#{@item.detail}"
+
+    //他人のitem/showページにのみ表示  
     .itembox__container__btnbox.clearfix
       .itembox__container__btnbox__left
         %button.itembox__container__btnbox__left__likebtn
@@ -86,6 +90,35 @@
           %i.fas.fa-lock
         = link_to "https://www.mercari.com/jp/safe/description/" do
           %span.itembox__container__btnbox__right__policy あんしん・あんぜんへの取り組み
+    ////
+
+  //current_userのitem/showページにのみ表示
+  .itembox__editbox
+    = link_to "#" do
+      %button.itembox__editbox__editbtn 商品の編集
+    .itembox__editbox__or or
+    = link_to "#" do
+      %button.itembox__editbox__stopbtn 出品を一旦停止する
+    = link_to "#" do
+      %button.itembox__editbox__deletebtn#open この商品を削除する
+
+    //モーダル
+  #overlay
+    #modalwindow
+      .modalbody
+        #text 確認
+        #text 削除すると二度と復活できません。
+        #text 削除する代わりに停止することもできます。
+        #text 本当に削除しますか？　
+      .modalbtns
+        %button#close キャンセル
+        %button#delete_item{onclick: "location.href='/'"} 削除する
+
+    -# #modalwindow2
+    -#   #modalbelete_notice 
+    -#     .text 出品を削除しました。
+  ////
+
   .itembox__message
     .itembox__message__content
       %form.itembox__message__content__form
@@ -127,3 +160,4 @@
       = render partial: "items/categorygoodsbox", collection:@category.items.limit(6)
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
+
