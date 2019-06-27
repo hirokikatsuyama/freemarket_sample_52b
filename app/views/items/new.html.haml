@@ -39,7 +39,7 @@
               %label.normal-label カテゴリー
               %span.form-require 必須
               .single-main__section__item--detail__pulldown__one__tab
-                = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+                = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
               .select-wrap
               .select-wrap2
           .single-main__section__item--detail__pulldown__one
