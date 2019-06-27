@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
   def update
     if @item.user_id == current_user.id
        @item.update(item_params)
-      redirect_to root_path
+       redirect_to root_path
     else
       render :edit
     end
