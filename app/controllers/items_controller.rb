@@ -27,8 +27,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(1)
+    @item = Item.find(39)
     @user = @item.user
+    @image = @item.images
     @category = @item.category
     @brand = @item.brand
     @good = Evaluation.evaluation(1, @user)
@@ -46,7 +47,7 @@ class ItemsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id)
+      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id, :size_id)
     end
   end
 

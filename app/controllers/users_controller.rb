@@ -6,11 +6,24 @@ class UsersController < ApplicationController
 
   def create_sign_up
     @user = User.new(user_params)
-    if @user.save
+    if @user.save(context: :validate_password)
       log_in(@user)
       redirect_to root_path
     else
       render action: "registration_base"
+    end
+  end
+
+  def create_sns
+    @user = User.new(user_params)
+    if @user.save
+      if session[:uid]
+        SnsCredential.create(user_id: @user.id, uid: session[:uid], provider: session[:provider])
+      end
+      log_in(@user)
+      redirect_to root_path
+    else
+      render action: "registration_sns"
     end
   end
 
@@ -58,6 +71,27 @@ class UsersController < ApplicationController
   def registration_base
     @user = User.new
     @user.build_profile
+  end
+
+  def registration_sns
+
+    @user = User.new
+    @user.build_profile
+    @user.sns_credentials.build
+    sns_email = request.env['omniauth.auth']['info']['email'] rescue nil
+    sns_uid = request.env['omniauth.auth']['uid'] rescue nil
+    sns_info = SnsCredential.find_by(uid: sns_uid)
+    user = User.find_by(email: sns_email)
+    if user && sns_info
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      @sns_name = request.env['omniauth.auth']['info']['name'] rescue nil
+      @sns_email = request.env['omniauth.auth']['info']['email'] rescue nil
+      session[:provider] = request.env['omniauth.auth']['provider'] rescue nil
+      session[:uid] = request.env['omniauth.auth']['uid'] rescue nil
+    end
+
   end
 
   def registration_phone
