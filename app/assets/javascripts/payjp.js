@@ -10,13 +10,8 @@ var form = $("#charge-form");
       exp_month: $("#exp_month").val(),
       exp_year: $("#exp_year").val(),
     };
-    //payjpに送るから、cardの要素はドキュメントと同じにする
-    console.log(card)
-
-
     Payjp.createToken(card,function(status,response){
       form.find("input[type=submit]").prop("disabled", true);
-      console.log(status)
       if(status == 200){
         $("#card_number").removeAttr("name");
         $("#cvc").removeAttr("name");

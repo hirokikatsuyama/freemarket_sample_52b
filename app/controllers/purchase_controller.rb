@@ -19,8 +19,8 @@ class PurchaseController < ApplicationController
     Payjp::Charge.create(
     :amount => 123456, 
     :customer => @credit.customer_id, 
-    :currency => 'jpy', 
-  )
+    :currency => 'jpy',
+    )
   redirect_to action: 'done' 
   end
 
