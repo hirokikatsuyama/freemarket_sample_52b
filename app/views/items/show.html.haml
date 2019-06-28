@@ -8,22 +8,11 @@
         %ul#slider
           - @image.each do |image|
             %li.itembox__container__photobox__img
-
-             
               = image_tag(image.url, class:"itembox__container__photobox__img__photo")
-
         %ul#itembox__container__small__photobox
           - @image.each do |image|
             %li.itembox__container__small__photobox__img
-
-
-              
-
-             
-
-
               = image_tag(image.url, class: "itembox__container__small__photobox__img__photo")
-
       %table.itembox__container__detail__table
         %tbody
           %tr
@@ -84,7 +73,6 @@
       %button.itembox__container__buybtn 購入画面に進む
     .itembox__container__discription
       %p.itembox__container__discription__exprain= "#{@item.detail}"
-
     //他人のitem/showページにのみ表示  
     .itembox__container__btnbox.clearfix
       .itembox__container__btnbox__left
@@ -102,7 +90,6 @@
         = link_to "https://www.mercari.com/jp/safe/description/" do
           %span.itembox__container__btnbox__right__policy あんしん・あんぜんへの取り組み
     ////
-
   //current_userのitem/showページにのみ表示
   - if @item.user_id == current_user.id
     .itembox__editbox
@@ -131,7 +118,6 @@
       -#   #modalbelete_notice 
       -#     .text 出品を削除しました。
   ////
-
   .itembox__message
     .itembox__message__content
       %form.itembox__message__content__form

@@ -34,34 +34,15 @@
               %span.form-require 必須
               %br/
               %select.exp_month#exp_month{maxlength: "2",type: "text",:name => "exp_month", :placeholder => "月"}
-                %option 1
-                %option 2
-                %option 3
-                %option 4
-                %option 5
-                %option 6
-                %option 7
-                %option 8
-                %option 9
-                %option 10
-                %option 11
-                %option 12
-              %span 月
+                - 1.upto(12) do |i|
+                  %option #{i}
+                  %span 月
               %br/
               %select.exp_year#exp_year{maxlength: "4", type: "text",:name => "exp_year", :placeholder => "年"}
-                %option 2019
-                %option 2020
-                %option 2021
-                %option 2022
-                %option 2023
-                %option 2024
-                %option 2025
-                %option 2026
-                %option 2027
-                %option 2028
-                %option 2029
-              %span 年
-            %br/
+                - 2019.upto(2029) do |i|
+                  %option #{i}
+                  %span 年
+              %br/
             %label セキュリティコード
             %span.form-require 必須
             %br/
