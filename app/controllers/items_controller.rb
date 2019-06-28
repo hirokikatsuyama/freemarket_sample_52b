@@ -49,7 +49,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy == current_user == user_id
+    if current_user_id == user_id
+      @item.destroy
       redirect_to root_path
     else
       redirect_to root_path alert: "エラーが発生しました。"
