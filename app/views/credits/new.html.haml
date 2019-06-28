@@ -8,7 +8,7 @@
     .container__right-main
       .container__right-main-space
         .credit-info
-          %form#charge-form{type: "submit", :controller => :credits, :action => :pay, :method => "POST" }
+          %form#charge-form{type: "submit", controller: "credits", action: "pay", method: "POST" }
             %label カード番号
             %span.form-require 必須
             %br/
