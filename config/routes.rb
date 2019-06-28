@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'users#registration_sns'
   get 'auth/failure', to: 'users#sign_in'
 
-  resources :items, only: [:index, :new, :create, :show] do
+  resources :items, only: [:index, :new, :create, :show, :destroy] do
     collection do
       get 'search'
     end
