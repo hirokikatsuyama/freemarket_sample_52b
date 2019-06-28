@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy,]
 
   def index
     @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).order(created_at: "DESC").limit(4)
@@ -49,12 +49,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user_id == user_id
-      @item.destroy
-      redirect_to root_path
-    else
-      redirect_to root_path alert: "エラーが発生しました。"
-    end
+    item = Item.find(params[:id])
+    # if item.user_id == current_user_id
+    item.destroy
+    redirect_to root_path
+    # else
+    #   redirect_to root_path alert: "エラーが発生しました。"
+    # end
   end
 
   private

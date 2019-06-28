@@ -93,30 +93,32 @@
     ////
 
   //current_userのitem/showページにのみ表示
-  .itembox__editbox
-    = link_to "#" do
-      %button.itembox__editbox__editbtn 商品の編集
-    .itembox__editbox__or or
-    = link_to "#" do
-      %button.itembox__editbox__stopbtn 出品を一旦停止する
-    = link_to "#" do
-      %button.itembox__editbox__deletebtn#open この商品を削除する
+  - if @item.user_id == current_user.id
+    .itembox__editbox
+      = link_to "#" do
+        %button.itembox__editbox__editbtn 商品の編集
+      .itembox__editbox__or or
+      = link_to "#" do
+        %button.itembox__editbox__stopbtn 出品を一旦停止する
+      = link_to "#" do
+        %button.itembox__editbox__deletebtn#open この商品を削除する
 
-    //モーダル
-  #overlay
-    #modalwindow
-      .modalbody
-        #text 確認
-        #text 削除すると二度と復活できません。
-        #text 削除する代わりに停止することもできます。
-        #text 本当に削除しますか？　
-      .modalbtns
-        %button#close キャンセル
-        %button#delete_item{onclick: "location.href='/'"} 削除する
+      //モーダル
+    #overlay
+      #modalwindow
+        .modalbody
+          #text 確認
+          #text 削除すると二度と復活できません。
+          #text 削除する代わりに停止することもできます。
+          #text 本当に削除しますか？　
+        .modalbtns
+          %button#close キャンセル
+          = link_to "削除する", "/items/#{@item.id}", method: :delete, id: "delete_item"
+          -# %button#delete_item{onclick: "location.href='/items/#{@item.id}'", method: :delete} 削除する
 
-    -# #modalwindow2
-    -#   #modalbelete_notice 
-    -#     .text 出品を削除しました。
+      -# #modalwindow2
+      -#   #modalbelete_notice 
+      -#     .text 出品を削除しました。
   ////
 
   .itembox__message
