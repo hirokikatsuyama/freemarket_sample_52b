@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   post 'users/create' =>'users#create_sign_in'
   delete 'sessions/destroy' => 'sessions#destroy'
 
-  resources :credits, only: [:index, :new]
-  resources :credits, only: [:new, :show] do
+  resources :credits, only: [:new, :show,:index,:new] do
     collection do
       post 'show', to: 'credits#show'
       post 'pay', to: 'credits#pay'

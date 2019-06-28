@@ -3,7 +3,7 @@ class CreditsController < ApplicationController
   require "payjp"
 
   def new
-    @credit = Credit.where(user_id:current_user.id)
+    @credit = current_user.credit
   end
 
   def pay 
@@ -16,7 +16,7 @@ class CreditsController < ApplicationController
       metadata: {user_id: 1}
       )
       #payjpに登録
-      @credit = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @credit = current_user.credit.new(customer_id: customer.id, card_id: customer.default_card)
       #dbに登録
       if @credit.save
         redirect_to action: "show"
@@ -29,7 +29,7 @@ class CreditsController < ApplicationController
   end
 
   def delete 
-    @credit = Credit.where(user_id: current_user.id).first
+    @credit = current_user.credit
     if @credit.present?
     else
       Payjp.api_key = Rails.application.credentials.payjp[:test_secret_key]
@@ -44,7 +44,7 @@ class CreditsController < ApplicationController
   end
 
   def show 
-    @credit = Credit.where(user_id: current_user.id).first
+    @credit = current_user.credit
     if @credit.blank?
       redirect_to action: "new" 
     else
