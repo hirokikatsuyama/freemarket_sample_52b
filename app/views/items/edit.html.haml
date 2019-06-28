@@ -1,0 +1,114 @@
+%script{src: "dropzone.js"}
+.single-container
+  %header.single-header
+    = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
+  %main.single-main
+    = form_for(@item) do |f|
+      %section.single-main__section
+        .single-main__section__title
+          %h2.single-main__section__title__bar 商品の情報を入力
+        .single-main__section__picture
+          %label#large-label 出品画像
+          %span.form-require 必須
+          %p 最大10枚までアップロードできます
+          .all-gazo
+            .uploader-5#preview
+            .single-main__section__picture__uploader
+              =f.label :images , id: "files" do
+                =f.file_field :images, multiple: true, class: "single1", style: "display: none;", onchange: "previewFile()"
+                .single-main__section__picture__uploader__font
+                  %p
+                  ドラッグアンドドロップまたは
+                  %br
+                  クリックしてファイルをアップロード
+        .single-main__section__item--name
+          .form-group
+            %label.normal-label 商品名
+            %span.form-require 必須
+            =f.label :name do
+              =f.text_field :name, class: "form", placeholder: "商品名（必須 40文字まで)"
+          .form-group
+            %label.normal-label 商品の説明
+            %span.form-require 必須
+            =f.label :detail do
+              =f.text_area :detail, class: "form-detail", cols: "50", rows:"10", wrap: "soft", placeholder: "商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", value: ""
+        .single-main__section__item--detail
+          %h3.gray-title.detail-left 商品の詳細
+          .single-main__section__item--detail__pulldown
+            .single-main__section__item--detail__pulldown__one
+              %label.normal-label カテゴリー
+              %span.form-require 必須
+              .single-main__section__item--detail__pulldown__one__tab
+                = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+              .select-wrap
+              .select-wrap2
+          .single-main__section__item--detail__pulldown__one
+          .single-main__section__item--detail__pulldown__one.hide__form
+            %label.normal-label サイズ
+            %span.form-require 必須
+            .single-main__section__item--detail__pulldown__one__tab
+              =f.collection_select :size_id, @sizes, :id, :name,{prompt: "---"},{class: 'select--booox', required:"required"}
+          .single-main__section__item--detail__pulldown__one.hide__form
+            %label.normal-label ブランド
+            %span.form-any 任意
+            .single-main__section__item--detail__pulldown__one__tab
+              =f.label :brand_id do
+                =f.text_field :brand_id, class: "form__brand", placeholder: "例）シャネル"
+          .single-main__section__item--detail__pulldown__one
+            %label.normal-label 商品の状態
+            %span.form-require 必須
+            .single-main__section__item--detail__pulldown__one__tab
+              =f.label :condition do
+                =f.select :condition, [["--"], ["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {class: 'select--booox'}
+        .single-main__section__delivery
+          %h3.gray-title 配送について
+          .single-main__section__delivery__pulldown
+            .single-main__section__delivery__pulldown__one
+              %label.normal-label 配送料の負担
+              %span.form-require 必須
+              .single-main__section__delivery__pulldown__one__tab
+                =f.label :shipping_cost do
+                  =f.select :shipping_cost, [["--"], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]], id: "pulu"
+                  .pulu2
+          .single-main__section__delivery__pulldown__one
+            %label.normal-label 配送元の地域
+            %span.form-require 必須
+            .single-main__section__delivery__pulldown__one__tab
+              = f.collection_select :shipping_source, Prefecture.all, :id, :name,{prompt: "---"}
+          .single-main__section__delivery__pulldown__one
+            %label.normal-label 発送までの日数
+            %span.form-require 必須
+            .single-main__section__delivery__pulldown__one__tab
+              =f.label :delivery_date do
+                =f.select :delivery_date, [["--"], ["1~2日で発送"], ["2~3日で発送"], ["4~7日で発送"]], {class: 'select--booox'}
+        .single-main__section__price
+          %h3.gray-title 販売価格(300〜9,999,999)
+          %ul.single-main__section__price__sell-form
+            %li.single-main__section__price__sell-form__price
+              %label.normal-label 価格
+              %span.form-require 必須
+              .price-right
+                ¥
+                =f.label :price do
+                  =f.text_field :price, class: "form-price", placeholder: "例）300", value: ""
+            %li.single-main__section__price__sell-form__margin
+              販売手数料(10%)
+            %li.single-main__section__price__sell-form__profit
+              %label#large-label 販売利益
+        .single-main__section__exhibition
+          %p
+            = link_to "禁止されている出品、行為", "#"
+            を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", "#"
+            は犯罪であり処罰される可能性があります。また、出品を持ちまして
+            = link_to "加盟店規約", "#"
+            に同意したことになります。
+          .single-main__section__exhibition__button
+            = f.submit "変更する" , class: "single-main__section__exhibition__button__exhibition"
+            %button.single-main__section__exhibition__button__return キャンセル
+    %footer.single-footer
+      .single-footer__section
+        %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
+        .single-footer__section__img
+          = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
+        %p.single-footer__right @ 2019 Mercari

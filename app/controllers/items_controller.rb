@@ -29,6 +29,21 @@ class ItemsController < ApplicationController
     redirect_to controller: :items, action: :index
   end
 
+  def edit
+    @parents = Category.order("id ASC").limit(13)
+    @sizes = Size.all
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+       @item.update!(item_params)
+       redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def show
     @item = Item.find(params[:id])
     @user = @item.user
@@ -67,3 +82,4 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 end
+
