@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: #ece9e9;
+}
 .wrapper {
   padding-top: 20px;
   background-color: #ece9e9;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  width: 100vw;
   .itembox__container {
     width: 700px;
     padding: 24px 40px 40px 40px;
@@ -221,6 +225,96 @@
     }
   }
 
+  .itembox__editbox {
+    margin: 24px auto;
+    padding: 8px 16px;
+    background: #fff;
+    width: 700px;
+    &__editbtn {
+      margin: 16px 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      text-align: center;
+      line-height: 45px;
+      width: 100%;
+      font-size: 14px;
+    }
+    &__or {
+      font-size: 16px;
+      text-align: center;
+      height: 16px;
+    }
+    &__stopbtn {
+      margin: 16px 0;
+      text-align: center;
+      line-height: 48px;
+      width: 100%;
+      font-size: 14px;
+      background: #aaa;
+      border: 1px solid #aaa;
+      color: #fff;
+    }
+    &__deletebtn {
+      margin-bottom: 16px;
+      text-align: center;
+      line-height: 45px;
+      width: 100%;
+      font-size: 14px;
+      background: #aaa;
+      border: 1px solid #aaa;
+      color: #fff;
+    }
+  }
+
+  #overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1002;
+  }
+  #modalwindow, #modalwindow2 {
+    margin: 20px auto 0;
+    width: 600px;
+    height: 300px;
+    background-color: #FFF;
+    display: none;
+    z-index: 1002;
+  }
+  .modalbody {
+    text-align: center;
+    margin: 0;
+    padding: 64px;
+    line-height: 1.5;
+  }
+  .modalbtns {
+    line-height: 63px;
+    height: 76px;
+  }
+  #close {
+    width: 300px;
+    height: 100%;
+    border-top: 1px solid #ccc;
+    float: left;
+    border-left: 1px solid #ccc;
+    background-color: #FFF;
+    border-radius: 3px;
+    transition: .4s;
+    font-size: 15px
+    }
+  #delete_item {
+    float: right;
+    width: 300px;
+    height: 100%;
+    border-top: 1px solid #ccc;
+    color: #0099e8;
+    font-size: 15px
+  }
+
   .itembox__message {
     margin: 8px auto;
     width: 700px;
@@ -390,8 +484,5 @@
         } 
       }
     }
-  }    
+  }
 }
-  
-  
-
