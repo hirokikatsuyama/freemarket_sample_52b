@@ -4,8 +4,8 @@ $(function() {
   var output2 = $('.single-main__section__price__sell-form__margin__feebox')
   input.on('input', function(e) {
     var value = input.val();
-    var fee = value * 0.10
-    var tax = value * 0.9
+    var fee = Math.round(value * 0.10)
+    var tax = Math.round(value * 0.9)
     var non = "-"
     if (fee, tax <= 99) {
       output.text(non);
