@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   resources :credits, only: [:index, :new]
   resources :purchase, only: [:new]
-
   resources :users, only: [:edit, :show] do
     collection do
       delete 'log_out'
@@ -28,7 +27,6 @@ Rails.application.routes.draw do
   get 'auth/failure', to: 'users#sign_in'
 
   resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
-
     collection do
       get 'search'
     end
