@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'users/create' =>'users#create_sign_in'
   delete 'sessions/destroy' => 'sessions#destroy'
 
+
   resources :credits, only: [:new, :show,:index,:new] do
     collection do
       post 'show', to: 'credits#show'
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   end
 
 
+
+ 
   resources :users, only: [:edit, :show] do
     collection do
       delete 'log_out'
@@ -42,7 +45,6 @@ Rails.application.routes.draw do
   get 'auth/failure', to: 'users#sign_in'
 
   resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
-
     collection do
       get 'search'
     end
