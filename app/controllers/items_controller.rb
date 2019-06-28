@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:show, :edit, :destroy,]
+
   def index
     @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).order(created_at: "DESC").limit(4)
     @man_items = Item.includes(:images).where(category_id: Category.find(2).subtree_ids).order(created_at: "DESC").limit(4)
@@ -26,8 +29,23 @@ class ItemsController < ApplicationController
     redirect_to controller: :items, action: :index
   end
 
+  def edit
+    @parents = Category.order("id ASC").limit(13)
+    @sizes = Size.all
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+       @item.update!(item_params)
+       redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def show
-    @item = Item.find(39)
+    @item = Item.find(params[:id])
     @user = @item.user
     @image = @item.images
     @category = @item.category
@@ -45,11 +63,23 @@ class ItemsController < ApplicationController
     end
   end
 
-  private
-    def item_params
-      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id, :size_id)
-    end
+  def destroy
+    item = Item.find(params[:id])
+    # if item.user_id == current_user_id
+    item.destroy
+    redirect_to root_path
+    # else
+    #   redirect_to root_path alert: "エラーが発生しました。"
+    # end
   end
 
+  private
+  def item_params
+    params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id, :size_id, :category_id).merge(user_id: current_user.id)
+  end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
+end
 
