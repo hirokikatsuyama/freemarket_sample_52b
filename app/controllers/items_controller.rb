@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       redirect_to root_path alert: "エラーが発生しました。"
+    end
   end
 
   private
