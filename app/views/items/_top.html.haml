@@ -1,7 +1,7 @@
 .top__item__contents__box
   = link_to item_path(top), class: "top__list" do
     .top__list__photo
-      = image_tag (top.images.url.first)
+      -# = image_tag (top.images.url.first)
     .top__list__description
       %h3.top__list__description__name=top.name
       .top__list__description__other
