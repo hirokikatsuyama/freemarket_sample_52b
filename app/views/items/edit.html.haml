@@ -39,7 +39,7 @@
               %label.normal-label カテゴリー
               %span.form-require 必須
               .single-main__section__item--detail__pulldown__one__tab
-                = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
+                = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
               .select-wrap
               .select-wrap2
           .single-main__section__item--detail__pulldown__one
@@ -93,10 +93,8 @@
                   =f.text_field :price, class: "form-price", placeholder: "例）300", value: ""
             %li.single-main__section__price__sell-form__margin
               販売手数料(10%)
-              .single-main__section__price__sell-form__margin__feebox
             %li.single-main__section__price__sell-form__profit
               %label#large-label 販売利益
-              .single-main__section__price__sell-form__profit__pricebox
         .single-main__section__exhibition
           %p
             = link_to "禁止されている出品、行為", "#"
@@ -106,12 +104,11 @@
             = link_to "加盟店規約", "#"
             に同意したことになります。
           .single-main__section__exhibition__button
-            = f.submit "出品する" , class: "single-main__section__exhibition__button__exhibition"
-            %button.single-main__section__exhibition__button__return もどる
+            = f.submit "変更する" , class: "single-main__section__exhibition__button__exhibition"
+            %button.single-main__section__exhibition__button__return キャンセル
     %footer.single-footer
       .single-footer__section
         %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
         .single-footer__section__img
           = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
-
