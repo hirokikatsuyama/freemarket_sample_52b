@@ -17,8 +17,7 @@ class PurchaseController < ApplicationController
     @credit = Credit.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.payjp[:test_secret_key]
     Payjp::Charge.create(
-      :amount => 123456, 
-      #あとで変更すること  :amount => @items.price,
+      :amount => @items.price, 
       :customer => @credit.customer_id, 
       :currency => 'jpy',
     )
