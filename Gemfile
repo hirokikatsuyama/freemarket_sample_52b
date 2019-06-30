@@ -44,9 +44,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'omniauth'
-  gem 'omniauth-google-oauth2'
-  gem 'omniauth-facebook'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -97,7 +94,7 @@ gem 'ransack'
 gem 'gretel'
 gem 'bcrypt'
 gem 'carrierwave'
-
-
-
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'dropzonejs-rails'
