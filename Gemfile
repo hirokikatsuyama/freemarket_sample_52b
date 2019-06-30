@@ -98,3 +98,5 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dropzonejs-rails'
+gem 'fog-aws'
+
