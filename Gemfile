@@ -47,7 +47,11 @@ group :development, :test do
   gem 'omniauth'
   gem 'omniauth-google-oauth2'
   gem 'omniauth-facebook'
-
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
   gem 'dotenv-rails'
 end
 
