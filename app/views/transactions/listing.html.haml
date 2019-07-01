@@ -1,0 +1,36 @@
+= render partial: "layouts/header"
+.mypage__wrapper.clearfix
+  .render-side-bar
+    = render partial: "users/side"
+    .listing
+      %section.listing__buy
+        %h2.listing__buy__head
+          出品した商品
+        .listing__item
+          = link_to listing_transactions_path, class: "listing__item__list" do
+            %h3 出品中
+            .listing-tab__contents
+            - @listing.each do |listing|
+              .listing-tab__contents__list
+                - if listing.present?
+                  .listing-tab__contents__list--image
+                    ※イメージ
+                  .listing-tab__contents__list__text
+                    .listing-tab__contents__list__text--title
+                      = listing.item.name
+                    .listing-tab__contents__list__text--status
+                      出品中
+                - else
+                  %li.listing__not__found__now 取引中の商品がありません
+                  %ul.listing-tab__contents__list__past
+                    %li
+          .listing__item__in_progress
+            %h3 取引中
+          = link_to completed_transactions_path, class: "listing__item__completed" do
+            %h3 売却済み
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
+
+
+
+
