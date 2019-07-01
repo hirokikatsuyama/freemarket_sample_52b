@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :destroy,]
+  before_action :set_transaction, only: [:create]
 
   def index
     @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).order(created_at: "DESC").limit(4)
@@ -40,6 +41,12 @@ class ItemsController < ApplicationController
         format.html{render action: 'new'}
       end
     end
+    @item = Item.create!(item_params)
+    @transaction.seller_id = @item.user_id
+    @transaction.item_id = @item.id
+    @transaction.status = 1
+    @transaction.save
+    redirect_to controller: :items, action: :index
   end
 
   def edit
@@ -84,6 +91,14 @@ class ItemsController < ApplicationController
     # else
     #   redirect_to root_path alert: "エラーが発生しました。"
     # end
+  private
+    def item_params
+      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id, :size_id).merge(user_id: current_user.id)
+    end
+
+    def set_transaction
+      @transaction = Transaction.new
+    end
   end
 
   def keyword_search
