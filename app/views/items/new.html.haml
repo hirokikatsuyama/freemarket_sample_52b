@@ -2,8 +2,8 @@
 .single-container
   %header.single-header
     = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
-  %main.single-main
-    = form_for(@item) do |f|
+  %main.single-main#new_item
+    = form_for @item do |f|
       %section.single-main__section
         .single-main__section__title
           %h2.single-main__section__title__bar 商品の情報を入力
@@ -11,16 +11,40 @@
           %label#large-label 出品画像
           %span.form-require 必須
           %p 最大10枚までアップロードできます
-          .all-gazo
-            .uploader-5#preview
-            .single-main__section__picture__uploader
-              =f.label :images , id: "files" do
-                =f.file_field :images, multiple: true, class: "single1", style: "display: none;", onchange: "previewFile()"
-                .single-main__section__picture__uploader__font
-                  %p
-                  ドラッグアンドドロップまたは
-                  %br
-                  クリックしてファイルをアップロード
+          = f.fields_for :images, @item.images.first do |image|
+            .item__img__dropzone.clearfix
+              #preview
+              .item__img__dropzone__input
+                =image.label :image, for: "upload-image" do
+                  .input-area
+                    =image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+                  .item__img__dropzone__input__description
+                    .item__img__dropzone__input__description__text
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをアップロード
+            .item__img__dropzone2.clearfix
+              #preview2
+              .item__img__dropzone2__input2
+                =image.label :image, for: "upload-image" do
+                  .input-area
+                    = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+                  .item__img__dropzone2__input2__description
+                    .item__img__dropzone2__input2__description__text
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをアップロード
+          -# .all-gazo
+          -#   .uploader-5#preview
+          -#   .single-main__section__picture__uploader
+          -#     =f.fields_for :images do |i|
+          -#       =i.label :image, id: "files" do
+          -#         =i.file_field :image, multiple: true, name: "item_images[name][]", class: "single1", style: "display: none;", onchange: "previewFile()"
+          -#         .single-main__section__picture__uploader__font
+          -#           %p
+          -#           ドラッグアンドドロップまたは
+          -#           %br
+          -#           クリックしてファイルをアップロード
         .single-main__section__item--name
           .form-group
             %label.normal-label 商品名

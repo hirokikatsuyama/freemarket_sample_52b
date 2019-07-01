@@ -8,6 +8,10 @@
         %input.keyword__search__box{:name => "keyword", :placeholder => "何かお探しですか？", :type => "text"}/
         .keyword__search__button
           %i.material-icons.search search
+      -# = search_form_for @search, class: "keyword__search", url: keyword_search_items_path do |f| 
+      -#   = f.text_field :name_or_detail_cont, placeholder: '何かお探しですか？', class: "keyword__search__box"
+      -#   = button_tag :type => "submit", :class =>"keyword__search__button" do
+      -#     %i.material-icons.search search
     .header__inner__bottom
       %nav.header__inner__bottom-left
         %ul.header__inner__bottom-left__box
