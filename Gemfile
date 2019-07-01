@@ -39,17 +39,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
 
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
-
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
   gem 'dotenv-rails'
 end
 
@@ -63,7 +62,7 @@ group :development do
 end
 
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
 
 group :test do
@@ -95,10 +94,9 @@ gem 'ransack'
 gem 'gretel'
 gem 'bcrypt'
 gem 'carrierwave'
-gem 'fog-aws'
-
-
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dropzonejs-rails'
+gem 'fog-aws'
+

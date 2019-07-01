@@ -5,7 +5,8 @@ class CreateCredits < ActiveRecord::Migration[5.2]
       t.string :expiration_date_month
       t.string :expiration_date_year
       t.string :security_code
-      # t.references :user, foreign_key:true
+      t.string :customer_id
+      t.string :card_id
 
       t.timestamps
     end
