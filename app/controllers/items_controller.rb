@@ -15,18 +15,28 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.images.build
     @parents = Category.order("id ASC").limit(13)
     @sizes = Size.all
   end
 
   def create
+    @item = Item.new(item_params)
     if brand = Brand.find_by(name: params[:item][:brand_id])
       params[:item][:brand_id] = brand.id
     else
       params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
     end
-    Item.create!(item_params)
-    redirect_to controller: :items, action: :index
+    respond_to do |format|
+      if @item.save && new_image_params[:images][0] != ""
+        new_image_params[:images].map do |image|
+          @item.images.create(image: image, item_id: @item.id)
+        end
+        format.html{redirect_to root_path}
+      else
+        format.html{render action: 'new'}
+      end
+    end
   end
 
   def edit
@@ -74,12 +84,12 @@ class ItemsController < ApplicationController
   end
 
   private
-  def item_params
-    params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price,{images: []}, :brand_id, :size_id, :category_id).merge(user_id: current_user.id)
-  end
 
-  def set_item
-    @item = Item.find(params[:id])
+    def item_params
+      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price, :brand_id, :size_id, :category_id).merge(user_id: current_user.id)
+    end
+    def new_image_params
+      params.require(:new_images).permit({images:[]})
+    end
   end
-end
 
