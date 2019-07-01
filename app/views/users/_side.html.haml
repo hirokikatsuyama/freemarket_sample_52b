@@ -22,7 +22,7 @@
           出品する
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to listing_transactions_path, class: "side__list" do
           出品した商品-出品中
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
@@ -30,7 +30,7 @@
           出品した商品-取引中
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to completed_transactions_path, class: "side__list" do
           出品した商品-売却済み
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
