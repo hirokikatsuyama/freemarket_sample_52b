@@ -51,4 +51,11 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: [:index, :show]
+  resources :transactions do
+    collection do
+      get 'listing'
+      get 'in_progress'
+      get 'completed'
+    end
+  end
 end
