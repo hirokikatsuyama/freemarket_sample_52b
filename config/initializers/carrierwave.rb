@@ -17,4 +17,5 @@ CarrierWave.configure do |config|
     config.fog_directory  = 'freemarket-image-upload'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-image-upload'
   end
+  
 end
