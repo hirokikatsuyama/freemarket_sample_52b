@@ -19,7 +19,7 @@
             %th 出品者
             %td
               = link_to "#{@user.nickname}" #"users_show_path#{current_user.id}"
-              //他人のitem/showページにのみ表示  
+              //他人のitem/showページにのみ表示
               - unless @item.user_id == current_user.id
                 %div
                   .itembox__container__detail__table__ratings
@@ -71,11 +71,11 @@
       %span.itembox__container__pricebox__tax= "(税抜)"
       %span.itembox__container__pricebox__fee= "(送料込)"
     - unless @item.user_id == current_user.id
-      = link_to "#" do
+      = link_to "/purchase/#{@item.id}", method: :get do
         %button.itembox__container__buybtn 購入画面に進む
     .itembox__container__discription
       %p.itembox__container__discription__exprain= "#{@item.detail}"
-    //他人のitem/showページにのみ表示  
+    //他人のitem/showページにのみ表示
     - unless @item.user_id == current_user.id
       .itembox__container__btnbox.clearfix
         .itembox__container__btnbox__left
@@ -111,14 +111,14 @@
           #text 確認
           #text 削除すると二度と復活できません。
           #text 削除する代わりに停止することもできます。
-          #text 本当に削除しますか？　
+          #text 本当に削除しますか？
         .modalbtns
           %button#close キャンセル
           = link_to "削除する", "/items/#{@item.id}", method: :delete, id: "delete_item"
           -# %button#delete_item{onclick: "location.href='/items/#{@item.id}'", method: :delete} 削除する
 
       -# #modalwindow2
-      -#   #modalbelete_notice 
+      -#   #modalbelete_notice
       -#     .text 出品を削除しました。
   ////
   .itembox__message
