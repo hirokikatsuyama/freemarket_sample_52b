@@ -16,16 +16,18 @@
               #preview
               .item__img__dropzone__input
                 =image.label :image, for: "upload-image" do
+                  %p
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックしてファイルをアップロード
                   .input-area
                     =image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-                  .item__img__dropzone__input__description
-                    .item__img__dropzone__input__description__text
-                      ドラッグアンドドロップ
-                      %br
-                      またはクリックしてファイルをアップロード
             .item__img__dropzone2.clearfix
               #preview2
               .item__img__dropzone2__input2
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
                 =image.label :image, for: "upload-image" do
                   .input-area
                     = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
@@ -34,17 +36,6 @@
                       ドラッグアンドドロップ
                       %br
                       またはクリックしてファイルをアップロード
-          -# .all-gazo
-          -#   .uploader-5#preview
-          -#   .single-main__section__picture__uploader
-          -#     =f.fields_for :images do |i|
-          -#       =i.label :image, id: "files" do
-          -#         =i.file_field :image, multiple: true, name: "item_images[name][]", class: "single1", style: "display: none;", onchange: "previewFile()"
-          -#         .single-main__section__picture__uploader__font
-          -#           %p
-          -#           ドラッグアンドドロップまたは
-          -#           %br
-          -#           クリックしてファイルをアップロード
         .single-main__section__item--name
           .form-group
             %label.normal-label 商品名
@@ -145,4 +136,8 @@
         .single-footer__section__img
           = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
-
+-# %script{:src => "effect.js"}
+-# %button{:onclick => "run();", :style => "font-size:32px;"} run
+-# %p
+-# %img#SrcImage{:src => "test.png"}/
+-# %canvas#DstCanvas

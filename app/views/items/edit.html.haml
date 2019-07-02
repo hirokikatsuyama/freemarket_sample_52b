@@ -112,3 +112,24 @@
         .single-footer__section__img
           = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
+%head
+  :css
+    .img-container {
+     width: 400px;
+     height: 300px;
+     display: inline-block;
+    }
+    .img-canvas {
+     display: inline-block;
+    }
+%body
+  　　
+  .img-container
+    　　　　
+    %img.img-responsive{:alt => "fluits", :id => "img−default", :src => "img/fluits.jpg"}/
+    　　
+  　　
+  / トリミングされた画像が表示される場所。縦横は好みで設定
+  　　
+  %canvas#jsi-canvas.img-canvas{:height => "200", :width => "200"}
+  　
