@@ -22,30 +22,25 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     respond_to do |format|
       if brand = Brand.find_by(name: params[:item][:brand_id])
         params[:item][:brand_id] = brand.id
       else
         params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
       end
-      
+
       @item = Item.new(item_params)
-      
+      @item.status = 1
       if @item.save && new_image_params[:images][0] != ""
         new_image_params[:images].map do |image|
           @item.images.create(image: image, item_id: @item.id)
         end
+        Transaction.create(seller_id: @item.user_id, item_id: @item.id, status: 1)
         format.js{render ajax_redirect_to(root_path)}
       else
         format.js{render ajax_redirect_to(new_item_path)}
       end
     end
-    @item = Item.create!(item_params)
-    @item.status = 1
-    @item.save
-    Transaction.create(seller_id: @item.user_id, item_id: @item.id, status: 1)
-    redirect_to controller: :items, action: :index
   end
 
   def edit
