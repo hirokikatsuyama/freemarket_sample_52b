@@ -1,0 +1,133 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #f5f5f5;
+}
+.in_progress__wrapper{
+  width: 1020px;
+  margin: 40px auto 0;
+  padding-bottom: 40px;
+}
+ .in_progress{
+    background: #f5f5f5;
+    float: right;
+    width: 700px;
+  &__buy{
+    margin: 40px 0 0;
+    background: #fff;
+    height:480px;
+    &__head{
+      padding: 0 16px;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+    }
+    .in_progress__item{
+      list-style: none;
+      width: 700px;
+      height:74px;
+      border: 0;
+      background: #eee;
+      font-size: 0;
+      border-style: solid;
+      border-width: 0;
+      h3{
+        color:black;
+      }
+      &__list {
+        width: 33%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        font-size: 22px;
+        height:74px;
+        font-size: 16px;
+        color: #ccc;
+        line-height:74px;
+      }
+      &__in_progress {
+        background: #fff;
+        width: 33%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height:74px;
+        font-size: 16px;
+        color: #ccc;
+        line-height:74px;
+       }
+       &__completed {
+        width: 33%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height:74px;
+        font-size: 16px;
+        color: #ccc;
+        line-height:74px;
+       }
+      }
+    }
+  }
+  .in_progress-tab__contents{
+    list-style:none;
+    height: 100%;
+    border-style: solid;
+    background: #fff;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    margin:0 auto;
+    &__list{
+      border-bottom: 1px solid #EEEEEE;
+      display: block;
+      list-style: none;
+      width:400px;
+      height:100px;
+      &--image{
+        float:left;
+        font-size: 9px;
+        text-align: left;
+      }
+      &__text {
+        float: left;
+        text-align: left;
+        &--title {
+          color: #333333;
+        }
+        &--status {
+          background-color: #0099e8;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 10px;
+          font-weight: bold;
+          height: 20px;
+          padding: 0 4px;
+          line-height: 20px;
+          width: 40px;
+        }
+      }
+      .in_progress__not__found__now{
+        opacity:0.1;
+        list-style:none;
+        background: image-url("mercari_icon.png");
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 110px 120px;
+        text-align: center;
+        font-size: 16px;
+        color: black;
+        padding: 160px 0 60px;
+      }
+      &__past{
+        list-style:none;
+      }
+    }
+  }
+
+.backicon{
+ margin:0 auto;
+}
