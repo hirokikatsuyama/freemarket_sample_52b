@@ -14,6 +14,11 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:images).where(brand_id: 4).where(status: 1).order(created_at: "DESC").limit(4)
   end
 
+  def set_search
+    @search = Item.ransack(params[:q])
+    @products = @search.result
+  end
+
   def new
     @item = Item.new
     @item.images.build
