@@ -12,7 +12,7 @@
             .listing-tab__contents
             - @listing.each do |listing|
               .listing-tab__contents__list
-                - if listing.present?
+                - if listing.present? && current_user.id == listing.seller_id
                   .listing-tab__contents__list--image
                     ※イメージ
                   .listing-tab__contents__list__text
@@ -24,7 +24,7 @@
                   %li.listing__not__found__now 取引中の商品がありません
                   %ul.listing-tab__contents__list__past
                     %li
-          .listing__item__in_progress
+          = link_to in_progress_transactions_path, class: "listing__item__in_progress" do
             %h3 取引中
           = link_to completed_transactions_path, class: "listing__item__completed" do
             %h3 売却済み

@@ -9,7 +9,7 @@
         .completed__item
           = link_to listing_transactions_path, class: "completed__item__listing" do
             %h3 出品中
-          .completed__item__in_progress
+          = link_to in_progress_transactions_path, class: "completed__item__in_progress" do
             %h3 取引中
           = link_to completed_transactions_path, class: "completed__item__completed" do
             %h3 売却済み
