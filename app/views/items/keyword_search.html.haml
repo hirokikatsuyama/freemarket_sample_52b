@@ -1,27 +1,20 @@
 = render partial: "layouts/header"
 = render partial: "layouts/button"
-.keyword__search.clearfix
-  .keyword__search__content
+.detail__search.clearfix
+  .detail__search__content
     -# if文つける
     %h2 新着商品
-    .keyword__search__content__box
+    .detail__search__content__box
       -@search_items.each do |item|
-        .keyword__search__item
-          =link_to item_path(item.id)
--# .categories__show.clearfix
--#   .categories__show__inner
--#     .clearfix
--#       .categories__show__box.clearfix
--#         -@search_items.each do |item|
--#           .categories__show__box__item
--#             =link_to item_path(item.id) do
--#               .categories__show__image
--#                 = image_tag (item.images.first.image.to_s)
--#               .categories__show__body
--#                 %h3.categories__show__body__name=item.name
--#                 .categories__show__body__details
--#                   .categories__show__body__details__price=converting(item.price)
--#                 %p
--#                   （税込）
+        .detail__search__item
+          =link_to item_path(item.id) do
+            .detail__search__item__image
+              = image_tag (item.images.first.image.to_s)
+            .detail__search__item__body
+              %h3.detail__search__item__body__text=item.name
+              .detail__search__item__body__price
+                .detail__search__item__body__price__text=converting(item.price)
+  .detail__search__content__side
+    .form.detail__search__form
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
