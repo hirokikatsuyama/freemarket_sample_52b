@@ -89,7 +89,6 @@ gem 'kaminari'
 gem "jquery-rails"
 
 gem 'ancestry'
-gem 'ransack'
 
 gem 'gretel'
 gem 'bcrypt'
