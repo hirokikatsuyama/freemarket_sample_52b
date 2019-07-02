@@ -1,0 +1,32 @@
+= render partial: "layouts/header"
+.mypage__wrapper.clearfix
+  .render-side-bar
+    = render partial: "users/side"
+    .in_progress
+      %section.in_progress__buy
+        %h2.in_progress__buy__head
+          出品した商品
+        .in_progress__item
+          = link_to listing_transactions_path, class: "in_progress__item__list" do
+            %h3 出品中
+          = link_to in_progress_transactions_path, class: "in_progress__item__in_progress" do
+            %h3 取引中
+            .in_progress-tab__contents
+              - @in_progress.each do |in_progress|
+                .in_progress-tab__contents__list
+                  - if in_progress.present? && (current_user.id == in_progress.seller_id || current_user.id == in_progress.buyer_id)
+                    .in_progress-tab__contents__list--image
+                      ※イメージ
+                    .in_progress-tab__contents__list__text
+                      .in_progress-tab__contents__list__text--title
+                        = in_progress.item.name
+                      .in_progress-tab__contents__list__text--status
+                        取引中
+                  - else
+                    %li.in_progress__not__found__now 取引中の商品がありません
+                    %ul.in_progress-tab__contents__list__past
+                      %li
+          = link_to completed_transactions_path, class: "in_progress__item__completed" do
+            %h3 売却済み
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"
