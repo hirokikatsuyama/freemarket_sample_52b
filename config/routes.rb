@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post 'users/create' =>'users#create_sign_in'
   delete 'sessions/destroy' => 'sessions#destroy'
 
-
   resources :credits, only: [:new, :show,:index,:new] do
     collection do
       post 'show', to: 'credits#show'
@@ -14,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-   resources :purchase, only: [:new] do
+   resources :purchase, only: [:show] do
     collection do
       get 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
@@ -22,9 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-
- 
   resources :users, only: [:edit, :show] do
     collection do
       delete 'log_out'
