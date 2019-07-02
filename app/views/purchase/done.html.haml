@@ -1,7 +1,7 @@
 .item__confirmation
   .item__confirmation__header
     %h1.item__confirmation__header__inner
-      = link_to "#" do
+      = link_to root_path do
         = image_tag('/images/mercari_logo_horizontal.png', size: "230x65")
   .item__confirmation__main
     .item__confirmation__box0
@@ -13,10 +13,12 @@
         .item__confirmation__product__content
           %h3
             = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPF_-Ey6UIAypKKCwOP30iAZqpam7Kslrll21X3hnzhgN9Zv_"
-          %p 商品の名前・商品の名前・商品の名前
+          %p
+            = @item.name
           .item__confirmation__product__form
             .buy__price
-              %span.buy__price__left ¥123,456
+              %span.buy__price__left
+                = "¥ #{@item.price}"
               %span.buy__price__right 送料込み
             .buy__point
               .buy__point--not
@@ -25,10 +27,11 @@
               .buy--total__title
                 支払い金額
               .buy--total__price
-                ¥ 123,456
+                = "¥ #{@item.price}"
             %p.buy__alert 配送先と支払い方法の入力を完了してください。
-            = form_tag(action: :pay, method: :post) do
-              %button.buy__button{ type: "submit",:onclick => "location.href='./purchase/new'",:controller => :purchase, :action => :pay, :method => :post} 購入する
+            = link_to root_path do
+              %button.buy__button
+                トップページに戻る
         .item__confirmation__user
           .item__confirmation__user__info
             %h3 配送先

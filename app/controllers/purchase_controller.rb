@@ -1,8 +1,8 @@
 class PurchaseController < ApplicationController
   require 'payjp'
-
+  before_action :set_item, only: [:done, :show, :pay]
   def index
-    @purchase = Purchase.where(user_id: current_user.id).first
+    @credit = Credit.where(user_id: current_user.id).first
     if @credit.blank?
       redirect_to controller: "credit", action: "new"
     else
@@ -12,24 +12,31 @@ class PurchaseController < ApplicationController
     end
   end
 
-
   def pay
+    price = @item.price
     @credit = Credit.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.payjp[:test_secret_key]
     Payjp::Charge.create(
-      :amount => @items.price, 
-      :customer => @credit.customer_id, 
-      :currency => 'jpy',
+      amount: price,
+      customer: @credit.customer_id,
+      currency: 'jpy',
     )
-    redirect_to action: 'done' 
+    @item.update(status: 2)
+    @transactions = Transaction.where(item_id: @item.id)
+    @transactions.update(buyer_id: current_user.id, status: 2)
+    render :done
   end
-
-  
 
   def done
+
   end
 
-  def new
+  def show
   end
 
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
