@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_093854) do
+ActiveRecord::Schema.define(version: 2019_07_01_055258) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -79,13 +79,11 @@ ActiveRecord::Schema.define(version: 2019_06_28_093854) do
   end
 
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "card_number"
-    t.string "expiration_date_month"
-    t.string "expiration_date_year"
-    t.string "security_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "customer_id"
+    t.string "card_id"
     t.index ["user_id"], name: "index_credits_on_user_id"
   end
 
@@ -178,6 +176,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_093854) do
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.bigint "item_id"
+    t.integer "status"
     t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
     t.index ["item_id"], name: "index_transactions_on_item_id"
     t.index ["seller_id"], name: "index_transactions_on_seller_id"
