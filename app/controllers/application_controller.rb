@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
     @search = Item.ransack(params[:q])
     @products = @search.result
   end
-  # binding.pry
 
   def production?
     Rails.env.production?

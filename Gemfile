@@ -99,3 +99,4 @@ gem 'omniauth-facebook'
 gem 'dropzonejs-rails'
 gem 'fog-aws'
 
+gem 'ransack'

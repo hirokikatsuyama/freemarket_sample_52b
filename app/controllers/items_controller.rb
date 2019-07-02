@@ -15,8 +15,6 @@ class ItemsController < ApplicationController
   end
 
   def set_search
-    @search = Item.ransack(params[:q])
-    @products = @search.result
   end
 
   def new
