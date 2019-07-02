@@ -203,7 +203,6 @@ $('.new_item').on('submit', function(e){
     contentType: false,
     processData: false,
   })
-  .done(location.href = '/');
   // location.href = '/';
   });
 });

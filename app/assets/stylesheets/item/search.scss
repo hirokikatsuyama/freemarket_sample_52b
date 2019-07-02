@@ -76,6 +76,18 @@
   &__item:nth-child(4n) {
     margin-right: 0;
   }
+  &__form {
+    position: relative;
+    &__sort {
+      opacity: 1;
+      position: static;
+      width: auto;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      margin: 0 auto;
+    }
+  }
 }
 
 .clearfix::after {
