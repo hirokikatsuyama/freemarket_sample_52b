@@ -202,7 +202,8 @@ $('.new_item').on('submit', function(e){
     data:   formData,
     contentType: false,
     processData: false,
-  });
-  location.href = '/';
+  })
+  .done(location.href = '/');
+  // location.href = '/';
   });
 });
