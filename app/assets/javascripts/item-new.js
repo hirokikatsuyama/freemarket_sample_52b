@@ -9,13 +9,13 @@ $(function() {
     var non = "-"
     if (fee, tax <= 99) {
       output.text(non);
-      output2.text(non); 
+      output2.text(non);
   } else if (100 <= fee, tax <= 9999999) {
       output.text("¥"+tax.toLocaleString());
       output2.text("¥"+fee.toLocaleString()); //コンマ区切りの記述
   } else {
       output.text(non);
-      output2.text(non); 
+      output2.text(non);
   }
   });
 });
