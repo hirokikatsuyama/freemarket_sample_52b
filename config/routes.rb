@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     collection do
       get 'search'
+      get 'keyword_search'
     end
   end
   resources :categories, only: [:index, :show]

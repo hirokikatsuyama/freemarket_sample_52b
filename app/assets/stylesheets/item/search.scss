@@ -1,0 +1,27 @@
+.keyword__search {
+  position: relative;
+  margin: 40px auto 0;
+  width: 1020px;
+  padding: 0 0 40px;
+  &__content {
+    float: right;
+    width: 700px;
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+    }
+    &__box {
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+  &__item {
+    margin: 0 20px 20px 0;
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}

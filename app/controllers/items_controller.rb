@@ -21,13 +21,16 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    if brand = Brand.find_by(name: params[:item][:brand_id])
-      params[:item][:brand_id] = brand.id
-    else
-      params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
-    end
+    
     respond_to do |format|
+      if brand = Brand.find_by(name: params[:item][:brand_id])
+        params[:item][:brand_id] = brand.id
+      else
+        params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
+      end
+      
+      @item = Item.new(item_params)
+      
       if @item.save && new_image_params[:images][0] != ""
         new_image_params[:images].map do |image|
           @item.images.create(image: image, item_id: @item.id)
@@ -83,6 +86,10 @@ class ItemsController < ApplicationController
     # end
   end
 
+  def keyword_search
+    @search_items = Item.all
+  end
+
   private
 
     def item_params
@@ -90,6 +97,9 @@ class ItemsController < ApplicationController
     end
     def new_image_params
       params.require(:new_images).permit({images:[]})
+    end
+    def set_item
+      @item = Item.find(params[:id])
     end
   end
 
