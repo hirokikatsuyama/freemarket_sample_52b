@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :destroy,]
+  include AjaxHelper 
 
   def index
     @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).order(created_at: "DESC").limit(4)
@@ -35,9 +36,9 @@ class ItemsController < ApplicationController
         new_image_params[:images].map do |image|
           @item.images.create(image: image, item_id: @item.id)
         end
-        format.html{redirect_to root_path}
+        format.js{render ajax_redirect_to(root_path)}
       else
-        format.html{render action: 'new'}
+        format.js{render ajax_redirect_to(new_item_path)}
       end
     end
   end
