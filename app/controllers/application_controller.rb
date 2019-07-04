@@ -1,10 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :category_list
+  before_action :top_search
   protect_from_forgery with: :exception
   include SessionsHelper
 
   private
+
+# binding.pry
+  def top_search
+    @search = Item.ransack(params[:q])
+    @products = @search.result
+  end
 
   def production?
     Rails.env.production?

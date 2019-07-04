@@ -2,7 +2,7 @@
   .side__nav
     %ul.side__nav__inner
       %li.side__nav__inner__first
-        = link_to "#", class: "side__list" do
+        = link_to user_path(current_user.id), class: "side__list" do
           マイページ
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
@@ -18,19 +18,19 @@
           いいね！一覧
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to new_item_path, class: "side__list" do
           出品する
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to listing_transactions_path, class: "side__list" do
           出品した商品-出品中
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to in_progress_transactions_path, class: "side__list" do
           出品した商品-取引中
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to completed_transactions_path, class: "side__list" do
           出品した商品-売却済み
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
@@ -70,7 +70,7 @@
     %h3.side__nav__inner__title 設定
     %ul.side__nav__inner
       %li.side__nav__inner__first
-        = link_to "#", class: "side__list" do
+        = link_to edit_user_path(current_user.id), class: "side__list" do
           プロフィール
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
@@ -78,7 +78,7 @@
           発送元・お届け先住所変更
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to new_credit_path, class: "side__list" do
           支払い方法
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
@@ -86,7 +86,7 @@
           メール/パスワード
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to confirmation_users_path, class: "side__list" do
           本人情報
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other

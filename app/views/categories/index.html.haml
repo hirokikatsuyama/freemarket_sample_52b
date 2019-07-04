@@ -3,7 +3,7 @@
   %ul
     %li
       - breadcrumb :category_index
-      = breadcrumbs separator: " &rsaquo; "
+      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
 = render partial: "layouts/button"
 .categories
   .categries__inner
