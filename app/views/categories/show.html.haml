@@ -14,7 +14,7 @@
           .categories__show__box__item
             =link_to "#" do
               .categories__show__image
-                = image_tag (item.images[0].url)
+                = image_tag (item.images.first.image.to_s)
               .categories__show__body
                 %h3.categories__show__body__name=item.name
                 .categories__show__body__details

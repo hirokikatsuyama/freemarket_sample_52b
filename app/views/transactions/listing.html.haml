@@ -1,4 +1,9 @@
 = render partial: "layouts/header"
+.link__list
+  %ul
+    %li
+      - breadcrumb :listing_transactions
+      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
 .mypage__wrapper.clearfix
   .render-side-bar
     = render partial: "users/side"

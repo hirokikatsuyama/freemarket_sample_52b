@@ -2,7 +2,7 @@
   .side__nav
     %ul.side__nav__inner
       %li.side__nav__inner__first
-        = link_to "#", class: "side__list" do
+        = link_to user_path(current_user.id), class: "side__list" do
           マイページ
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other

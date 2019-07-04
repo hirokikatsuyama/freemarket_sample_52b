@@ -1,4 +1,9 @@
 = render partial: "layouts/header"
+.link__list
+  %ul
+    %li
+      - breadcrumb :log_out_page_users
+      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
 = render partial: "layouts/button"
 .logout.clearfix
   = render partial: "side"
