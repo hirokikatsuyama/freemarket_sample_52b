@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_055258) do
+ActiveRecord::Schema.define(version: 2019_07_04_061713) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
+    t.integer "size"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
@@ -79,11 +80,13 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
   end
 
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "card_number"
+    t.string "expiration_date_month"
+    t.string "expiration_date_year"
+    t.string "security_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.string "customer_id"
-    t.string "card_id"
     t.index ["user_id"], name: "index_credits_on_user_id"
   end
 
@@ -110,8 +113,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
     t.string "name"
     t.string "detail"
     t.string "condition"
-    t.string "shipping_cost"
-    t.string "shipping_method"
+    t.integer "shipping_cost"
     t.string "shipping_source"
     t.string "delivery_date"
     t.string "shopping_status"
@@ -125,8 +127,10 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
     t.bigint "user_id"
     t.bigint "brand_id"
     t.bigint "size_id"
+    t.bigint "shipping_method_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id"
     t.index ["size_id"], name: "index_items_on_size_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -155,10 +159,18 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "shipping_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "method_name"
+    t.integer "method_cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sizing"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -176,7 +188,6 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.bigint "item_id"
-    t.integer "status"
     t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
     t.index ["item_id"], name: "index_transactions_on_item_id"
     t.index ["seller_id"], name: "index_transactions_on_seller_id"
@@ -202,6 +213,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_055258) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "shipping_methods"
   add_foreign_key "items", "sizes"
   add_foreign_key "items", "users"
   add_foreign_key "likes", "items"

@@ -66,19 +66,6 @@
                 = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
               .select-wrap
               .select-wrap2
-          .single-main__section__item--detail__pulldown__one
-          .single-main__section__item--detail__pulldown__one.hide__form
-            %label.normal-label サイズ
-            %span.form-require 必須
-            .single-main__section__item--detail__pulldown__one__tab
-              =f.collection_select :size_id, @sizes, :id, :name,{prompt: "---"},{class: 'select--booox', required:"required"}
-          -# = f.fields_for @brand do |brand|
-          -#   .single-main__section__item--detail__pulldown__one.hide__form
-          -#     %label.normal-label ブランド
-          -#     %span.form-any 任意
-          -#     .single-main__section__item--detail__pulldown__one__tab
-          -#       =brand.label :name do
-          -#         =brand.text_field :name, class: "form__brand", placeholder: "例）シャネル"   
           .single-main__section__item--detail__pulldown__one.hide__form
             %label.normal-label ブランド
             %span.form-any 任意
@@ -100,7 +87,14 @@
               .single-main__section__delivery__pulldown__one__tab
                 =f.label :shipping_cost do
                   =f.select :shipping_cost, [["--"], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]], id: "pulu"
-                  .pulu2
+
+            -# .single-main__section__delivery__pulldown__one
+            -#   %label.normal-label 配送料の方法
+            -#   %span.form-require 必須
+            -#   .single-main__section__delivery__pulldown__one__tab
+            -#     =f.label :shipping_cost do
+            -#       =f.select :shipping_cost, [["--"], ["未定"], ["らくらくメルカリ便"], ["ゆうメール"], ["レターパック"], ["普通郵便（定形、定形外）"], ["クロネコヤマト"], ["ゆうパック"], ["クリックポスト"], ["ゆうパケット"]], id: "pulu2"
+
           .single-main__section__delivery__pulldown__one
             %label.normal-label 配送元の地域
             %span.form-require 必須
