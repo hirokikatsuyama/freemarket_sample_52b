@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_07_04_061713) do
     t.string "expiration_date_month"
     t.string "expiration_date_year"
     t.string "security_code"
+    t.string "customer_id"
+    t.string "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
