@@ -16,21 +16,20 @@
             %h3 出品中
           = link_to in_progress_transactions_path, class: "in_progress__item__in_progress" do
             %h3 取引中
-            .in_progress-tab__contents
+            .in_progress-contents
               - @in_progress.each do |in_progress|
-                .in_progress-tab__contents__list
+                .in_progress-contents__list
                   - if in_progress.present? && (current_user.id == in_progress.seller_id || current_user.id == in_progress.buyer_id)
-                    .in_progress-tab__contents__list--image
+                    .in_progress-contents__list--image
                       ※イメージ
-                    .in_progress-tab__contents__list__text
-                      .in_progress-tab__contents__list__text--title
+                    .in_progress-contents__list__text
+                      .in_progress-contents__list__text--title
                         = in_progress.item.name
-                      .in_progress-tab__contents__list__text--status
+                      .in_progress-contents__list__text--status
                         取引中
                   - else
-                    %li.in_progress__not__found__now 取引中の商品がありません
-                    %ul.in_progress-tab__contents__list__past
-                      %li
+                    .in_progress-contents__list__unfound
+                      取引中の商品がありません
           = link_to completed_transactions_path, class: "in_progress__item__completed" do
             %h3 売却済み
 = render partial: "layouts/banner"

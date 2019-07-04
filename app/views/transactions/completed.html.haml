@@ -20,18 +20,17 @@
             %h3 売却済み
             .completed-tab__contents
             - @completed.each do |completed|
-              .completed-tab__contents__list
+              .completed-contents__list
                 - if completed.present?
-                  .completed-tab__contents__list--image
+                  .completed-contents__list--image
                     ※イメージ
-                  .completed-tab__contents__list__text
-                    .completed-tab__contents__list__text--title
+                  .completed-contents__list__text
+                    .completed-contents__list__text--title
                       = completed.item.name
-                    .completed-tab__contents__list__text--status
+                    .completed-contents__list__text--status
                       売却済
                 - else
-                  %li.completed__not__found__now 取引中の商品がありません
-                  %ul.completed-tab__contents__list__past
-                    %li
+                  .completed-contents__list__unfound
+                    取引中の商品がありません
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
