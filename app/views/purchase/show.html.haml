@@ -9,13 +9,13 @@
       .item__confirmation__product
         .item__confirmation__product__content
           %h3
-            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPF_-Ey6UIAypKKCwOP30iAZqpam7Kslrll21X3hnzhgN9Zv_"
+            = image_tag @item.images.first.image.to_s
           %p
             = @item.name
           .item__confirmation__product__form
             .buy__price
               %span.buy__price__left
-                = "¥ #{@item.price}"
+                = converting(@item.price)
               %span.buy__price__right 送料込み
             .buy__point
               .buy__point--not
@@ -24,7 +24,7 @@
               .buy--total__title
                 支払い金額
               .buy--total__price
-                = "¥ #{@item.price}"
+                = converting(@item.price)
             %p.buy__alert 配送先と支払い方法の入力を完了してください。
             = form_tag(pay_purchase_index_path, method: :post) do
               = hidden_field_tag :id, @item.id
