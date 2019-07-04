@@ -77,9 +77,12 @@ class ItemsController < ApplicationController
 
   def search
     @children = Category.find(params[:parent_id]).children
+    @sizing = Category.find(params[:parent_id]).size
+    @size = Size.where(sizing:@sizing)
     respond_to do |format|
-      format.html
-      format.json
+      format.html  { redirect_to :root }
+      format.json  { render json: { categories: @children, sizes: @size} }
+      #カテゴリーテーブルとサイズテーブル、異なる2つのテーブルから値を取得
     end
   end
 
@@ -92,6 +95,12 @@ class ItemsController < ApplicationController
   def keyword_search
     @search_items = Item.all
   end
+
+  def shipping_search
+    @shipping_cost = ShippingMethod.where(method_cost: params[:shipping_cost])
+
+  end
+
 
   private
 
