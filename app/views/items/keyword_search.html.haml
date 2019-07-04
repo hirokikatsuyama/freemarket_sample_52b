@@ -15,7 +15,77 @@
               .detail__search__item__body__price
                 .detail__search__item__body__price__text=converting(item.price)
   .detail__search__content__side
-    .form.detail__search__form
-      .form.detail__search__form__sort
+    %form.detail__search__form
+      .detail__search__form__sort
+        %select.detail__search__form__sort__input
+          %option 並び替え
+          %option 価格の安い順
+          %option 価格の高い順
+          %option 出品の古い順
+          %option 出品の新しい順
+          %option いいね！の多い順
+        %i.fas.fa-angle-down
+      .detail__search__form__check
+        %h3 詳細検索
+        .detail__search__form__check__box
+          %label
+            %i.fas.fa-plus.detail__search__icon
+            %span キーワードを追加する
+          %input{placeholder:"例）値下げ", class: "detail__search__form__check__box__input"}
+        .detail__search__form__category
+          %label
+            %i.fas.fa-list-ul.detail__search__icon
+            %span カテゴリーを選択する
+          %select.detail__search__form__category__select
+            %option すべて
+            %option 並び替え
+            %option 価格の安い順
+            %option 価格の高い順
+            %option 出品の古い順
+            %option 出品の新しい順
+            %option いいね！の多い順
+          -# %i.fas.fa-angle-down
+        .detail__search__form__check__box
+          %label
+            %i.fas.fa-tag.detail__search__icon
+            %span ブランド名から探す
+          %input{placeholder:"例）シャネル", class: "detail__search__form__check__box__input"}
+        .detail__search__form__category
+          %label
+            %i.fas.fa-expand.detail__search__icon
+            %span サイズを指定する
+          %select.detail__search__form__category__select
+            %option すべて
+            %option 洋服のサイズ
+            %option メンズ靴のサイズ
+            %option レディース靴のサイズ
+            %option スカートのサイズ
+            %option キッズ服のサイズ
+            %option ベビー・キッズ靴のサイズ
+            %option ベビー服のサイズ
+            %option テレビのサイズ
+            %option カメラレンズのサイズ
+            %option オートバイのサイズ
+            %option ヘルメットのサイズ
+            %option タイヤのサイズ
+            %option スキーのサイズ
+            %option スノーボードのサイズ
+          -# %i.fas.fa-angle-down
+        .detail__search__form__category
+          %label
+            %i.fas.fa-coins.detail__search__icon
+            %span 価格
+          %select.detail__search__form__category__select
+            %option 選択してください
+            %option 300 ~ 1000
+            %option 1000 ~ 5000
+            %option 5000 ~ 10000
+            %option 10000 ~ 30000
+            %option 30000 ~ 50000
+            %option 50000 ~
+          -# %i.fas.fa-angle-down
+          %input{placeholder:"¥ Min", class: "detail__search__form__price"}
+          %span.detail__search__form__price__text ~
+          %input{placeholder:"¥ Max", class: "detail__search__form__price"}
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"

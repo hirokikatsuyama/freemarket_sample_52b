@@ -62,6 +62,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = @item.user
     @image = @item.images
+    binding.pry
     @category = @item.category
     @brand = @item.brand
     @good = Evaluation.evaluation(1, @user)

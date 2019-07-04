@@ -6,28 +6,28 @@
     %h2.top__pickup__title ピックアップカテゴリー
     .top__item
       %h3.top__item__title
-        = link_to "レディース 新着アイテム", "#", class: "top__item__title__link"
+        = link_to "レディース 新着アイテム", "/categories/1", class: "top__item__title__link"
       .top__item__contents.clearfix
         = render partial: 'top', collection: @lady_items
       .top__item__all
         = link_to "すべての商品を見る", "#"
     .top__item
       %h3.top__item__title
-        = link_to "メンズ 新着アイテム", "#", class: "top__item__title__link"
+        = link_to "メンズ 新着アイテム", "/categories/2", class: "top__item__title__link"
       .top__item__contents.clearfix
         = render partial: 'top', collection: @man_items
       .top__item__all
         = link_to "すべての商品を見る", "#"
     .top__item
       %h3.top__item__title
-        = link_to "ベビー・キッズ 新着アイテム", "#", class: "top__item__title__link"
+        = link_to "ベビー・キッズ 新着アイテム", "/categories/3", class: "top__item__title__link"
       .top__item__contents.clearfix
         = render partial: 'top', collection: @kids_items
       .top__item__all
         = link_to "すべての商品を見る", "#"
     .top__item
       %h3.top__item__title
-        = link_to "コスメ・香水・美容 新着アイテム", "#", class: "top__item__title__link"
+        = link_to "コスメ・香水・美容 新着アイテム", "/categories/7", class: "top__item__title__link"
       .top__item__contents.clearfix
         = render partial: 'top', collection: @beauty_items
       .top__item__all
