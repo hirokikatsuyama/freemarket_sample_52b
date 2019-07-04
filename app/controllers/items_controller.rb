@@ -61,8 +61,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @user = @item.user
-    @image = @item.images
-    binding.pry
+    @images = @item.images
     @category = @item.category
     @brand = @item.brand
     @good = Evaluation.evaluation(1, @user)
