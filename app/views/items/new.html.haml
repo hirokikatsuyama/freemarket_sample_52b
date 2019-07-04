@@ -1,7 +1,8 @@
 %script{src: "dropzone.js"}
 .single-container
   %header.single-header
-    = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
+    = link_to "/", class: "title__logo" do
+      = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
   %main.single-main#new_item
     = form_for @item do |f|
       %section.single-main__section
@@ -134,7 +135,8 @@
       .single-footer__section
         %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
         .single-footer__section__img
-          = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
+          = link_to "/", class: "title__logo" do
+            = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
 -# %script{:src => "effect.js"}
 -# %button{:onclick => "run();", :style => "font-size:32px;"} run

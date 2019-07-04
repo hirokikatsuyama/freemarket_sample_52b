@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :destroy,]
-  include AjaxHelper 
+  include AjaxHelper
 
   def index
     @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).where(status: 1).order(created_at: "DESC").limit(4)
@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
     @good = Evaluation.evaluation(1, @user)
     @normal = Evaluation.evaluation(2, @user)
     @bad = Evaluation.evaluation(3, @user)
+    @prefecture = Prefecture.find(@item[:shipping_source]).name
   end
 
   def search
