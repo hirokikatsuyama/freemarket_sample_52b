@@ -70,7 +70,7 @@
     %h3.side__nav__inner__title 設定
     %ul.side__nav__inner
       %li.side__nav__inner__first
-        = link_to "#", class: "side__list" do
+        = link_to edit_user_path(current_user.id), class: "side__list" do
           プロフィール
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
@@ -86,7 +86,7 @@
           メール/パスワード
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other
-        = link_to "#", class: "side__list" do
+        = link_to confirmation_users_path, class: "side__list" do
           本人情報
           %i.fas.fa-angle-right.next
       %li.side__nav__inner__other

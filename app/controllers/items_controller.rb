@@ -29,7 +29,9 @@ class ItemsController < ApplicationController
       if brand = Brand.find_by(name: params[:item][:brand_id])
         params[:item][:brand_id] = brand.id
       else
+        if
         params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
+        end
       end
 
       @item = Item.new(item_params)

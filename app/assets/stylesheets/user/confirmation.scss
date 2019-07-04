@@ -90,6 +90,11 @@
     &__prefecture {
       margin: 40px 0 0;
       position: relative;
+      label {
+        font-weight: 600;
+        display: inline-block;
+        font-size: 14px;
+      }
       &__icon {
         position: absolute;
         right: 10px;
