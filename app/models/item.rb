@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   has_many :comments
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   def previous
     user.items.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first

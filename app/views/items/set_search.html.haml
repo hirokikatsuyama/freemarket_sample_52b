@@ -1,16 +1,10 @@
 = render partial: "layouts/header"
-.link__list
-  %ul
-    %li
-      - breadcrumb :category, @category
-      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
 = render partial: "layouts/button"
 .categories__show.clearfix
   .categories__show__inner
     .clearfix
-      %h1.categories__show__title="#{@category.name}の商品一覧"
       .categories__show__box.clearfix
-        -@items.each do |item|
+        -@products.each do |item|
           .categories__show__box__item
             =link_to "#" do
               .categories__show__image
@@ -21,8 +15,15 @@
                   .categories__show__body__details__price=converting(item.price)
                 %p
                   （税込）
-    .categories__description
-      .categories__description__title
-        %h3=@category.name
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
+
+
+-# %head
+-#   %meta{:charset => "utf-8"}/
+-#   %link{:href => "", :rel => "stylesheet", :type => ""}/
+-# %body
+-#   @search.each do |items|
+-#   = @items.name
+-# %br/
+

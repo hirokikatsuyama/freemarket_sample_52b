@@ -155,7 +155,7 @@ $(function(){
     preview2.empty();
   } else {
     var pickup_images1 = images.slice(0,5);
-    
+
     // 1~5枚目を１段目に表示
     $('#preview').empty();
     $.each(pickup_images1, function(index, image){
@@ -202,7 +202,8 @@ $('.new_item').on('submit', function(e){
     data:   formData,
     contentType: false,
     processData: false,
-  });
-  location.href = '/';
+  })
+  // location.href = '/';
   });
 });
+

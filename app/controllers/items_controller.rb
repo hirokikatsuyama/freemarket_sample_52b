@@ -1,16 +1,20 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :destroy,]
+  include AjaxHelper
 
   def index
-    @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).order(created_at: "DESC").limit(4)
-    @man_items = Item.includes(:images).where(category_id: Category.find(2).subtree_ids).order(created_at: "DESC").limit(4)
-    @kids_items = Item.includes(:images).where(category_id: Category.find(3).subtree_ids).order(created_at: "DESC").limit(4)
-    @beauty_items = Item.includes(:images).where(category_id: Category.find(7).subtree_ids).order(created_at: "DESC").limit(4)
-    @chanel = Item.includes(:images).where(brand_id: 1).order(created_at: "DESC").limit(4)
-    @vuitton = Item.includes(:images).where(brand_id: 2).order(created_at: "DESC").limit(4)
-    @supreme = Item.includes(:images).where(brand_id: 3).order(created_at: "DESC").limit(4)
-    @nike = Item.includes(:images).where(brand_id: 4).order(created_at: "DESC").limit(4)
+    @lady_items = Item.includes(:images).where(category_id: Category.find(1).subtree_ids).where(status: 1).order(created_at: "DESC").limit(4)
+    @man_items = Item.includes(:images).where(category_id: Category.find(2).subtree_ids).where(status: 1).order(created_at: "DESC").limit(4)
+    @kids_items = Item.includes(:images).where(category_id: Category.find(3).subtree_ids).where(status: 1).order(created_at: "DESC").limit(4)
+    @beauty_items = Item.includes(:images).where(category_id: Category.find(7).subtree_ids).where(status: 1).order(created_at: "DESC").limit(4)
+    @chanel = Item.includes(:images).where(brand_id: 1).where(status: 1).order(created_at: "DESC").limit(4)
+    @vuitton = Item.includes(:images).where(brand_id: 2).where(status: 1).order(created_at: "DESC").limit(4)
+    @supreme = Item.includes(:images).where(brand_id: 3).where(status: 1).order(created_at: "DESC").limit(4)
+    @nike = Item.includes(:images).where(brand_id: 4).where(status: 1).order(created_at: "DESC").limit(4)
+  end
+
+  def set_search
   end
 
   def new
@@ -21,23 +25,25 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     respond_to do |format|
       if brand = Brand.find_by(name: params[:item][:brand_id])
         params[:item][:brand_id] = brand.id
       else
+        if
         params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
+        end
       end
-      
+
       @item = Item.new(item_params)
-      
+      @item.status = 1
       if @item.save && new_image_params[:images][0] != ""
         new_image_params[:images].map do |image|
           @item.images.create(image: image, item_id: @item.id)
         end
-        format.html{redirect_to root_path}
+        Transaction.create(seller_id: @item.user_id, item_id: @item.id, status: 1)
+        format.js{render ajax_redirect_to(root_path)}
       else
-        format.html{render action: 'new'}
+        format.js{render ajax_redirect_to(new_item_path)}
       end
     end
   end
@@ -60,12 +66,13 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @user = @item.user
-    @image = @item.images
+    @images = @item.images
     @category = @item.category
     @brand = @item.brand
     @good = Evaluation.evaluation(1, @user)
     @normal = Evaluation.evaluation(2, @user)
     @bad = Evaluation.evaluation(3, @user)
+    @prefecture = Prefecture.find(@item[:shipping_source]).name
   end
 
   def search
@@ -81,12 +88,8 @@ class ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    # if item.user_id == current_user_id
     item.destroy
     redirect_to root_path
-    # else
-    #   redirect_to root_path alert: "エラーが発生しました。"
-    # end
   end
 
   def keyword_search

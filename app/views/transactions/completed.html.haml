@@ -1,0 +1,37 @@
+= render partial: "layouts/header"
+.link__list
+  %ul
+    %li
+      - breadcrumb :completed_transactions
+      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
+.mypage__wrapper.clearfix
+  .render-side-bar
+    = render partial: "users/side"
+    .completed
+      %section.completed__buy
+        %h2.completed__buy__head
+          出品した商品
+        .completed__item
+          = link_to listing_transactions_path, class: "completed__item__listing" do
+            %h3 出品中
+          = link_to in_progress_transactions_path, class: "completed__item__in_progress" do
+            %h3 取引中
+          = link_to completed_transactions_path, class: "completed__item__completed" do
+            %h3 売却済み
+            .completed-tab__contents
+            - @completed.each do |completed|
+              .completed-tab__contents__list
+                - if completed.present?
+                  .completed-tab__contents__list--image
+                    ※イメージ
+                  .completed-tab__contents__list__text
+                    .completed-tab__contents__list__text--title
+                      = completed.item.name
+                    .completed-tab__contents__list__text--status
+                      売却済
+                - else
+                  %li.completed__not__found__now 取引中の商品がありません
+                  %ul.completed-tab__contents__list__past
+                    %li
+= render partial: "layouts/banner"
+= render partial: "layouts/footer"

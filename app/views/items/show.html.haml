@@ -1,4 +1,9 @@
 = render partial: "layouts/header"
+.link__list
+  %ul
+    %li
+      - breadcrumb :item
+      = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-right gretel__icon')} "
 = render partial: "layouts/button"
 .wrapper
   .itembox__container
@@ -6,20 +11,20 @@
     .itembox__container__detail--main.clearfix
       .itembox__container__photobox#wrap
         %ul#slider
-          - @image.each do |image|
+          - @images.each do |image|
             %li.itembox__container__photobox__img
-              -# = image_tag(image.url, class:"itembox__container__photobox__img__photo")
+              = image_tag image.image.to_s, class:"itembox__container__photobox__img__photo"
         %ul#itembox__container__small__photobox
-          - @image.each do |image|
+          - @images.each do |image|
             %li.itembox__container__small__photobox__img
-              -# = image_tag(image.url, class: "itembox__container__small__photobox__img__photo") 
+              = image_tag image.image.to_s, class: "itembox__container__small__photobox__img__photo" 
       %table.itembox__container__detail__table
         %tbody
           %tr
             %th 出品者
             %td
               = link_to "#{@user.nickname}" #"users_show_path#{current_user.id}"
-              //他人のitem/showページにのみ表示  
+              //他人のitem/showページにのみ表示
               - unless @item.user_id == current_user.id
                 %div
                   .itembox__container__detail__table__ratings
@@ -61,7 +66,7 @@
           %tr
             %th 配送元地域
             %td
-              =link_to "#{@item.shipping_source}", "#"
+              =link_to "#{@prefecture}", "#"
           %tr
             %th 発送日の目安
             %td= "#{@item.delivery_date}"
@@ -71,11 +76,11 @@
       %span.itembox__container__pricebox__tax= "(税抜)"
       %span.itembox__container__pricebox__fee= "(送料込)"
     - unless @item.user_id == current_user.id
-      = link_to "#" do
+      = link_to "/purchase/#{@item.id}", method: :get do
         %button.itembox__container__buybtn 購入画面に進む
     .itembox__container__discription
       %p.itembox__container__discription__exprain= "#{@item.detail}"
-    //他人のitem/showページにのみ表示  
+    //他人のitem/showページにのみ表示
     - unless @item.user_id == current_user.id
       .itembox__container__btnbox.clearfix
         .itembox__container__btnbox__left
@@ -111,14 +116,14 @@
           #text 確認
           #text 削除すると二度と復活できません。
           #text 削除する代わりに停止することもできます。
-          #text 本当に削除しますか？　
+          #text 本当に削除しますか？
         .modalbtns
           %button#close キャンセル
           = link_to "削除する", "/items/#{@item.id}", method: :delete, id: "delete_item"
           -# %button#delete_item{onclick: "location.href='/items/#{@item.id}'", method: :delete} 削除する
 
       -# #modalwindow2
-      -#   #modalbelete_notice 
+      -#   #modalbelete_notice
       -#     .text 出品を削除しました。
   ////
   .itembox__message
@@ -158,8 +163,8 @@
     .itembox__user__profile__mainbox
       %h2=link_to "#{@user.nickname}さんのその他の出品", "#"
       = render partial: "items/usergoodsbox", collection:@user.items.limit(6), :as => "items"
-      %h2=link_to "#{@category.name}", "#"
-      = render partial: "items/categorygoodsbox", collection:@category.items.limit(6)
+      %h2=link_to "#{@category.name}", "/categories/#{@category.id}"
+      = render partial: "items/categorygoodsbox", collection:@category.items.limit(6), :as => "items"
 = render partial: "layouts/banner"
 = render partial: "layouts/footer"
 
