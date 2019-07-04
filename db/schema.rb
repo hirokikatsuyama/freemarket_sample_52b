@@ -186,6 +186,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_061713) do
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.bigint "item_id"
+    t.integer "status"
     t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
     t.index ["item_id"], name: "index_transactions_on_item_id"
     t.index ["seller_id"], name: "index_transactions_on_seller_id"
