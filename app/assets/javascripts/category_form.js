@@ -103,7 +103,8 @@ $(function(){
                           dataType: 'json'
                         })
                         .done(function(data) {
-                          if(data.size == ""){$('.single-main__section__item--detail__pulldown__one').css('display', 'none')}
+                          console.log(data)
+                          if(data.sizes == ""){$('#sizebox').css('display', 'none')}
                           else{
                             $('.single-main__section__item--detail__pulldown__one').css('display', 'block')
                               var html = buildSize();
