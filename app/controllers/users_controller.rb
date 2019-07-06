@@ -6,11 +6,14 @@ class UsersController < ApplicationController
 
   def create_sign_up
     @user = User.new(user_params)
+    @user.build_profile
     if @user.save(context: :validate_password)
       log_in(@user)
       redirect_to root_path
+      flash[:notice] = "会員情報が登録されました"
     else
       render action: "registration_base"
+      flash[:notice] = "入力内容に不備があります"
     end
   end
 
