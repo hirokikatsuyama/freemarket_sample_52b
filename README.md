@@ -7,6 +7,7 @@
 |avater_image|text|
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
+
 ### Association
 -has_one :address
 -has_many :items
