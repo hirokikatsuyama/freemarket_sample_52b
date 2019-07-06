@@ -29,6 +29,7 @@
 |birthday_month|integer|null: false|
 |bithday_day|integer|null: false|
 |user_id|references|null:false, foreign_key:true|
+
 ### Association
 -belongs_to :user
 
@@ -43,6 +44,7 @@
 |building|string|
 |phone|integer|
 |user_id|references|null:false, foreign_key:true|
+
 ### Association
 -belongs_to :user
 
@@ -78,45 +80,49 @@
 -has_many :transactions
 
 
-### comments table
+## comments table
 |Column|type|Options|
 |------|----|-------|
 |text|string|null: false|
 |user_id|references|null: false,foreign_key: true|
 |item_id|references|null: false,foreign_key: true|
+
 ### Association
 -belongs_to :user
 -belongs_to :item
 
 
-### evaluations table
+## evaluations table
 |Column|type|Options|
 |------|----|-------|
 |evaluation|string|null: false|
 |date|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |transaction_id|references|null: false,foreign_key: true|
+
 ### Association
 -belongs_to :user
 -belongs_to :tansaction
 
 
-### transactions table
+## transactions table
 |Column|type|Options|
 |------|----|-------|
 |item_id|references|null: false,foreign_key: true|
 |buyer_id|references|null: false,foreign_key: true|
 |seller_id|references|null: false, foreign_key: true|
+
 ### Association
 -belongs_to :user
 -belongs_to :item
 
 
-### likes table
+## likes table
 |Column|type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
+
 ### Association
 -belongs_to :user
 -belongs_to :item
@@ -135,11 +141,12 @@
 -belongs_to :user
 
 
-### images table
+## images table
 |Column|type|Options|
 |------|----|-------|
 |image|string|null: false|
 |item_id|references|null: false, foreign_key: true|
+
 ### Association
 -belongs_to :item
 
@@ -151,29 +158,32 @@
 ### Association
 -has_many :brands
 
-### brands table
+## brands table
 |Column|type|Options|
 |------|----|-------|
 |name|string|null: false|
 |brands_group_id|references|null: false, foreign_key: true|
+
 ### Association
 -belongs_to :brands_group
 -has_many :items
 
-### categories table
+## categories table
 |Column|type|Options|
 |------|----|-------|
 |name|string|null: false|
 |parent_id|references|null: false, foreign_key: true|
+
 ### Association
 -belongs_to :parent, class_name: :"Category"
 -has_many :children, class_name: :"Category"
 -has_many :items
 
 
-### sizes table
+## sizes table
 |Column|type|Options|
 |------|----|-------|
 |name|string|null: false|
+
 ### Association
 -has_many :items
