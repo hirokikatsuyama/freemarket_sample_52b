@@ -6,6 +6,8 @@
       %button.button-registration{onclick: "location.href='/users/sign_up'"} 新規会員登録
     .sign-in__content__main
       = form_for(:session, url: users_create_path) do |f|
+        - if flash[:notice]
+          %p.flash-registration= flash[:notice]
         .sign-in__content__main__button
           %button.button-facebook{onclick: "location.href='/auth/facebook'", type: "button"} Facebookでログイン
           %button.button-google{onclick: "location.href='/auth/google_oauth2'", type: "button"} Googleでログイン

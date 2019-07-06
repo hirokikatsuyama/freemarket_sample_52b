@@ -64,15 +64,20 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
-    @user = @item.user
-    @images = @item.images
-    @category = @item.category
-    @brand = @item.brand
-    @good = Evaluation.evaluation(1, @user)
-    @normal = Evaluation.evaluation(2, @user)
-    @bad = Evaluation.evaluation(3, @user)
-    @prefecture = Prefecture.find(@item[:shipping_source]).name
+    unless current_user
+      redirect_to sign_in_users_path
+      flash[:notice] = "ログインが必要です。アカウントをお持ちでない場合は上記の「新規会員登録」より会員登録をしてください。"
+    else
+      @item = Item.find(params[:id])
+      @user = @item.user
+      @images = @item.images
+      @category = @item.category
+      @brand = @item.brand
+      @good = Evaluation.evaluation(1, @user)
+      @normal = Evaluation.evaluation(2, @user)
+      @bad = Evaluation.evaluation(3, @user)
+      @prefecture = Prefecture.find(@item[:shipping_source]).name
+    end
   end
 
   def search
