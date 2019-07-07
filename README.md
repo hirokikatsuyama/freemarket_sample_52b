@@ -151,10 +151,11 @@
 -belongs_to :item
 
 
-### brands_group table
+## brands_group table
 |Column|type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false
+
 ### Association
 -has_many :brands
 
