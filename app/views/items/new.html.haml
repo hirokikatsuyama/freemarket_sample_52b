@@ -12,31 +12,47 @@
           %label#large-label 出品画像
           %span.form-require 必須
           %p 最大10枚までアップロードできます
-          = f.fields_for :images, @item.images.first do |image|
-            .item__img__dropzone.clearfix
-              #preview
-              .item__img__dropzone__input
-                =image.label :image, for: "upload-image" do
+          .all-gazo
+            .uploader-5#preview
+            .single-main__section__picture__uploader
+              #form_upload.form_upload
+                -# =i.file_field :image, id: "image-2"
+                -# =i.file_field :image, id: "image-3"
+                -# =i.file_field :image, id: "image-4"
+                -# =i.file_field :image, id: "image-5"
+                -# =i.file_field :image, id: "image-6"
+                .single-main__section__picture__uploader__font.form_upload__text
                   %p
-                  ドラッグアンドドロップ
+                  ドラッグアンドドロップまたは
                   %br
-                  またはクリックしてファイルをアップロード
-                  .input-area
-                    =image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-            .item__img__dropzone2.clearfix
-              #preview2
-              .item__img__dropzone2__input2
-                ドラッグアンドドロップ
-                %br
-                またはクリックしてファイルをアップロード
-                =image.label :image, for: "upload-image" do
-                  .input-area
-                    = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-                  .item__img__dropzone2__input2__description
-                    .item__img__dropzone2__input2__description__text
-                      ドラッグアンドドロップ
-                      %br
-                      またはクリックしてファイルをアップロード
+                  クリックしてファイルをアップロード
+                  = f.fields_for :images do |i|
+                    =i.label :image, id: "files" do
+                      =i.file_field :image
+                      -# =i.file_field :image, id: "image-1 input_image files", class: "upload0"
+            -# .item__img__dropzone.clearfix
+            -#   #preview
+            -#   .item__img__dropzone__input
+            -#     %p
+            -#     ドラッグアンドドロップ
+            -#     %br
+            -#     またはクリックしてファイルをアップロード
+            -#     .input-area
+            -#       =i.label :images, id: "files" do
+            -#         = i.file_field :image, class: "image-1"
+            -# .item__img__dropzone2.clearfix
+            -#   #preview2
+            -#   .item__img__dropzone2__input2
+            -#     ドラッグアンドドロップ
+            -#     %br
+            -#     またはクリックしてファイルをアップロード
+            -#     .input-area
+            -#       = i.file_field :image
+            -#     .item__img__dropzone2__input2__description
+            -#       .item__img__dropzone2__input2__description__text
+            -#         ドラッグアンドドロップ
+            -#         %br
+            -#         またはクリックしてファイルをアップロード
         .single-main__section__item--name
           .form-group
             %label.normal-label 商品名
@@ -63,7 +79,7 @@
             %span.form-any 任意
             .single-main__section__item--detail__pulldown__one__tab
               =f.label :brand_id do
-                =f.text_field :brand_id, class: "form__brand", placeholder: "例）シャネル"   
+                =f.text_field :brand_id, class: "form__brand", placeholder: "例）シャネル"
           .single-main__section__item--detail__pulldown__one
             %label.normal-label 商品の状態
             %span.form-require 必須
@@ -123,7 +139,7 @@
             = link_to "加盟店規約", "#"
             に同意したことになります。
           .single-main__section__exhibition__button
-            = f.submit "出品する" , class: "single-main__section__exhibition__button__exhibition"
+            = f.submit "出品する", name:"commit", class: "single-main__section__exhibition__button__exhibition"
             %button.single-main__section__exhibition__button__return もどる
     %footer.single-footer
       .single-footer__section
@@ -132,8 +148,3 @@
           = link_to "/", class: "title__logo" do
             = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
         %p.single-footer__right @ 2019 Mercari
--# %script{:src => "effect.js"}
--# %button{:onclick => "run();", :style => "font-size:32px;"} run
--# %p
--# %img#SrcImage{:src => "test.png"}/
--# %canvas#DstCanvas
