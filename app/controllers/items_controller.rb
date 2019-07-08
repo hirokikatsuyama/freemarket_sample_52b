@@ -77,6 +77,7 @@ class ItemsController < ApplicationController
       @normal = Evaluation.evaluation(2, @user)
       @bad = Evaluation.evaluation(3, @user)
       @prefecture = Prefecture.find(@item[:shipping_source]).name
+      @ShippingMethod = ShippingMethod.sind(@item[:shipping_cost]).name
     end
   end
 
