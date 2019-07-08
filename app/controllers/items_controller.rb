@@ -32,8 +32,8 @@ class ItemsController < ApplicationController
       params[:item][:brand_id] = Brand.create(name: params[:item][:brand_id]).id
     end
       @item = Item.new(item_params)
-    if @item.save
       @item.status = 1
+    if @item.save
       Transaction.create(seller_id: @item.user_id, item_id: @item.id, status: 1)
       redirect_to root_path
     end
