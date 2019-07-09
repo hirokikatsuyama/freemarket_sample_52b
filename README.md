@@ -9,13 +9,13 @@
 |password|string|null: false, unique: true|
 
 ### Association
--has_one :address
--has_many :items
--has_many :likes
--has_many :comments
--has_many :transactions
--has_many :evaluations
-ーhas_one :credit
+- has_one :address
+- has_many :items
+- has_many :likes
+- has_many :comments
+- has_many :transactions
+- has_many :evaluations
+ー has_one :credit
 
 ## profiles table
 |Column|type|Options|
@@ -31,7 +31,7 @@
 |user_id|references|null:false, foreign_key:true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 
 ## address table
@@ -46,7 +46,7 @@
 |user_id|references|null:false, foreign_key:true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 
 ## items table
@@ -70,14 +70,14 @@
 |size_id|references|foreign_key: true|
 
 ### Association
--belongs_to :user
--belongs_to :brand
--belongs_to :small_category
--belongs_to :size
--has_many :likes
--has_many :comments
--has_many :images
--has_many :transactions
+- belongs_to :user
+- belongs_to :brand
+- belongs_to :small_category
+- belongs_to :size
+- has_many :likes
+- has_many :comments
+- has_many :images
+- has_many :transactions
 
 
 ## comments table
@@ -88,8 +88,8 @@
 |item_id|references|null: false,foreign_key: true|
 
 ### Association
--belongs_to :user
--belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 
 ## evaluations table
@@ -101,8 +101,8 @@
 |transaction_id|references|null: false,foreign_key: true|
 
 ### Association
--belongs_to :user
--belongs_to :tansaction
+- belongs_to :user
+- belongs_to :tansaction
 
 
 ## transactions table
@@ -113,8 +113,8 @@
 |seller_id|references|null: false, foreign_key: true|
 
 ### Association
--belongs_to :user
--belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 
 ## likes table
@@ -124,8 +124,8 @@
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
--belongs_to :user
--belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 
 
@@ -138,7 +138,7 @@
 |security_code|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 ### Association
--belongs_to :user
+- belongs_to :user
 
 
 ## images table
@@ -148,7 +148,7 @@
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
--belongs_to :item
+- belongs_to :item
 
 
 ## brands_group table
@@ -157,7 +157,7 @@
 |name|string|null: false
 
 ### Association
--has_many :brands
+- has_many :brands
 
 ## brands table
 |Column|type|Options|
@@ -166,8 +166,8 @@
 |brands_group_id|references|null: false, foreign_key: true|
 
 ### Association
--belongs_to :brands_group
--has_many :items
+- belongs_to :brands_group
+- has_many :items
 
 ## categories table
 |Column|type|Options|
@@ -176,9 +176,9 @@
 |parent_id|references|null: false, foreign_key: true|
 
 ### Association
--belongs_to :parent, class_name: :"Category"
--has_many :children, class_name: :"Category"
--has_many :items
+- belongs_to :parent, class_name: :"Category"
+- has_many :children, class_name: :"Category"
+- has_many :items
 
 
 ## sizes table
@@ -187,4 +187,4 @@
 |name|string|null: false|
 
 ### Association
--has_many :items
+- has_many :items
