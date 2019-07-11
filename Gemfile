@@ -100,3 +100,4 @@ gem 'dropzonejs-rails'
 gem 'fog-aws'
 
 gem 'ransack'
+gem 'capistrano-rails-console'
