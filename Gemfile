@@ -50,7 +50,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'dotenv-rails'
-  # gem 'capistrano-rails-console'
+  gem 'capistrano-rails-console'
 end
 
 group :development do
