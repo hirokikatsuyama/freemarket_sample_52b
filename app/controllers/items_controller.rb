@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
       @normal = Evaluation.evaluation(2, @user)
       @bad = Evaluation.evaluation(3, @user)
       @prefecture = Prefecture.find(@item[:shipping_source]).name
-      @ShippingMethod = ShippingMethod.sind(@item[:shipping_cost]).name
+      @ShippingCost = ShippingMethod.find(@item[:shipping_cost]).name
     end
   end
 
@@ -103,8 +103,12 @@ class ItemsController < ApplicationController
   end
 
   def shipping_search
-    @shipping_cost = ShippingMethod.where(method_cost: params[:shipping_cost])
-
+    @shipping_cost = params[:shipping_id]
+    @shipping = ShippingMethod.where(method_cost:@shipping_cost)
+    respond_to do |format|
+      format.html 
+      format.json
+    end
   end
 
 
