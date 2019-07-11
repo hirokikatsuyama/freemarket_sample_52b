@@ -111,7 +111,7 @@ $(function() {
     $('.single-main__section__picture__uploader').css({
       'position':'absolute',
       'top':'180px',
-      'width':'100%'
+      'width':'calc(100% - 15px)'
     });
 
     })
@@ -142,7 +142,7 @@ $(function() {
       'position':'absolute',
       'top':'180px',
       'left':'123px',
-      'width':'calc(100% - 140px)'
+      'width':'calc(100% - 139px)'
     });
     $('.preimage6').css({
       'position':'absolute',
@@ -172,8 +172,8 @@ $(function() {
     $('.single-main__section__picture__uploader').css({
       'position':'absolute',
       'top':'180px',
-      'left':'245px',
-      'width':'calc(100% - 280px)'
+      'left':'247px',
+      'width':'calc(100% - 260px)'
     });
     $('.preimage7').css({
       'position':'absolute',
@@ -205,12 +205,12 @@ $(function() {
       'position':'absolute',
       'top':'180px',
       'left':'370px',
-      'width':'calc(100% - 485px)'
+      'width':'calc(100% - 385px)'
     });
     $('.preimage8').css({
       'position':'absolute',
       'top':'180px',
-      'left':'245px'
+      'left':'246px'
     });
     })
 
@@ -236,8 +236,8 @@ $(function() {
     $('.single-main__section__picture__uploader').css({
       'position':'absolute',
       'top':'180px',
-      'left':'490px',
-      'width':'calc(100% - 500px)'
+      'left':'493px',
+      'width':'calc(100% - 508px)'
     });
     $('.preimage9').css({
       'position':'absolute',
@@ -268,7 +268,7 @@ $(function() {
     $('.preimage10').css({
       'position':'absolute',
       'top':'180px',
-      'left':'490px'
+      'left':'492px'
     });
     })
 
