@@ -406,14 +406,15 @@
       padding-left:20px;
       padding-right:8px;
       border-right: 1px solid #eee;
-
+    }
+  }
+}
 .single-main__section__delivery__pulldown__one__tab__box {
   overflow: auto;
   // padding:40px;
   width:400px;
   float:right;
   margin:15px 0;
-  
   #item_shipping_cost {
   -moz-appearance: none;
   appearance: none;
@@ -433,7 +434,7 @@
     &__side2{
       padding-left:8px;
     }
-      }
+  }
 }
 .edit-form{
   color: black;
