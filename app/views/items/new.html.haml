@@ -21,6 +21,7 @@
                   ドラッグアンドドロップまたは
                   %br
                   クリックしてファイルをアップロード
+                  %br
                   = f.fields_for :images do |i|
                     =i.label :image, id: "files" do
                       =i.file_field :image

@@ -9,9 +9,7 @@ $(function() {
   $('#item_images_attributes_7_image').hide();
   $('#item_images_attributes_8_image').hide();
   $('#item_images_attributes_9_image').hide();
-  // $('#item_images_attributes_0_image').css({
-  //   'display':'none'
-  // });
+
 
 //1番目プレビュー
 $("#item_images_attributes_0_image").on("change", function(){
