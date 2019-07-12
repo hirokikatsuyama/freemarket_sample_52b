@@ -1,12 +1,12 @@
 $(function(){
     //中カテゴリのselectタブのhtml
     function buildChild(){
-      var html =`<select class="item-contents__item-about_box_condition_input" id="child" name="item[category_id]"></select>`
+      var html =`<select class="item-contents__item-about_box_condition_input" id="child" name="item[category_id]"><option value="">---</option></select>`
       return html;}
 
     //小カテゴリのselectタブのhtml
     function buildGrandChild(){
-      var html =`<select class="item-contents__item-about_box_condition_input" id="grand_child" name="item[category_id]"></select>`
+      var html =`<select class="item-contents__item-about_box_condition_input" id="grand_child" name="item[category_id]"><option value="">---</option></select>`
       return html;}
 
   　//小、中カテゴリのoptionタブのhtml これをselectタブに代入
