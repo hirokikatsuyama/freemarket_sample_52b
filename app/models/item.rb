@@ -10,6 +10,18 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :transactions, dependent: :destroy
 
+  validates :name, presence: true
+  validates :detail, presence: true
+  validates :condition, presence: true
+  validates :shipping_source, presence: true
+  validates :delivery_date, presence: true
+  validates :shipping_cost, presence: true
+  validates :price, presence: true
+  validates :category_id, presence: true
+  validates :user_id, presence: true
+  validates :shipping_method_id, presence: true
+  validates :images, presence: true
+
   def previous
     user.items.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
   end
@@ -17,14 +29,5 @@ class Item < ApplicationRecord
   def next
     user.items.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
   end
-
-  # def reject_image(attributes)
-  #   if attributes[:id]
-  #     attributes.merge!(_destroy: "1") if attributes[:image_cache].blank? && attributes[:image].blank?
-  #     false
-  #   else
-  #     false
-  #   end
-  # end
 
 end

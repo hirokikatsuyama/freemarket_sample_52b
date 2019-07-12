@@ -37,6 +37,8 @@ class ItemsController < ApplicationController
     if @item.save
       Transaction.create(seller_id: @item.user_id, item_id: @item.id, status: 1)
       redirect_to root_path
+    else
+      redirect_to new_item_path
     end
   end
 
