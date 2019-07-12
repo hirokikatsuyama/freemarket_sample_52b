@@ -1,71 +1,43 @@
 %script{src: "dropzone.js"}
-.single-container
-  %header.single-header
+.single
+  .single-header
     = link_to "/", class: "title__logo" do
       = image_tag('/images/mercari_logo_horizontal.png', size: "250x70")
-  %main.single-main#new_item
+  .single-main#new_item
     = form_for @item do |f|
-      %section.single-main__section
+      .single-main__section
         .single-main__section__title
           %h2.single-main__section__title__bar 商品の情報を入力
         .single-main__section__picture
-          %label#large-label 出品画像
+          %label#big-label 出品画像
           %span.form-require 必須
           %p 最大10枚までアップロードできます
           .all-gazo
             .uploader-5#preview
             .single-main__section__picture__uploader
               #form_upload.form_upload
-                -# =i.file_field :image, id: "image-2"
-                -# =i.file_field :image, id: "image-3"
-                -# =i.file_field :image, id: "image-4"
-                -# =i.file_field :image, id: "image-5"
-                -# =i.file_field :image, id: "image-6"
                 .single-main__section__picture__uploader__font.form_upload__text
                   %p
                   ドラッグアンドドロップまたは
                   %br
                   クリックしてファイルをアップロード
+                  %br
                   = f.fields_for :images do |i|
                     =i.label :image, id: "files" do
                       =i.file_field :image
-                      -# =i.file_field :image, id: "image-1 input_image files", class: "upload0"
-            -# .item__img__dropzone.clearfix
-            -#   #preview
-            -#   .item__img__dropzone__input
-            -#     %p
-            -#     ドラッグアンドドロップ
-            -#     %br
-            -#     またはクリックしてファイルをアップロード
-            -#     .input-area
-            -#       =i.label :images, id: "files" do
-            -#         = i.file_field :image, class: "image-1"
-            -# .item__img__dropzone2.clearfix
-            -#   #preview2
-            -#   .item__img__dropzone2__input2
-            -#     ドラッグアンドドロップ
-            -#     %br
-            -#     またはクリックしてファイルをアップロード
-            -#     .input-area
-            -#       = i.file_field :image
-            -#     .item__img__dropzone2__input2__description
-            -#       .item__img__dropzone2__input2__description__text
-            -#         ドラッグアンドドロップ
-            -#         %br
-            -#         またはクリックしてファイルをアップロード
         .single-main__section__item--name
           .form-group
-            %label.normal-label 商品名
+            %label 商品名
             %span.form-require 必須
             =f.label :name do
-              =f.text_field :name, class: "form", placeholder: "商品名（必須 40文字まで)"
+              =f.text_field :name, class: "single-main__section__item--name__input", placeholder: "商品名（必須 40文字まで)"
           .form-group
-            %label.normal-label 商品の説明
+            %label 商品の説明
             %span.form-require 必須
             =f.label :detail do
-              =f.text_area :detail, class: "form-detail", cols: "50", rows:"10", wrap: "soft", placeholder: "商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", value: ""
+              =f.text_area :detail, class: "single-main__section__discription", cols: "50", rows:"10", wrap: "soft", placeholder: "商品の説明必須1,00文字以内色、素材、重さ、定価、注意点など例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", value: ""
         .single-main__section__item--detail
-          %h3.gray-title.detail-left 商品の詳細
+          %label#gray-label.detail-left 商品の詳細
           .single-main__section__item--detail__pulldown
             .single-main__section__item--detail__pulldown__one
               %label.normal-label カテゴリー
@@ -74,52 +46,52 @@
                 = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
               .select-wrap
               .select-wrap2
-          .single-main__section__item--detail__pulldown__one.hide__form
-            %label.normal-label ブランド
-            %span.form-any 任意
+          .single-main__section__item--detail__pulldown__one.hide__form#appear-label
+            %label ブランド
+            %span.form-require 必須
             .single-main__section__item--detail__pulldown__one__tab
               =f.label :brand_id do
                 =f.text_field :brand_id, class: "form__brand", placeholder: "例）シャネル"
           .single-main__section__item--detail__pulldown__one
-            %label.normal-label 商品の状態
+            %label 商品の状態
             %span.form-require 必須
             .single-main__section__item--detail__pulldown__one__tab
               =f.label :condition do
-                =f.select :condition, [["--"], ["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {class: 'select--booox'}
+                =f.select :condition, [["--"], ["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {class: 'select--box'}
         .single-main__section__delivery
-          %h3.gray-title 配送について
+          %label#gray-label 配送について
           .single-main__section__delivery__pulldown
             .single-main__section__delivery__pulldown__one
-              %label.normal-label 配送料の負担
+              %label 配送料の負担
               %span.form-require 必須
               .single-main__section__delivery__pulldown__one__tab__box
                 =f.collection_select :shipping_cost, Shipping.all, :id,:name,{id: "pulu"}
           .single-main__section__delivery__pulldown__one
-            %label.normal-label 配送元の地域
+            %label 配送元の地域
             %span.form-require 必須
             .single-main__section__delivery__pulldown__one__tab
               = f.collection_select :shipping_source, Prefecture.all, :id, :name,{prompt: "---"}
           .single-main__section__delivery__pulldown__one
-            %label.normal-label 発送までの日数
+            %label 発送までの日数
             %span.form-require 必須
             .single-main__section__delivery__pulldown__one__tab
               =f.label :delivery_date do
-                =f.select :delivery_date, [["--"], ["1~2日で発送"], ["2~3日で発送"], ["4~7日で発送"]], {class: 'select--booox'}
+                =f.select :delivery_date, [["--"], ["1~2日で発送"], ["2~3日で発送"], ["4~7日で発送"]], {class: 'select--box'}
         .single-main__section__price
-          %h3.gray-title 販売価格(300〜9,999,999)
+          %label#gray-label 販売価格(300〜9,999,999)
           %ul.single-main__section__price__sell-form
             %li.single-main__section__price__sell-form__price
-              %label.normal-label 価格
+              %label 価格
               %span.form-require 必須
-              .price-right
+              .price-form
                 ¥
                 =f.label :price do
-                  =f.text_field :price, class: "form-price", placeholder: "例）300", value: ""
+                  =f.text_field :price, class: "input-price", placeholder: "例）300", value: ""
             %li.single-main__section__price__sell-form__margin
               販売手数料(10%)
               .single-main__section__price__sell-form__margin__feebox
             %li.single-main__section__price__sell-form__profit
-              %label#large-label 販売利益
+              %label#big-label 販売利益
               .single-main__section__price__sell-form__profit__pricebox
         .single-main__section__exhibition
           %p
@@ -132,10 +104,10 @@
           .single-main__section__exhibition__button
             = f.submit "出品する", name:"commit", class: "single-main__section__exhibition__button__exhibition"
             %button.single-main__section__exhibition__button__return もどる
-    %footer.single-footer
+    .single-footer
       .single-footer__section
-        %nav プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
+        #exhibition-font プライバシーポリシー　　メルカリ利用規約　　特定商取引に関する表記
         .single-footer__section__img
           = link_to "/", class: "title__logo" do
             = image_tag('/images/mercari_logo_vertical.png', size: "88x85")
-        %p.single-footer__right @ 2019 Mercari
+        %p.single-footer__right#exhibition-font @ 2019 Mercari

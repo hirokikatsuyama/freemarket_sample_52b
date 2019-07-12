@@ -14,15 +14,16 @@ class ItemsController < ApplicationController
     @nike = Item.includes(:images).where(brand_id: 4).where(status: 1).order(created_at: "DESC").limit(4)
   end
 
-  def set_search
-  end
-
   def new
-    @item = Item.new
-    10.times { @item.images.build }
-    # @item.images.build
-    @parents = Category.order("id ASC").limit(13)
-    @sizes = Size.all
+    unless current_user
+      redirect_to sign_in_users_path
+      flash[:notice] = "ログインが必要です。アカウントをお持ちでない場合は上記の「新規会員登録」より会員登録をしてください。"
+    else
+      @item = Item.new
+      10.times { @item.images.build }
+      @parents = Category.order("id ASC").limit(13)
+      @sizes = Size.all
+    end
   end
 
   def create
@@ -37,14 +38,6 @@ class ItemsController < ApplicationController
       Transaction.create(seller_id: @item.user_id, item_id: @item.id, status: 1)
       redirect_to root_path
     end
-    # if @item.save && new_image_params[:images][0] != ""
-    #   new_image_params[:images].map do |image|
-    #     @item.images.create(image: image, item_id: @item.id)
-    #   end
-    #   format.js{render ajax_redirect_to(root_path)}
-    # else
-    #   format.js{render ajax_redirect_to(new_item_path)}
-    # end
   end
 
   def edit
@@ -114,12 +107,9 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      # params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price, :brand_id, :size_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
       params.require(:item).permit(:name, :detail, :condition, :shipping_method_id, :shipping_cost, :delivery_date, :shipping_source, :price, :brand_id, :size_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
     end
-    # def new_image_params
-    #   params.require(:new_images).permit({images:[]})
-    # end
+
     def set_item
       @item = Item.find(params[:id])
     end
