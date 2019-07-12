@@ -69,7 +69,12 @@ class ItemsController < ApplicationController
       @normal = Evaluation.evaluation(2, @user)
       @bad = Evaluation.evaluation(3, @user)
       @prefecture = Prefecture.find(@item[:shipping_source]).name
-      @ShippingCost = ShippingMethod.find(@item[:shipping_cost]).name
+      @ShippingMethod = ShippingMethod.find(@item[:shipping_cost]).method_name
+      if @item.shipping_cost == 2
+        @ShippngCost = "送料込み（出品者負担）"
+      elsif @item.shipping_cost == 3
+        @ShippngCost = "着払い（購入者負担）"
+      end
     end
   end
 

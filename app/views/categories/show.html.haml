@@ -12,7 +12,7 @@
       .categories__show__box.clearfix
         -@items.each do |item|
           .categories__show__box__item
-            =link_to "#" do
+            =link_to item_path(item) do
               .categories__show__image
                 = image_tag (item.images.first.image.to_s)
               .categories__show__body
