@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'set_search'
+      get 'shipping_search'
     end
   end
   resources :categories, only: [:index, :show]

@@ -92,17 +92,8 @@
             .single-main__section__delivery__pulldown__one
               %label.normal-label 配送料の負担
               %span.form-require 必須
-              .single-main__section__delivery__pulldown__one__tab
-                =f.label :shipping_cost do
-                  =f.select :shipping_cost, [["--"], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]], id: "pulu"
-
-            -# .single-main__section__delivery__pulldown__one
-            -#   %label.normal-label 配送料の方法
-            -#   %span.form-require 必須
-            -#   .single-main__section__delivery__pulldown__one__tab
-            -#     =f.label :shipping_cost do
-            -#       =f.select :shipping_cost, [["--"], ["未定"], ["らくらくメルカリ便"], ["ゆうメール"], ["レターパック"], ["普通郵便（定形、定形外）"], ["クロネコヤマト"], ["ゆうパック"], ["クリックポスト"], ["ゆうパケット"]], id: "pulu2"
-
+              .single-main__section__delivery__pulldown__one__tab__box
+                =f.collection_select :shipping_cost, Shipping.all, :id,:name,{id: "pulu"}
           .single-main__section__delivery__pulldown__one
             %label.normal-label 配送元の地域
             %span.form-require 必須
