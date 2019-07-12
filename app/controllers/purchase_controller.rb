@@ -14,11 +14,13 @@ class PurchaseController < ApplicationController
     @item.update(status: 2)
     @transactions = Transaction.where(item_id: @item.id)
     @transactions.update(buyer_id: current_user.id, status: 2)
+
+    customer = Payjp::Customer.retrieve(@credit.customer_id)
+    @default_card_information = customer.cards.retrieve(@credit.card_id)
     render :done
   end
 
   def done
-
   end
 
   def show

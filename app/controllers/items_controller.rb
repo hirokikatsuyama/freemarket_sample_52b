@@ -69,6 +69,7 @@ class ItemsController < ApplicationController
       @normal = Evaluation.evaluation(2, @user)
       @bad = Evaluation.evaluation(3, @user)
       @prefecture = Prefecture.find(@item[:shipping_source]).name
+      @ShippingCost = ShippingMethod.find(@item[:shipping_cost]).name
     end
   end
 
@@ -94,15 +95,19 @@ class ItemsController < ApplicationController
   end
 
   def shipping_search
-    @shipping_cost = ShippingMethod.where(method_cost: params[:shipping_cost])
-
+    @shipping_cost = params[:shipping_id]
+    @shipping = ShippingMethod.where(method_cost:@shipping_cost)
+    respond_to do |format|
+      format.html 
+      format.json
+    end
   end
 
 
   private
 
     def item_params
-      params.require(:item).permit(:name, :detail, :condition, :shipping_cost, :delivery_date, :shipping_source, :price, :brand_id, :size_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
+      params.require(:item).permit(:name, :detail, :condition, :shipping_method_id, :shipping_cost, :delivery_date, :shipping_source, :price, :brand_id, :size_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
     end
 
     def set_item
