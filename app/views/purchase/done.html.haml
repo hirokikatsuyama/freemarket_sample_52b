@@ -12,7 +12,7 @@
       .item__confirmation__product
         .item__confirmation__product__content
           %h3
-            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPF_-Ey6UIAypKKCwOP30iAZqpam7Kslrll21X3hnzhgN9Zv_"
+            = image_tag @item.images.first.image.to_s
           %p
             = @item.name
           .item__confirmation__product__form
