@@ -17,11 +17,14 @@ $(function(){
     //サイズのselectタブのhtml
     function buildSize(){
       var html = `<div class="single-main__section__item--detail__pulldown__one" id="sizebox">
-                  <div class="single-main__section__item--detail__pulldown__one.hide__form"></select>
-                  <label class="normal-label">サイズ</label>
-                  <span class="form-require">必須</span>
-                  <div class="single-main__section__item--detail__pulldown__one__tab"></div>
-                  <select class="select--booox" required:"required" id="size" name="item[size_id]" "---"></select>`
+                    <div class="single-main__section__item--detail__pulldown__one.hide__form"></div>
+                      <label class="normal-label">サイズ</label>
+                      <span class="form-require">必須</span>
+                      <div class="single-main__section__item--detail__pulldown__one__tab"></div>
+                        <select class="select--booox" required:"required" id="size" name="item[size_id]"></select>
+                      </div>
+                   </div>`
+
       return html;}
 
     function buildSizeOption(sizingOption){
