@@ -41,12 +41,11 @@
               %select.exp_month#exp_month{maxlength: "2",type: "text",:name => "exp_month", :placeholder => "月"}
                 - 1.upto(12) do |i|
                   %option #{i}
-                  %span 月
-              %br/
+              %span 月
               %select.exp_year#exp_year{maxlength: "4", type: "text",:name => "exp_year", :placeholder => "年"}
                 - 2020.upto(2029) do |i|
                   %option #{i}
-                  %span 年
+              %span 年
               %br/
             %label セキュリティコード
             %span.form-require 必須
