@@ -37,7 +37,6 @@ $(function(){
         $('#child').remove();
         //小カテゴリが1度選択されたらリセット
         $('#grand_child').remove();
-
         $('#sizebox').remove();
         //parentValueに、大カテゴリのhtmlの値を代入。
         var parentValue = document.getElementById("parent-form").value;
@@ -67,8 +66,10 @@ $(function(){
 
             //#childのid = 中カテゴリプルダウンが選択されたら発火
             $("#child").on("change", function(){
-              $('#sizebox').remove();
-              var parentValue = document.getElementById("child").value;
+                //小カテゴリが1度選択されたらリセット
+                $('#grand_child').remove();
+                $('#sizebox').remove();
+                var parentValue = document.getElementById("child").value;
                 $.ajax({
                   //itemsファイルの中のsearch.json.jbuilderを読み込む
                   url:  '/items/search',
@@ -113,13 +114,13 @@ $(function(){
                             $('.select-wrap').append(html)
                             data.sizes.forEach(function(sizingOption){
                             var option = buildSizeOption(sizingOption);
-                            $('#size').append(option);  
+                            $('#size').append(option);
                             });
                           }
                         });
                     });
-               }) 
-            }) 
+               })
+            })
         })
     })
 });
