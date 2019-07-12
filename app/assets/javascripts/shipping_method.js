@@ -27,14 +27,13 @@ $(function(){
           dataType: 'json'
         })
         .done(function(shipping) {
-            $('#shipping').css('display', 'block');
-              var html = buildShipping();
-            $('.single-main__section__delivery__pulldown__one__tab__box').append(html);
-            shipping.forEach(function(shippingOption){
-              var option = buildShippingOption(shippingOption);
-              console.log(option);
-            $('#pulu2').append(option);  
-            });
+          $('#shipping').css('display', 'block');
+            var html = buildShipping();
+          $('.single-main__section__delivery__pulldown__one__tab__box').append(html);
+          shipping.forEach(function(shippingOption){
+            var option = buildShippingOption(shippingOption);
+          $('#pulu2').append(option);  
+          });
         });
     });
 });
