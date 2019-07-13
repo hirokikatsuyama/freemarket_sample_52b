@@ -101,7 +101,7 @@
   //current_userのitem/showページにのみ表示
   - if @item.user_id == current_user.id
     .itembox__editbox
-      = link_to "#" do
+      = link_to "/items/#{@item.id}/edit" do
         %button.itembox__editbox__editbtn 商品の編集
       .itembox__editbox__or or
       = link_to "#" do
